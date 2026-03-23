@@ -1,0 +1,93 @@
+# ============================================================================
+# configs/biomed_seg_lang_v1_histopath.yaml
+# ============================================================================
+# Extend the base BiomedParse v1 config to fine-tune on custom histopathology
+# datasets.  Copy/paste the relevant sections into configs/biomed_seg_lang_v1.yaml
+# or use this as a standalone override config.
+#
+# See README_HISTOPATH.md for full setup instructions.
+# ============================================================================
+
+# Base config: configs/biomed_seg_lang_v1.yaml  (loaded first via --conf_files)
+# This file is loaded second and overrides only the keys listed below.
+
+# ----------------------------------------------------------------------------
+# Dataset configuration
+# Dot-notation keys patch only the specified sub-key, leaving the rest of
+# the DATASETS dict (CLASS_CONCAT, SIZE_DIVISIBILITY, etc.) from the base
+# config intact.
+# ----------------------------------------------------------------------------
+
+# All five histopath datasets combined.  Swap to individual names below if
+# some dataset folders are not yet populated.
+DATASETS.TRAIN:
+  - "biomed_HistoPathAll_train"
+
+DATASETS.TEST:
+  - "biomed_HistoPathAll_test"
+
+# ---- Individual dataset names (uncomment to use instead of HistoPathAll) ----
+# DATASETS.TRAIN:
+#   - "biomed_HistoPathColon_train"
+#   - "biomed_HistoPathBCSS_train"
+#   - "biomed_HistoPathCells_train"
+#   - "biomed_HistoPathLung_train"
+#   - "biomed_HistoPathProstate_train"
+# DATASETS.TEST:
+#   - "biomed_HistoPathColon_test"
+#   - "biomed_HistoPathBCSS_test"
+#   - "biomed_HistoPathCells_test"
+#   - "biomed_HistoPathLung_test"
+#   - "biomed_HistoPathProstate_test"
+
+# ----------------------------------------------------------------------------
+# Training settings — text encoder fine-tuning only
+# Each key is written in dot-notation so that only the listed sub-keys are
+# patched; the rest of SOLVER (STEPS, GAMMA, OPTIMIZER, CLIP_GRADIENTS …)
+# is inherited unchanged from the base config.
+# ----------------------------------------------------------------------------
+
+SOLVER.BASE_LR: 0.00005         # lower LR for fine-tuning
+SOLVER.MAX_NUM_EPOCHS: 20
+SOLVER.WARMUP_ITERS: 200
+
+# Freeze everything except the text encoder.
+# FIX_PARAM freezes any parameter whose name contains the key.
+# IGNORE_FIX lists substrings exempted from FIX_PARAM (stay requires_grad=True).
+SOLVER.FIX_PARAM:
+  backbone: True         # freeze visual backbone
+  pixel_decoder: True    # freeze pixel / FPN decoder
+  predictor: True        # freeze transformer decoder (query, cross-attn, ffn …)
+
+SOLVER.IGNORE_FIX:
+  - lang_encoder         # …except the text encoder, which stays trainable
+
+SOLVER.LR_MULTIPLIER:
+  lang_encoder: 1.0      # text encoder uses the full BASE_LR
+
+# Load the pretrained BiomedParse v1 checkpoint before fine-tuning.
+# WEIGHT (bool) tells the trainer to call load_weight(); RESUME_FROM is the
+# path passed to BaseModel.from_pretrained().  The "hf_hub:" prefix triggers
+# an automatic HuggingFace download (same path the evaluation wrapper uses).
+WEIGHT: true
+RESUME_FROM: "hf_hub:microsoft/BiomedParse"
+
+# ============================================================================
+# Ablation study configs
+# ============================================================================
+# To run per-dimension ablations, use these dataset names in TRAIN/TEST:
+#
+#   biomed_HistoPathColon_histological_train / _test
+#   biomed_HistoPathColon_spatial_train      / _test
+#   biomed_HistoPathColon_hierarchical_train / _test
+#   biomed_HistoPathColon_ambiguity_train    / _test
+#
+# These require that you first generate dimension-specific JSON files by
+# running:
+#   python biomedparse_datasets/run_ablation_conversion.py \
+#       --colon_json <path> --bcss_json <path> ... --splits train test
+#
+# Then in the registration file, call:
+#   register_ablation_json_datasets("HistoPathColon",
+#                                   "biomedparse_datasets/HistoPathColon")
+# ============================================================================

@@ -1,0 +1,81 @@
+# ============================================================================
+# biomed_seg_lang_v1_histopath_full.yaml
+# ============================================================================
+# Full model fine-tuning on all histopathology datasets.
+# ALL modules are trainable (backbone, pixel decoder, predictor, lang encoder).
+#
+# Compared to the text-encoder-only config:
+#   - FIX_PARAM is empty  → nothing is frozen
+#   - BASE_LR is lower    → prevents catastrophic forgetting of pretrained weights
+#   - LR_MULTIPLIER gives differential learning rates per component:
+#       backbone      → 10 % of BASE_LR  (most conservative — deep visual features)
+#       pixel_decoder → 20 % of BASE_LR
+#       predictor     → 50 % of BASE_LR  (transformer decoder / cross-attention heads)
+#       lang_encoder  → 100% of BASE_LR  (text encoder adapts most to new domain)
+#
+# Loaded second via --conf_files; patches only the keys listed below.
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# Dataset configuration
+# ----------------------------------------------------------------------------
+# # Default: BiomedParse official + your histopath (colon, lung, prostate, breast_*)
+# DATASETS.TRAIN:
+#   - "biomed_CombinedFull_train"
+
+# DATASETS.TEST:
+#   - "biomed_CombinedFull_test"
+
+# ---- Alternatives (uncomment to use) ---------------------------------------
+# Histopath only (your data):
+DATASETS.TRAIN: ["biomed_HistoPathAll_train"]
+DATASETS.TEST:  ["biomed_HistoPathAll_test"]
+# BiomedParse official only:
+# DATASETS.TRAIN: ["biomed_BiomedParseAll_train"]
+# DATASETS.TEST:  ["biomed_BiomedParseAll_test"]
+# Individual datasets (uncomment instead of CombinedFull) ---------------
+# DATASETS.TRAIN:
+#   - "biomed_HistoPathColon_train"
+#   - "biomed_HistoPathBCSS_train"
+#   - "biomed_HistoPathCells_train"
+#   - "biomed_HistoPathLung_train"
+#   - "biomed_HistoPathProstate_train"
+# DATASETS.TEST:
+#   - "biomed_HistoPathColon_test"
+#   - "biomed_HistoPathBCSS_test"
+#   - "biomed_HistoPathCells_test"
+#   - "biomed_HistoPathLung_test"
+#   - "biomed_HistoPathProstate_test"
+DATASETS.PROMPT_COMBINE: true
+# ----------------------------------------------------------------------------
+# Training settings — full model fine-tuning
+# ----------------------------------------------------------------------------
+
+SOLVER.LORA:
+  ENABLED: true
+  R: 8                    # LoRA rank
+  ALPHA: 16               # LoRA alpha (scaling)
+  TARGET_MODULES: ["lang_encoder", "predictor"]  # or more specific: query, key, value, c_proj
+  DROPOUT: 0.0
+
+
+SOLVER.BASE_LR: 0.00000001         # 5x lower than text-only run to protect visual features
+SOLVER.MAX_NUM_EPOCHS: 20
+SOLVER.WARMUP_ITERS: 96        # longer warmup: more params need to settle
+
+# Nothing is frozen — all modules are trainable.
+SOLVER.FIX_PARAM: {}
+SOLVER.IGNORE_FIX: []
+
+# Differential learning rates per component.
+# Any param whose name contains the key gets BASE_LR * multiplier.
+# Params not matching any key receive BASE_LR (1.0x) by default.
+SOLVER.LR_MULTIPLIER:
+  backbone: 0.1         # visual backbone  → 1e-6  (most conservative)
+  pixel_decoder: 0.2    # pixel / FPN decoder → 2e-6
+  predictor: 0.5        # transformer decoder → 5e-6
+  lang_encoder: 1.0     # text encoder        → 1e-5 (most aggressive)
+
+# Load the pretrained BiomedParse v1 checkpoint before fine-tuning.
+WEIGHT: true
+RESUME_FROM: "hf_hub:microsoft/BiomedParse"
