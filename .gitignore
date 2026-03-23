@@ -6,3 +6,4 @@ logs/
 output/
 BiomedParse/output
 pretrained/
+pretrained/biomedparse_v1.pt
