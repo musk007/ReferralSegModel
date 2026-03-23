@@ -1,0 +1,191 @@
+# Class Prompts Configuration for DualProtoSeg CONCH Adapter
+# Each dataset has class-specific prompts for text-guided segmentation
+
+# Colon/Colorectal Cancer Dataset (GlaS, CRC)
+colon:
+  num_classes: 5
+  class_names:
+    - Healthy gland
+    - Benign gland
+    - Moderately differentiated gland
+    - Moderately-to-poorly differentiated gland
+    - Poorly differentiated gland
+  class_prompts:
+    0:  # Healthy gland
+      - "Well-formed straight tubular crypt with a round, open lumen."
+      - "Regularly spaced colonic crypt with intact epithelial lining and preserved architecture."
+      - "Benign colonic gland showing uniform basally oriented nuclei and abundant goblet cells."
+      - "Intact tubular gland with smooth contours and continuous luminal surface."
+      - "Normal colonic crypt with evenly distributed goblet mucin and preserved polarity."
+      - "Well-organized intestinal gland separated by intact lamina propria."
+      - "Non-neoplastic glandular structure with orderly epithelial arrangement and open lumen."
+      - "Straight colonic crypt with uniform epithelial thickness and no nuclear stratification."
+      - "Benign intestinal gland with preserved crypt architecture and homogeneous cell population."
+      - "Normal colonic gland with clear luminal space and intact surrounding stroma."
+    1:  # Benign gland
+      - "well-formed elongated tubular crypt"
+      - "well-formed crypt with wide open lumen."
+      - "well-formed crypt with abundant radial goblet mucin"
+      - "well-formed crypt with uniform basally aligned nuclei separated by intact lamina propria."
+      - "well-formed tubular crypt with open continuous lumen."
+      - "epithelial gland with lumen"
+      - "glandular structure with orderly basally aligned nuclei without stratification."
+      - "glandular structure with central lumen."
+      - "intestinal epithelial glands with uniform basally oriented nuclei."
+      - "colonic glandular architecture with intact surrounding lamina propria."
+    2:  # Moderately differentiated gland
+      - "Elongated, irregularly contoured neoplastic gland."
+      - "Irregular gland with partially collapsed lumen."
+      - "Irregular gland with depleted goblet mucin."
+      - "Malignant gland with stratified hyperchromatic nuclei within desmoplastic stroma."
+      - "Malignant gland with irregular but patent lumen."
+      - "Irregular epithelial gland with depleted goblet mucin."
+      - "Malignant glandular structure with stratified hyperchromatic nuclei."
+      - "Irregular glandular structure with irregular slit-like lumen and depleted goblet mucin."
+      - "Irregularintestinal epithelial glands with stratified hyperchromatic nuclei, and minimal intervening desmoplastic stroma."
+      - "Malignant colonic glandular architecture with partial luminal obliteration."
+    3:  # Moderately-to-poorly differentiated gland
+      - "Irregular malignant gland with partially preserved luminal formation and nuclear stratification."
+      - "Distorted glandular structure with angulated contours and focal luminal collapse."
+      - "Neoplastic gland showing reduced gland formation with hyperchromatic, stratified nuclei."
+      - "Poorly formed gland with slit-like lumen embedded in desmoplastic stroma."
+      - "Malignant epithelial gland with irregular architecture and partial loss of polarity."
+      - "Atypical glandular structure with crowding and diminished goblet mucin."
+      - "Irregular infiltrative gland with incomplete luminal differentiation and nuclear pleomorphism."
+      - "Malignant gland showing architectural distortion with residual glandular differentiation."
+      - "Partially formed neoplastic glands with irregular lumina and increased nuclear atypia."
+      - "Moderately to poorly differentiated glandular carcinoma with distorted luminal outlines."
+    4:  # Poorly differentiated gland
+      - "Solid sheets of malignant epithelial cells lacking glandular or luminal formation."
+      - "Infiltrative nests and cords of pleomorphic tumor cells without recognizable gland architecture."
+      - "Poorly differentiated carcinoma composed of discohesive atypical cells in desmoplastic stroma."
+      - "Solid growth pattern with marked nuclear pleomorphism and complete loss of gland formation."
+      - "Sheets of high-grade malignant cells with hyperchromatic nuclei and no luminal differentiation."
+      - "Anaplastic tumor cells arranged in solid nests without glandular structures."
+      - "Poorly differentiated malignant cells infiltrating stroma as solid cords and clusters."
+      - "High-grade carcinoma with diffuse solid growth and absence of glandular architecture."
+      - "Cohesive and discohesive pleomorphic tumor cells lacking identifiable gland formation."
+      - "Poorly differentiated carcinoma showing solid invasive growth with marked cytologic atypia."
+
+# Breast Cancer Semantic Segmentation (BCSS) Dataset  
+# Note: Using 4 classes (TUM, STR, LYM, NEC) to match DualProtoSeg checkpoint
+bcss:
+  num_classes: 4
+  class_names:
+    - Tumor
+    - Stroma
+    - Inflammatory
+    - Necrosis
+  class_prompts:
+    0:  # TUM (Tumor)
+      - "Invasive carcinoma composed of solid nests and cords of pleomorphic atypical cells infiltrating desmoplastic stroma without myoepithelial rims."
+      - "Densely cellular invasive carcinoma composed of solid sheets and irregular nests infiltrating desmoplastic stroma without myoepithelial rims."
+      - "Cohesive sheets and nests of markedly atypical epithelial cells with high nuclear grade infiltrating fibrous stroma, lacking myoepithelial rims."
+      - "Invasive carcinoma forming solid nests and cords with marked nuclear atypia infiltrating fibrous stroma, lacking myoepithelial rims."
+      - "Invasive carcinoma composed of solid nests and cords of pleomorphic atypical cells infiltrating desmoplastic stroma without myoepithelial rims."
+      - "Invasive carcinoma composed of pleomorphic atypical cells in solid nests and cords infiltrating desmoplastic stroma, lacking myoepithelial rims."
+    1:  # STR (Stroma)
+      - "Isolate fibrotic tumor-associated stroma with collagen bundles and reactive spindle fibroblasts cuffing and separating invasive carcinoma nests, with only sparse inflammatory cells."
+      - "Tumor-associated stroma showing collagenized desmoplasia with scattered spindle fibroblasts adjacent to invasive carcinoma, lacking dense lymphoid aggregates."
+      - "Desmoplastic stroma interdigitating between invasive tumor nests, composed of collagen bundles with scattered bland spindle fibroblasts and minimal inflammation."
+      - "Desmoplastic tumor-associated stroma composed of collagenized fibroblastic tissue separating invasive carcinoma nests, with sparse scattered inflammatory cells."
+      - "Tumor-associated stroma with dense collagen bundles and reactive spindle fibroblasts separating invasive carcinoma nests, lacking dense lymphoid aggregates."
+      - "Tumor-associated desmoplastic stroma showing dense collagen with reactive spindle fibroblasts cuffing and separating invasive carcinoma nests, with minimal inflammatory infiltrate."
+    2:  # LYM (Inflammatory/Lymphocytes)
+      - "Inflamed stroma showing dense lymphocytic infiltrates and loose edematous connective tissue without prominent collagenized desmoplasia or cohesive epithelial tumor nests."
+      - "Loose edematous stroma densely infiltrated by small lymphocytes and plasma cells, lacking prominent collagenized desmoplastic reaction."
+      - "Inflamed stroma characterized by loose edematous connective tissue heavily infiltrated by lymphocytes and plasma cells, without prominent collagenized desmoplasia."
+      - "Inflamed stroma with dense lymphocytic infiltrate and loose edematous matrix adjacent to tumor, lacking prominent desmoplastic collagenization."
+      - "Stromal regions with dense lymphocytic infiltrates and loose edematous matrix, often forming periductal or peritumoral aggregates, lacking prominent collagen bundles."
+      - "Inflamed stroma containing dense sheets of small lymphocytes and plasma cells within loose edematous connective tissue, lacking cohesive atypical epithelial nests."
+    3:  # NEC (Necrosis)
+      - "Central acellular necrotic zone with ghost tumor cell outlines and karyorrhectic debris not confined within pre-existing ducts."
+      - "Acellular eosinophilic necrotic debris with ghost outlines and karyorrhectic material not confined within ductal or glandular structures."
+      - "Central geographic necrosis showing eosinophilic ghost cells and karyorrhectic debris within a tumor nodule, not confined by ductal walls."
+      - "Acellular eosinophilic necrotic area with ghost outlines and karyorrhectic debris not confined within ducts, surrounded by viable tumor and stroma."
+      - "Acellular necrotic debris forming irregular geographic zones within tumor, with ghost outlines and karyorrhectic material not confined to ducts."
+      - "Acellular eosinophilic necrotic pools with ghost tumor cell outlines and karyorrhectic debris, not confined within ducts or glands."
+
+# Lung Segmentation Dataset (e.g., hepatocellular carcinoma)
+lung:
+  num_classes: 3
+  class_names:
+    - Tumor epithelium
+    - Tumor stroma
+    - normal tissue
+  class_prompts:
+    0:  # Tumor epithelium
+      - "background tissue"
+      - "non-hepatic tissue"
+      - "connective tissue"
+      - "fibrous septa"
+      - "vascular structures"
+    1:  # Tumor stroma
+      - "hepatocellular carcinoma"
+      - "malignant hepatocytes"
+      - "tumor nodules"
+      - "neoplastic liver cells"
+      - "hepatic tumor mass"
+      - "hepatoma cells"
+      - "cancerous hepatocytes with atypia"
+      - "malignant liver neoplasm"
+    2:  # normal tissue
+      - "normal hepatocytes"
+      - "liver parenchyma"
+      - "hepatic lobules"
+      - "normal liver tissue"
+      - "benign hepatocytes"
+      - "non-neoplastic liver"
+
+# Prostate Cancer Segmentation Dataset
+prostate:
+  num_classes: 4
+  class_names:
+    - Benign tissue
+    - Grade 3 cancer
+    - Grade 4 cancer
+    - Grade 5 cancer
+  class_prompts:
+    0:  # Benign tissue
+      - "prostatic stroma"
+      - "fibromuscular tissue"
+      - "connective tissue"
+      - "smooth muscle"
+      - "stromal background"
+    1:  # Grade 3 cancer
+      - "benign prostatic glands"
+      - "normal prostate acini"
+      - "benign epithelial glands with basal cell layer"
+      - "non-neoplastic prostatic glands"
+      - "normal prostate glandular epithelium"
+      - "benign glands with intact architecture"
+    2:  # Grade 4 cancer
+      - "adenocarcinoma of prostate"
+      - "malignant prostatic glands"
+      - "Gleason pattern carcinoma"
+      - "prostatic adenocarcinoma glands"
+      - "cancerous prostate acini"
+      - "neoplastic prostatic glands lacking basal cells"
+      - "prostate cancer with nuclear atypia"
+      - "malignant glandular epithelium"
+    3:  # Grade 5 cancer
+      - "malignant prostate gland"
+      - "prostate adenocarcinoma"
+      - "prostate cancer with glandular differentiation"
+      - "prostate adenocarcinoma with glandular differentiation"
+      - "prostate adenocarcinoma with glandular differentiation"
+
+# Default prompts (fallback)
+default:
+  num_classes: 2
+  class_names:
+    - background
+    - foreground
+  class_prompts:
+    0:
+      - "background"
+      - "non-target region"
+    1:
+      - "foreground"
+      - "target region"
+      - "region of interest"

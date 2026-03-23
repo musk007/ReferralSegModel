@@ -1,0 +1,83 @@
+# ============================================================================
+# configs/biomed_seg_lang_v1_histopath.yaml
+# ============================================================================
+# Extend the base BiomedParse v1 config to fine-tune on custom histopathology
+# datasets.  Copy/paste the relevant sections into configs/biomed_seg_lang_v1.yaml
+# or use this as a standalone override config.
+#
+# See README_HISTOPATH.md for full setup instructions.
+# ============================================================================
+
+_BASE_: "biomed_seg_lang_v1.yaml"        # inherit all base settings
+
+# ----------------------------------------------------------------------------
+# Dataset configuration
+# ----------------------------------------------------------------------------
+DATASETS:
+  # ---- Training ----
+  # Option A: Fine-tune on custom data only
+  TRAIN:
+    - "biomed_HistoPathColon_train"
+    - "biomed_HistoPathBCSS_train"
+    - "biomed_HistoPathLung_train"
+    - "biomed_HistoPathProstate_train"
+
+  # Option B: Fine-tune on custom data + original BiomedParse data (mixed)
+  # TRAIN:
+  #   - "biomed_BiomedParseData-Demo_train"   # replace with full dataset name
+  #   - "biomed_HistoPathAll_train"           # combined custom dataset
+
+  # ---- Evaluation ----
+  TEST:
+    - "biomed_HistoPathColon_test"
+    - "biomed_HistoPathBCSS_test"
+    - "biomed_HistoPathLung_test"
+    - "biomed_HistoPathProstate_test"
+
+  # ---- Prompt dimension selection ----
+  # Controls which reasoning dimension is used as the text prompt during training.
+  #   "all"          -> randomly sample one sentence per example each epoch
+  #                     (recommended for full multi-dimensional training)
+  #   "histological" -> always use histological reasoning sentence only
+  #   "spatial"      -> always use spatial reasoning sentence only
+  #   "hierarchical" -> always use hierarchical reasoning sentence only
+  #   "ambiguity"    -> always use ambiguity reasoning sentence only
+  PROMPT_DIMENSION: "all"
+
+  # If True, concatenate all available dimension sentences into one long prompt.
+  # Not recommended for standard training; useful for testing combined prompts.
+  PROMPT_COMBINE: False
+
+# ----------------------------------------------------------------------------
+# Training settings (adjust as needed)
+# ----------------------------------------------------------------------------
+SOLVER:
+  BASE_LR: 0.0001          # lower LR for fine-tuning vs. pretraining
+  MAX_ITER: 10000
+  WARMUP_ITERS: 500
+  CHECKPOINT_PERIOD: 1000
+  IMS_PER_BATCH: 4         # reduce if GPU memory is constrained
+
+# Resume from pretrained BiomedParse v1 checkpoint
+MODEL:
+  WEIGHTS: "pretrained/biomedparse_v1.pt"
+
+# ============================================================================
+# Ablation study configs
+# ============================================================================
+# To run per-dimension ablations, use these dataset names in TRAIN/TEST:
+#
+#   biomed_HistoPathColon_histological_train / _test
+#   biomed_HistoPathColon_spatial_train      / _test
+#   biomed_HistoPathColon_hierarchical_train / _test
+#   biomed_HistoPathColon_ambiguity_train    / _test
+#
+# These require that you first generate dimension-specific JSON files by
+# running:
+#   python biomedparse_datasets/run_ablation_conversion.py \
+#       --colon_json <path> --bcss_json <path> ... --splits train test
+#
+# Then in the registration file, call:
+#   register_ablation_json_datasets("HistoPathColon",
+#                                   "biomedparse_datasets/HistoPathColon")
+# ============================================================================
