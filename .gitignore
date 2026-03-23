@@ -5,3 +5,4 @@ test_data/
 logs/
 output/
 BiomedParse/output
+pretrained/
