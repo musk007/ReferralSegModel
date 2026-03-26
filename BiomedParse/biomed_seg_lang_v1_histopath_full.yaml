@@ -29,6 +29,7 @@
 # ---- Alternatives (uncomment to use) ---------------------------------------
 # Histopath only (your data):
 DATASETS.TRAIN: ["biomed_HistoPathAll_train"]
+DATASETS.EVAL:  ["biomed_HistoPathAll_eval"]   # held-out split for best-model tracking
 DATASETS.TEST:  ["biomed_HistoPathAll_test"]
 # BiomedParse official only:
 # DATASETS.TRAIN: ["biomed_BiomedParseAll_train"]
@@ -59,8 +60,10 @@ SOLVER.LORA:
   DROPOUT: 0.0
 
 
+SOLVER.BEST_METRIC: "mIoU"         # metric used to select and save the best checkpoint
+
 SOLVER.BASE_LR: 0.00000001         # 5x lower than text-only run to protect visual features
-SOLVER.MAX_NUM_EPOCHS: 20
+SOLVER.MAX_NUM_EPOCHS: 10
 SOLVER.WARMUP_ITERS: 96        # longer warmup: more params need to settle
 
 # Nothing is frozen — all modules are trainable.

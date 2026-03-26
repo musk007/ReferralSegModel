@@ -225,11 +225,11 @@ def _register_combined_histopath(split: str):
 
 def _register_all_histopath_datasets():
     for dataset_name, folder_name in _HISTOPATH_DATASETS.items():
-        for split in ("train", "test"):
+        for split in ("train", "eval", "test"):
             registered_name = f"biomed_{dataset_name}_{split}"
             _register_histopath_dataset(registered_name, folder_name, split)
 
-    for split in ("train", "test"):
+    for split in ("train", "eval", "test"):
         _register_combined_histopath(split)
 
 

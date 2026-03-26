@@ -110,6 +110,41 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
             logger.info(results)
         return results
 
+    def _eval_on_eval_split(self, save_folder):
+        """Evaluate on DATASETS.EVAL (the held-out validation split)."""
+        eval_datasets = self.opt.get('DATASETS', {}).get('EVAL', [])
+        if not eval_datasets:
+            return {}
+        logger.info("Eval-split evaluation start ...")
+        if self.opt['FP16']:
+            from torch.cuda.amp import autocast
+            with autocast():
+                results = self.pipeline.evaluate_model_on_datasets(self, save_folder, eval_datasets)
+        else:
+            results = self.pipeline.evaluate_model_on_datasets(self, save_folder, eval_datasets)
+        if self.opt['rank'] == 0:
+            logger.info(f"Eval-split results: {results}")
+        return results
+
+    @staticmethod
+    def _extract_metric(results: dict, metric_key: str) -> float:
+        """
+        Walk the nested results dict and return the mean of all values matching
+        `metric_key`.  Results structure:
+            { "<dataset>/<eval_type>": { "<subtype>": { "<metric>": value, ... } } }
+        Returns -inf if the key is not found.
+        """
+        values = []
+        def _walk(d):
+            if isinstance(d, dict):
+                for k, v in d.items():
+                    if k == metric_key and isinstance(v, (int, float)):
+                        values.append(float(v))
+                    else:
+                        _walk(v)
+        _walk(results)
+        return float(np.mean(values)) if values else float('-inf')
+
     def compute_loss(self, forward_func, batch):
 
         def forward(func, trainer, batch):
@@ -301,6 +336,12 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
                 if eval_log:
                     wandb.log(eval_log, step=0)
 
+        best_eval_score = float('-inf')
+        best_metric_key = self.opt.get('SOLVER', {}).get('BEST_METRIC', 'mIoU')
+        eval_datasets = self.opt.get('DATASETS', {}).get('EVAL', [])
+        if eval_datasets and self.opt['rank'] == 0:
+            logger.info(f"Eval-split datasets: {eval_datasets}  (tracking metric: {best_metric_key})")
+
         train_prev_logged_time = datetime.now()
         for epoch in range(self.train_params['start_epoch_idx'], num_epochs):
             self.train_params['current_epoch_idx'] = epoch
@@ -363,11 +404,31 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
                 if batch_idx + 1 == self.train_params['updates_per_epoch']:
                     if self.opt.get('SAVE_CHECKPOINT', True):
                         self.save_checkpoint(self.train_params['num_updates'])
+
+                    # --- Test-set evaluation (unchanged) ---
                     results = self._eval_on_set(self.save_folder)
                     if self.opt['rank'] == 0 and self.opt.get('WANDB', False) and wandb.run is not None:
-                        eval_log = _flatten_eval_results_for_wandb(results)
+                        eval_log = _flatten_eval_results_for_wandb(results, prefix="test")
                         if eval_log:
                             wandb.log(eval_log, step=current_optim_steps)
+
+                    # --- Eval-split evaluation + best-model tracking ---
+                    if eval_datasets:
+                        eval_results = self._eval_on_eval_split(self.save_folder)
+                        score = self._extract_metric(eval_results, best_metric_key)
+                        if self.opt['rank'] == 0:
+                            logger.info(
+                                f"Epoch {epoch+1}/{num_epochs}  eval {best_metric_key}={score:.4f}"
+                                f"  (best so far: {best_eval_score:.4f})"
+                            )
+                            if self.opt.get('WANDB', False) and wandb.run is not None:
+                                eval_log = _flatten_eval_results_for_wandb(eval_results, prefix="eval")
+                                eval_log[f"eval/best_{best_metric_key}"] = max(score, best_eval_score)
+                                if eval_log:
+                                    wandb.log(eval_log, step=current_optim_steps)
+                        if score > best_eval_score:
+                            best_eval_score = score
+                            self.save_best_checkpoint(epoch, score, best_metric_key)
                     break
 
             logger.info(f"This epoch takes {datetime.now() - epoch_start_time}")

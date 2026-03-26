@@ -47,10 +47,10 @@ def align_and_update_state_dicts(model_state_dict, ckpt_state_dict):
                 if ckpt_key in ckpt_keys:
                     ckpt_keys.pop(ckpt_keys.index(ckpt_key))
                 matched_log.append("Loaded {}, Model Shape: {} <-> Ckpt Shape: {}".format(model_key, model_weight.shape, ckpt_weight.shape))
-            else:
-                unmatched_log.append("*UNMATCHED* {}, Model Shape: {} <-> Ckpt Shape: {}".format(model_key, model_weight.shape, ckpt_weight.shape))
-        else:
-            unloaded_log.append("*UNLOADED* {}, Model Shape: {}".format(model_key, model_weight.shape))
+        #     else:
+        #         unmatched_log.append("*UNMATCHED* {}, Model Shape: {} <-> Ckpt Shape: {}".format(model_key, model_weight.shape, ckpt_weight.shape))
+        # else:
+        #     unloaded_log.append("*UNLOADED* {}, Model Shape: {}".format(model_key, model_weight.shape))
             
     if is_main_process():
         logger.info("Loaded {}/{} weights from checkpoint.".format(

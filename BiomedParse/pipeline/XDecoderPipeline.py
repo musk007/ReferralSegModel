@@ -26,7 +26,7 @@ from detectron2.data import MetadataCatalog
 from modeling import build_model
 from modeling.utils import get_class_names, apply_lora_to_model
 from modeling.BaseModel import BaseModel
-from datasets import build_evaluator, build_eval_dataloader, build_train_dataloader
+from datasets import build_evaluator, build_eval_dataloader, build_eval_dataloader_for_names, build_train_dataloader
 from utilities.distributed import is_main_process
 from utilities.constants import COCO_PANOPTIC_CLASSES
 from trainer.utils.misc import move_batch_to_device, cast_batch_to_half
@@ -223,4 +223,97 @@ class XDecoderPipeline:
             for evaltype in scores[datatype]:
                 if 'instance_results' in scores[datatype][evaltype]:
                     scores[datatype][evaltype]= scores[datatype][evaltype]['scores']
+        return scores
+
+    def evaluate_model_on_datasets(
+        self,
+        trainer: DefaultTrainer,
+        save_folder,
+        dataset_names: list,
+    ) -> dict:
+        """
+        Evaluate on an explicit list of dataset names (e.g. DATASETS.EVAL).
+        Maintains a separate dataloader cache from evaluate_model (which uses DATASETS.TEST).
+        Returns the same nested scores dict as evaluate_model.
+        """
+        model = trainer.raw_models['default'].eval()
+        self._opt = hook_opt(self._opt)
+
+        # Build / reuse eval-split dataloaders (cached separately from valid_loader)
+        if not hasattr(self, 'eval_split_loader'):
+            self.eval_split_loader = build_eval_dataloader_for_names(self._opt, dataset_names)
+
+        scores = {}
+        for idx, dataset_label in enumerate(dataset_names):
+            torch.cuda.empty_cache()
+            eval_batch_gen = self.eval_split_loader[idx]
+            evaluator = build_evaluator(self._opt, dataset_label, self._opt['SAVE_DIR'])
+            evaluator.reset()
+
+            with torch.no_grad():
+                names = get_class_names(dataset_label)
+                if self._opt['MODEL']['ENCODER']['BINARY_CLASSES']:
+                    names = ['target', 'background']
+                model.model.metadata = MetadataCatalog.get(dataset_label)
+                model.model.metadata = hook_metadata(model.model.metadata, dataset_label)
+                eval_type = model.model.metadata.evaluator_type
+                if 'background' in names:
+                    model.model.sem_seg_head.num_classes = len(names) - 1
+                model.model.sem_seg_head.predictor.lang_encoder.get_text_embeddings(names, is_eval=True)
+                hook_switcher(model, dataset_label)
+
+                total = len(eval_batch_gen)
+                num_warmup = min(5, total - 1)
+                start_time = time.perf_counter()
+                total_data_time = total_compute_time = total_eval_time = 0
+                start_data_time = time.perf_counter()
+
+                for bidx, batch in enumerate(eval_batch_gen):
+                    total_data_time += time.perf_counter() - start_data_time
+                    if bidx == num_warmup:
+                        start_time = time.perf_counter()
+                        total_data_time = total_compute_time = total_eval_time = 0
+
+                    start_compute_time = time.perf_counter()
+                    batch = move_batch_to_device(batch, self._opt['device'])
+                    if self._opt['FP16']:
+                        batch = cast_batch_to_half(batch)
+                    outputs = model(batch, mode=eval_type)
+                    if torch.cuda.is_available():
+                        torch.cuda.synchronize()
+                    total_compute_time += time.perf_counter() - start_compute_time
+
+                    start_eval_time = time.perf_counter()
+                    evaluator.process(batch, outputs)
+                    total_eval_time += time.perf_counter() - start_eval_time
+
+                    iters_after_start = bidx + 1 - num_warmup * int(bidx >= num_warmup)
+                    data_sec = total_data_time / iters_after_start
+                    compute_sec = total_compute_time / iters_after_start
+                    eval_sec = total_eval_time / iters_after_start
+                    total_sec = (time.perf_counter() - start_time) / iters_after_start
+                    if is_main_process() and (bidx >= num_warmup * 2 or compute_sec > 5):
+                        eta = datetime.timedelta(seconds=int(total_sec * (total - bidx - 1)))
+                        log_every_n_seconds(
+                            logging.INFO,
+                            f"[EvalSplit] {dataset_label}. {bidx+1}/{total}. "
+                            f"Inference: {compute_sec:.4f} s/iter. ETA={eta}",
+                            n=5,
+                        )
+                    start_data_time = time.perf_counter()
+
+            results = evaluator.evaluate()
+            model.model.sem_seg_head.predictor.lang_encoder.reset_text_embeddings()
+            if is_main_process():
+                scores[f"{dataset_label}/{eval_type}"] = results
+
+        # restore training state
+        model.model.sem_seg_head.num_classes = self._opt['MODEL']['ENCODER']['NUM_CLASSES']
+        model.model.metadata = MetadataCatalog.get(self._opt['DATASETS']['TRAIN'][0])
+
+        # strip instance_results like evaluate_model does
+        for datatype in scores:
+            for evaltype in scores[datatype]:
+                if 'instance_results' in scores[datatype][evaltype]:
+                    scores[datatype][evaltype] = scores[datatype][evaltype]['scores']
         return scores

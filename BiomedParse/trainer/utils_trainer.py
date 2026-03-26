@@ -153,6 +153,25 @@ class UtilsTrainer(DistributedTrainer):
 
         logger.warning(f'Finished saving checkpoint and model to {save_dir}.')
 
+    def save_best_checkpoint(self, epoch: int, score: float, metric_key: str):
+        """Save model weights to <save_folder>/best_model/ when a new best eval score is reached."""
+        if self.opt['world_size'] > 1:
+            torch.distributed.barrier()
+
+        if self.opt['rank'] == 0:
+            best_dir = os.path.join(self.save_folder, 'best_model')
+            os.makedirs(best_dir, exist_ok=True)
+            for module_name in self.model_names:
+                module_best_dir = os.path.join(best_dir, module_name)
+                os.makedirs(module_best_dir, exist_ok=True)
+                self.raw_models[module_name].save_pretrained(module_best_dir)
+            meta = {'epoch': epoch, 'score': score, 'metric': metric_key}
+            with open(os.path.join(best_dir, 'best_meta.json'), 'w') as f:
+                json.dump(meta, f, indent=2)
+            logger.warning(
+                f'Saved best model (epoch={epoch+1}, {metric_key}={score:.4f}) to {best_dir}.'
+            )
+
     def load_weight(self, checkpoint_path=None, must_exist=False):
         self.load_model(checkpoint_path)
         logger.warning(f'Load weights from {checkpoint_path}...')

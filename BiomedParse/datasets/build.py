@@ -438,11 +438,11 @@ def get_config_from_name(cfg, dataset_name):
         assert False, "dataset not support."
 
 
-def build_eval_dataloader(cfg, ):
+def build_eval_dataloader_for_names(cfg, dataset_names):
+    """Build eval dataloaders for an explicit list of dataset names."""
     dataloaders = []
-    for dataset_name in cfg['DATASETS']['TEST']:
+    for dataset_name in dataset_names:
         cfg = get_config_from_name(cfg, dataset_name)
-        # adjust mapper according to dataset
         if dataset_name == 'imagenet_val':
             mapper = ImageNetDatasetMapper(cfg, False)
         elif dataset_name == 'bdd10k_val_sem_seg':
@@ -460,13 +460,17 @@ def build_eval_dataloader(cfg, ):
         elif 'refcoco' in dataset_name:
             mapper = RefCOCODatasetMapper(cfg, False)
         elif 'med_sam' in dataset_name:
-            mapper = MedSAMDatasetMapper(cfg, False) 
+            mapper = MedSAMDatasetMapper(cfg, False)
         elif 'biomed' in dataset_name:
-            mapper = BioMedDatasetMapper(cfg, False)     
+            mapper = BioMedDatasetMapper(cfg, False)
         else:
             mapper = None
         dataloaders += [build_detection_test_loader(cfg, dataset_name, mapper=mapper)]
     return dataloaders
+
+
+def build_eval_dataloader(cfg, ):
+    return build_eval_dataloader_for_names(cfg, cfg['DATASETS']['TEST'])
 
 
 def build_train_dataloader(cfg, ):

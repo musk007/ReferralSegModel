@@ -240,7 +240,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", required=True, help="Path to raw GPT annotation JSON")
     parser.add_argument("--dataset_type", required=True, choices=["colon", "bcss", "breast_cells", "lung", "prostate"], help="Which histopathology dataset")
-    parser.add_argument("--split", required=True, choices=["train", "test"], help="Data split")
+    parser.add_argument("--split", required=True, choices=["train", "eval", "test"], help="Data split")
     parser.add_argument("--output_json", required=True, help="Output path for BiomedParse-format JSON")
     parser.add_argument("--prompt_mode", default="all", choices=["all", "histological", "spatial", "hierarchical", "ambiguity"], help="Which reasoning dimension(s) to include in text prompts")
     parser.add_argument("--images_dir", default=None, help="Directory containing images for this split (used to detect the correct file extension).If omitted, .png is assumed.")
