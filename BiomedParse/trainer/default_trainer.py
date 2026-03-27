@@ -122,8 +122,6 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
                 results = self.pipeline.evaluate_model_on_datasets(self, save_folder, eval_datasets)
         else:
             results = self.pipeline.evaluate_model_on_datasets(self, save_folder, eval_datasets)
-        if self.opt['rank'] == 0:
-            logger.info(f"Eval-split results: {results}")
         return results
 
     @staticmethod
@@ -144,6 +142,26 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
                         _walk(v)
         _walk(results)
         return float(np.mean(values)) if values else float('-inf')
+
+    @staticmethod
+    def _summarise_eval_metrics(results: dict) -> dict:
+        """
+        Flatten the nested eval results dict into a single-level dict of
+        mean values for the key segmentation metrics (mIoU, mDice, cIoU, cDice).
+        Returns { metric_name: mean_value } across all datasets in results.
+        """
+        REPORT_KEYS = ("mIoU", "mDice", "cIoU", "cDice", "precision@0.5")
+        accum = {k: [] for k in REPORT_KEYS}
+
+        def _walk(d):
+            if isinstance(d, dict):
+                for k, v in d.items():
+                    if k in REPORT_KEYS and isinstance(v, (int, float)):
+                        accum[k].append(float(v))
+                    else:
+                        _walk(v)
+        _walk(results)
+        return {k: float(np.mean(v)) for k, v in accum.items() if v}
 
     def compute_loss(self, forward_func, batch):
 
@@ -416,16 +434,22 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
                     if eval_datasets:
                         eval_results = self._eval_on_eval_split(self.save_folder)
                         score = self._extract_metric(eval_results, best_metric_key)
+                        summary = self._summarise_eval_metrics(eval_results)
                         if self.opt['rank'] == 0:
+                            metrics_str = "  ".join(
+                                f"{k}={v:.4f}" for k, v in summary.items()
+                            )
+                            best_marker = "  *** NEW BEST ***" if score > best_eval_score else \
+                                          f"  (best: {best_eval_score:.4f})"
                             logger.info(
-                                f"Epoch {epoch+1}/{num_epochs}  eval {best_metric_key}={score:.4f}"
-                                f"  (best so far: {best_eval_score:.4f})"
+                                f"EVAL epoch[{epoch+1:3}/{num_epochs}]  "
+                                + metrics_str
+                                + best_marker
                             )
                             if self.opt.get('WANDB', False) and wandb.run is not None:
-                                eval_log = _flatten_eval_results_for_wandb(eval_results, prefix="eval")
+                                eval_log = {f"eval/{k}": v for k, v in summary.items()}
                                 eval_log[f"eval/best_{best_metric_key}"] = max(score, best_eval_score)
-                                if eval_log:
-                                    wandb.log(eval_log, step=current_optim_steps)
+                                wandb.log(eval_log, step=current_optim_steps)
                         if score > best_eval_score:
                             best_eval_score = score
                             self.save_best_checkpoint(epoch, score, best_metric_key)
