@@ -449,7 +449,13 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
                             if self.opt.get('WANDB', False) and wandb.run is not None:
                                 eval_log = {f"eval/{k}": v for k, v in summary.items()}
                                 eval_log[f"eval/best_{best_metric_key}"] = max(score, best_eval_score)
+                                eval_log["epoch"] = epoch + 1
                                 wandb.log(eval_log, step=current_optim_steps)
+                                # also update summary so metrics are always visible in workspace table
+                                for k, v in summary.items():
+                                    wandb.run.summary[f"eval/{k}"] = v
+                                wandb.run.summary[f"eval/best_{best_metric_key}"] = max(score, best_eval_score)
+                                wandb.run.summary["epoch"] = epoch + 1
                         if score > best_eval_score:
                             best_eval_score = score
                             self.save_best_checkpoint(epoch, score, best_metric_key)
