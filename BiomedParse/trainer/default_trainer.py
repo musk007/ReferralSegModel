@@ -108,6 +108,12 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
             results = self.pipeline.evaluate_model(self, save_folder)
         if self.opt['rank'] == 0:
             logger.info(results)
+        # Barrier: wait for all ranks to finish evaluation before resuming training.
+        # Without this, rank 0 can race ahead into the next epoch's ALLREDUCE
+        # while other ranks are still inside the evaluator's all_gather, causing
+        # an NCCL collective mismatch and a 600-second watchdog timeout/crash.
+        if self.opt['world_size'] > 1:
+            torch.distributed.barrier()
         return results
 
     def _eval_on_eval_split(self, save_folder):
@@ -122,6 +128,9 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
                 results = self.pipeline.evaluate_model_on_datasets(self, save_folder, eval_datasets)
         else:
             results = self.pipeline.evaluate_model_on_datasets(self, save_folder, eval_datasets)
+        # Barrier: same reason as _eval_on_set — prevent rank divergence after evaluation.
+        if self.opt['world_size'] > 1:
+            torch.distributed.barrier()
         return results
 
     @staticmethod
