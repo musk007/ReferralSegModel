@@ -154,10 +154,8 @@ class UtilsTrainer(DistributedTrainer):
         logger.warning(f'Finished saving checkpoint and model to {save_dir}.')
 
     def save_best_checkpoint(self, epoch: int, score: float, metric_key: str):
-        """Save model weights to <save_folder>/best_model/ when a new best eval score is reached."""
-        if self.opt['world_size'] > 1:
-            torch.distributed.barrier()
-
+        """Save model weights to <save_folder>/best_model/ when a new best eval score is reached.
+        NOTE: called by rank 0 only — do NOT put a barrier inside here."""
         if self.opt['rank'] == 0:
             best_dir = os.path.join(self.save_folder, 'best_model')
             os.makedirs(best_dir, exist_ok=True)

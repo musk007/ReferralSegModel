@@ -468,6 +468,14 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
                         if score > best_eval_score:
                             best_eval_score = score
                             self.save_best_checkpoint(epoch, score, best_metric_key)
+
+                    # Synchronise ALL ranks at the very end of the epoch (after
+                    # checkpoint saving, test-set eval, and eval-split eval).
+                    # This prevents rank 0 from racing ahead or blocking at a
+                    # rank-0-only operation (e.g. save_best_checkpoint) while
+                    # other ranks have already started the next epoch's training.
+                    if self.opt['world_size'] > 1:
+                        torch.distributed.barrier()
                     break
 
             logger.info(f"This epoch takes {datetime.now() - epoch_start_time}")
