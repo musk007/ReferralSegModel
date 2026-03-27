@@ -2,10 +2,19 @@ import logging
 from mpi4py import MPI
 import os
 import re
+import socket
 import subprocess
 import torch
 
 logger = logging.getLogger(__name__)
+
+
+def _find_free_port() -> str:
+    """Return a free TCP port on localhost as a string."""
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind(('', 0))
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        return str(s.getsockname()[1])
 
 
 class MPIAdapter:
@@ -19,7 +28,18 @@ class MPIAdapter:
 
     def __init__(self, port='55551', set_env_vars=True):
         local_address = '127.0.0.1'
-        default_torch_distributed_port = port  # chosen arbitrarily
+
+        # Rank 0 picks a free port (or uses MASTER_PORT if set), then broadcasts.
+        # This avoids EADDRINUSE when a previous run's port is still in TIME_WAIT.
+        if 'OMPI_COMM_WORLD_SIZE' in os.environ:
+            rank = int(os.environ.get('OMPI_COMM_WORLD_RANK', 0))
+            if rank == 0:
+                port = os.environ.get('MASTER_PORT') or _find_free_port()
+            else:
+                port = None
+            port = MPI.COMM_WORLD.bcast(port, root=0)
+
+        default_torch_distributed_port = port
 
         if 'OMPI_COMM_WORLD_SIZE' not in os.environ:
             # application was started without MPI
