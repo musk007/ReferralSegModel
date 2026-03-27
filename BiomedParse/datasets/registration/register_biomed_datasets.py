@@ -153,10 +153,26 @@ def _load_histopath_json(root: str, split: str) -> list[dict]:
     with open(json_path) as f:
         entries = json.load(f)
 
+    _EXT_FALLBACKS = {".png": ".jpg", ".jpg": ".png", ".jpeg": ".png"}
+
+    def _resolve_path(directory: str, filename: str) -> str:
+        """Return the path to `filename` under `directory`, trying alternate
+        extensions if the referenced extension is not found on disk."""
+        path = os.path.join(directory, filename)
+        if os.path.exists(path):
+            return path
+        stem, ext = os.path.splitext(filename)
+        alt_ext = _EXT_FALLBACKS.get(ext.lower())
+        if alt_ext:
+            alt_path = os.path.join(directory, stem + alt_ext)
+            if os.path.exists(alt_path):
+                return alt_path
+        return path  # return original even if missing (will be caught by mapper)
+
     dataset_dicts = []
     for i, e in enumerate(entries):
-        img_path  = os.path.join(img_dir,  e["image_name"])
-        mask_path = os.path.join(mask_dir, e["mask_name"])
+        img_path  = _resolve_path(img_dir,  e["image_name"])
+        mask_path = _resolve_path(mask_dir, e["mask_name"])
 
         # Normalise sentences: add "raw" key if missing (mapper reads ['raw'])
         sentences = []
