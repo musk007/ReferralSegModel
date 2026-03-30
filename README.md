@@ -1,250 +1,276 @@
-# Text-Prompted Image Segmentation Evaluation Pipeline
+# BiomedParse Fine-Tuning & Evaluation for Histopathology
 
-A unified evaluation framework for text-prompted medical image segmentation models.
+Fine-tuning [BiomedParse](https://github.com/microsoft/BiomedParse) on histopathology datasets (colon, lung, prostate, breast BCSS, breast cells) with text-prompted segmentation.
 
-## Supported Models
-
-1. **SAM3** - Meta's Segment Anything Model 3
-2. **BiomedParse** - Biomedical segmentation with text prompts
-3. **MediSee** - Medical image reasoning and segmentation
-4. **DualProtoSeg** - Weakly supervised histopathology segmentation with CONCH
-
-## Quick Start
-
-### Setup
-
-All models use the unified `dualprotoseg` conda environment:
+## Prerequisites
 
 ```bash
 conda activate dualprotoseg
 ```
 
-### Run Single Model
+Cluster nodes: 8 x NVIDIA H200 (140 GB VRAM each), 128 CPUs.
 
-```bash
-# Evaluate specific model
-./run.sh sam3
-./run.sh biomedparse
-./run.sh medisee
-./run.sh dualprotoseg
-```
-
-### Run All Models
-
-```bash
-# Evaluate all 4 models sequentially
-./run.sh --all
-```
-
-### Compare Models
-
-```bash
-# Compare all 4 models side-by-side
-./run.sh --compare
-```
-
-### List Available Models
-
-```bash
-./run.sh --list
-```
-
-## Configuration
-
-Edit `run.sh` to configure:
-
-### Data Paths
-```bash
-IMAGES_DIR="/home/roba/miccai26/test_data/test_examples/colon_example"
-MASKS_DIR="/home/roba/miccai26/test_data/test_examples/colon_example/masks"
-PROMPTS_JSON="/home/roba/miccai26/test_data/test_examples/instructions/GlaS_gpt-5.1_0_original.json"
-OUTPUT_DIR="/home/roba/miccai26/results/segmentations_allDim"
-```
-
-### Model Paths
-```bash
-BIOMEDPARSE_PATH="/home/roba/miccai26/BiomedParse"
-SAM3_PATH=""  # Uses default installation
-MEDISEE_PATH="/home/roba/miccai26/MediSee"
-MEDISEE_MODEL_DIR="/home/roba/miccai26/models/medisee"
-DUALPROTOSEG_PATH="/home/roba/miccai26/DualProtoSeg"
-```
-
-### DualProtoSeg Specific
-```bash
-DUALPROTOSEG_CHECKPOINT="/path/to/checkpoint/best_cam.pth"
-DATASET="bcss"  # Options: colon, bcss, liver, prostate
-PROMPTS_CONFIG="/home/roba/miccai26/configs/class_prompts.yaml"
-```
-
-**Important**: For DualProtoSeg, the `DATASET` must match what the checkpoint was trained on to avoid dimension mismatches.
-
-## File Structure
+## Repository Structure
 
 ```
 /home/roba/miccai26/
-├── run.sh                          # Main evaluation script
-├── text_seg_eval_example.py        # Evaluation framework
-├── configs/
-│   └── class_prompts.yaml         # Class prompts for DualProtoSeg
+├── runner_full.sh                          # SLURM script — LoRA fine-tuning
+├── runner_nolora.sh                        # SLURM script — full-weight fine-tuning (no LoRA)
+├── eval.sh                                 # Evaluation on histopath + BiomedParse official test sets
+├── text_seg_eval_example.py                # Evaluation framework
 ├── wrappers/
-│   ├── sam3_wrapper.py
-│   ├── biomedparse_wrapper.py
-│   ├── medisee_wrapper.py
-│   └── dualprotoseg_wrapper.py
-├── BiomedParse/                   # Model repositories
-├── MediSee/
-├── DualProtoSeg/
-├── models/                        # Model weights
-│   ├── medisee/
-│   └── ...
-└── results/                       # Evaluation outputs
-    └── segmentations_allDim/
+│   └── biomedparse_wrapper.py              # Inference wrapper for eval
+├── BiomedParse/                            # BiomedParse source (modified)
+│   ├── configs/
+│   │   └── biomed_seg_lang_v1.yaml         # Base model config
+│   ├── biomed_seg_lang_v1_histopath_full.yaml    # Training config (LoRA)
+│   ├── biomed_seg_lang_v1_histopath_nolora.yaml  # Override: no LoRA, selective freezing
+│   ├── modeling/
+│   │   ├── BaseModel.py                    # Model loading (auto-detects LoRA checkpoints)
+│   │   └── utils/lora.py                   # LoRA adapter implementation
+│   ├── trainer/
+│   │   ├── default_trainer.py              # Training loop, per-epoch eval, W&B logging
+│   │   ├── xdecoder_trainer.py             # Optimizer setup, param freezing
+│   │   └── utils_trainer.py                # Checkpoint saving
+│   ├── datasets/
+│   │   ├── registration/
+│   │   │   └── register_biomed_datasets.py # Dataset registration (histopath + official)
+│   │   └── evaluation/
+│   │       └── grounding_evaluation.py     # mIoU, mDice, cIoU, cDice, precision@k
+│   └── output/                             # Training outputs (checkpoints, best_model)
+├── biomedparse_datasets/                   # Dataset root
+│   ├── colon/
+│   │   ├── train/ train_mask/ train.json
+│   │   ├── eval/  eval_mask/  eval.json
+│   │   └── test/  test_mask/  test.json
+│   ├── lung/          (same structure)
+│   ├── prostate/      (same structure)
+│   ├── breast_bcss/   (same structure)
+│   ├── breast_cells/  (same structure)
+│   └── biomedParse/BiomedParseData/        # Official BiomedParse datasets
+├── test_data/instructions/test/            # Per-dataset instruction JSONs for eval
+├── results/eval/                           # Evaluation results
+└── logs/                                   # SLURM job logs
 ```
 
-## Metrics
+## Fine-Tuning
 
-The evaluation computes the following metrics:
+### Configuration
 
-- **IoU** (Intersection over Union)
-- **Dice** coefficient
-- **Precision**
-- **Recall**
-- **Accuracy**
+Training behaviour is controlled by YAML config files stacked in order (each overrides the previous):
 
-Optional metrics:
-- **Specificity**
-- **Boundary IoU**
-- **Hausdorff** distance
+1. `configs/biomed_seg_lang_v1.yaml` — base BiomedParse architecture config
+2. `biomed_seg_lang_v1_histopath_full.yaml` — datasets, training params, LoRA settings
+3. `biomed_seg_lang_v1_histopath_nolora.yaml` *(optional)* — disables LoRA, freezes backbone/pixel_decoder
 
-## Output
+Three knobs control what gets fine-tuned:
 
-Each evaluation produces:
+| Setting | Purpose |
+|---|---|
+| `SOLVER.LORA.ENABLED` | When `true`, wraps target `nn.Linear` layers with rank-R LoRA adapters. Only `lora_A`/`lora_B` are trainable. |
+| `SOLVER.LORA.TARGET_MODULES` | List of module name substrings to apply LoRA to (e.g. `["lang_encoder", "predictor"]`). |
+| `SOLVER.FIX_PARAM` | Freeze entire modules by name when LoRA is disabled (e.g. `backbone: true`). |
+| `SOLVER.LR_MULTIPLIER` | Per-module learning rate scaling. Set to `0.0` to soft-freeze a module. |
 
-1. **JSON results** - Quantitative metrics summary
-2. **Predictions** - Segmentation masks as PNG files
-3. **Console output** - Real-time progress and statistics
+### Option A: LoRA Fine-Tuning (`runner_full.sh`)
 
-Example:
-```
-results/segmentations_allDim/
-├── sam3_eval_results.json
-├── sam3_predictions/
-│   ├── image1_pred.png
-│   ├── image2_pred.png
-│   └── ...
-├── biomedparse_eval_results.json
-├── biomedparse_predictions/
-└── ...
-```
-
-## Running on GPU
-
-For GPU execution (required for actual inference):
+Trains LoRA adapters (rank 8) on `lang_encoder` + `predictor` + `sem_seg_head`. Backbone and pixel_decoder receive reduced LR but are not frozen.
 
 ```bash
-# Interactive session
-srun --gres=gpu:1 --mem=32G --time=01:00:00 --pty bash
-cd /home/roba/miccai26
-./run.sh sam3
-
-# Or direct execution
-srun --gres=gpu:1 --mem=32G ./run.sh --all
+sbatch runner_full.sh
 ```
 
-## Model-Specific Notes
+Key settings in `biomed_seg_lang_v1_histopath_full.yaml`:
 
-### SAM3
-- Requires: `sam3` package installed
-- Dependencies: `einops`, `decord`, `pycocotools`, `psutil`
+```yaml
+SOLVER.LORA:
+  ENABLED: true
+  R: 8
+  ALPHA: 16
+  TARGET_MODULES: ["sem_seg_head", "lang_encoder", "predictor"]
 
-### BiomedParse
-- Requires: `detectron2`, `mpi4py`, `kornia`
-- Path: `/home/roba/miccai26/BiomedParse`
+SOLVER.FIX_PARAM: {}           # nothing frozen
 
-### MediSee
-- Requires: `sentencepiece`, `protobuf`
-- Model dir: `/home/roba/miccai26/models/medisee`
-- Based on LLaVA-Med architecture
+SOLVER.LR_MULTIPLIER:
+  backbone: 0.1                # 10% of BASE_LR
+  pixel_decoder: 0.2           # 20% of BASE_LR
+  predictor: 0.5               # 50% of BASE_LR
+  lang_encoder: 1.0            # 100% of BASE_LR
+```
 
-### DualProtoSeg
-- Requires: CONCH model and class prompts configuration
-- **Important**: Dataset must match checkpoint training dataset
-- Default: BCSS dataset (4 classes: Tumor, Stroma, Inflammatory, Necrosis)
-- Checkpoint: `/home/roba/miccai26/DualProtoSeg/runs/checkpoints/.../best_cam.pth`
+### Option B: Full-Weight Fine-Tuning — No LoRA (`runner_nolora.sh`)
+
+Directly fine-tunes all weights in `lang_encoder` + `predictor`. Backbone and pixel_decoder are completely frozen.
+
+```bash
+sbatch runner_nolora.sh
+```
+
+This stacks an additional override config `biomed_seg_lang_v1_histopath_nolora.yaml`:
+
+```yaml
+SOLVER.LORA:
+  ENABLED: false
+
+SOLVER.FIX_PARAM:
+  backbone: true               # frozen
+  pixel_decoder: true           # frozen
+
+SOLVER.LR_MULTIPLIER:
+  backbone: 0.0
+  pixel_decoder: 0.0
+  predictor: 1.0
+  lang_encoder: 1.0
+```
+
+### Customising What Gets Fine-Tuned
+
+To create a new training configuration, copy one of the existing YAML files and adjust the three knobs. Examples:
+
+**LoRA on all four modules:**
+```yaml
+SOLVER.LORA:
+  ENABLED: true
+  TARGET_MODULES: ["backbone", "pixel_decoder", "predictor", "lang_encoder"]
+SOLVER.FIX_PARAM: {}
+```
+
+**Full-weight fine-tuning on text encoder only:**
+```yaml
+SOLVER.LORA:
+  ENABLED: false
+SOLVER.FIX_PARAM:
+  backbone: true
+  pixel_decoder: true
+  predictor: true
+SOLVER.LR_MULTIPLIER:
+  lang_encoder: 1.0
+```
+
+### Overriding Output Directory and Epochs
+
+Environment variables override defaults in the runner scripts:
+
+```bash
+OUTPUT_DIR=/home/roba/miccai26/BiomedParse/output/my_experiment \
+SOLVER.MAX_NUM_EPOCHS=50 \
+sbatch runner_full.sh
+```
+
+### Single-Dataset Fine-Tuning
+
+```bash
+TRAIN_DATASET=colon sbatch runner_full.sh
+TRAIN_DATASET=lung sbatch runner_nolora.sh
+# Options: colon, lung, prostate, breast_bcss, breast_cells
+```
+
+### Monitoring
+
+Training logs to W&B (project: `BiomedParseFineTune`) and to SLURM log files:
+
+```bash
+# Watch SLURM queue
+watch squeue
+
+# Tail training logs
+tail -f /home/roba/miccai26/logs/finetune_full_<JOBID>.err
+tail -f /home/roba/miccai26/logs/finetune_nolora_<JOBID>.err
+```
+
+Per-epoch eval metrics logged: `mIoU`, `mDice`, `cIoU`, `cDice`, `precision@0.5` (on 0–100 scale).
+
+Best model is saved automatically based on `SOLVER.BEST_METRIC` (default: `mIoU`).
+
+### Training Output Structure
+
+```
+output/histopath_full/biomed_seg_lang_v1.yaml_conf~/run_N/
+├── 00000740/                   # Epoch checkpoint
+│   └── default/
+│       └── model_state_dict.pt
+├── best_model/                 # Best eval-split checkpoint
+│   ├── default/
+│   │   └── model_state_dict.pt
+│   └── best_meta.json          # { epoch, score, metric }
+└── wandb/                      # W&B run data
+```
+
+## Evaluation
+
+### Histopathology Test Sets
+
+Evaluates on lung, colon, prostate, breast_bcss, breast_cells using instruction-based prompts:
+
+```bash
+HISTOPATH=1 bash eval.sh
+```
+
+### BiomedParse Official Datasets
+
+Evaluates on ACDC, BreastUS, CAMUS, CDD-CESM, etc.:
+
+```bash
+BIOMEDPARSE_OFFICIAL=1 bash eval.sh
+```
+
+### Both Together
+
+```bash
+BIOMEDPARSE_OFFICIAL=1 HISTOPATH=1 bash eval.sh
+```
+
+### Single Dataset
+
+```bash
+DATASET=colon bash eval.sh
+DATASET=lung bash eval.sh
+```
+
+### Specifying a Checkpoint
+
+Edit `BIOMEDPARSE_CHECKPOINT` in `eval.sh` (line 75) to point to the desired checkpoint directory:
+
+```bash
+BIOMEDPARSE_CHECKPOINT="/home/roba/miccai26/BiomedParse/output/histopath_full/.../best_model"
+```
+
+The loader auto-detects LoRA checkpoints and applies LoRA wrappers before loading weights.
+
+### Evaluation Metrics
+
+All metrics are reported on a **0–100 percentage scale**:
+
+| Metric | Description |
+|---|---|
+| `mIoU` | Mean Intersection over Union (per-sample, averaged) |
+| `cIoU` | Cumulative IoU (global intersection / global union) |
+| `mDice` | Mean Dice coefficient |
+| `cDice` | Cumulative Dice coefficient |
+| `precision@0.5` | Fraction of samples with IoU >= 0.5 |
+
+### Evaluation Output
+
+```
+results/eval/<dataset>/biomedparse/
+├── biomedparse_results.json    # Quantitative metrics
+└── predictions/                # Predicted mask PNGs
+```
 
 ## Troubleshooting
 
-### "ModuleNotFoundError"
-Ensure the correct conda environment is activated:
-```bash
-conda activate dualprotoseg
-```
+### NCCL Timeout During Training
 
-### "Found no NVIDIA driver"
-You're running on a login node. Use `srun` to get a GPU node.
+Caused by rank divergence in distributed training. The training code includes barriers at epoch boundaries. If issues recur, check `trainer/default_trainer.py`.
 
-### DualProtoSeg dimension mismatch
-Ensure `DATASET` in `run.sh` matches the checkpoint's training dataset.
+### `$UNUSED$` Warnings When Loading Checkpoint
 
-### Missing model weights
-Check paths in `run.sh` and ensure models are downloaded:
-- MediSee: weights should be in `/home/roba/miccai26/models/medisee`
-- DualProtoSeg: checkpoint path must be valid
+If you see `$UNUSED$ ... lora_A` warnings during evaluation, the LoRA wrappers were not applied before loading. This is handled automatically in `BaseModel.from_pretrained()` — ensure you're using the latest code.
 
-## Advanced Usage
+### Image Loading Errors
 
-### Custom Dataset
+The dataset registration code (`register_biomed_datasets.py`) tries alternate extensions (`.png` <-> `.jpg`) if the referenced file is not found. Check that image/mask files exist in the dataset directories.
 
-1. For DualProtoSeg, add your dataset to `configs/class_prompts.yaml`:
+### HuggingFace Timeout on Worker Nodes
 
-```yaml
-my_dataset:
-  num_classes: 3
-  class_names:
-    - class1
-    - class2
-    - class3
-  class_prompts:
-    0:
-      - "detailed description of class 1"
-      - "another description of class 1"
-      # Add 4-6 prompts per class
-    1:
-      - "description of class 2"
-    2:
-      - "description of class 3"
-```
-
-2. Update `DATASET="my_dataset"` in `run.sh`
-
-### Custom Metrics
-
-Edit `text_seg_eval_example.py` to add metrics:
-```python
-METRICS = "iou dice precision recall accuracy specificity boundary_iou hausdorff"
-```
-
-### Batch Processing
-
-Process multiple datasets:
-```bash
-for dataset in dataset1 dataset2 dataset3; do
-    IMAGES_DIR="/path/to/$dataset/images"
-    MASKS_DIR="/path/to/$dataset/masks"
-    ./run.sh --all
-done
-```
-
-## Citation
-
-If you use this evaluation framework, please cite the respective model papers:
-
-- **SAM3**: Meta's Segment Anything Model
-- **BiomedParse**: [Citation needed]
-- **MediSee**: [Citation needed]
-- **DualProtoSeg**: Weakly supervised histopathology segmentation
-
-## License
-
-See individual model repositories for licensing information.
+Worker nodes may lack internet access. The runner scripts set `HF_HUB_OFFLINE=1` and `TRANSFORMERS_OFFLINE=1` to use cached models. Ensure the cache is populated on a login node first.

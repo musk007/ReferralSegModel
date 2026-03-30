@@ -56,13 +56,13 @@ SOLVER.LORA:
   ENABLED: true
   R: 8                    # LoRA rank
   ALPHA: 16               # LoRA alpha (scaling)
-  TARGET_MODULES: ["lang_encoder", "predictor"]  # or more specific: query, key, value, c_proj
+  TARGET_MODULES: ["sem_seg_head", "lang_encoder", "predictor"]  # or more specific: query, key, value, c_proj
   DROPOUT: 0.0
 
 
 SOLVER.BEST_METRIC: "mIoU"         # metric used to select and save the best checkpoint
 
-SOLVER.BASE_LR: 0.00000001         # 5x lower than text-only run to protect visual features
+SOLVER.BASE_LR: 0.000001         # 5x lower than text-only run to protect visual features
 SOLVER.MAX_NUM_EPOCHS: 10
 SOLVER.WARMUP_ITERS: 96        # longer warmup: more params need to settle
 

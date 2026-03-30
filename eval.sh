@@ -42,7 +42,7 @@ set -e
 # Configurable parameters  (override via environment or --export)
 # ---------------------------------------------------------------------------
 MODEL="${MODEL:-biomedparse}"
-DATASET="${DATASET:-lung}"
+DATASET="${DATASET:-colon}"
 DEVICE="${DEVICE:-cuda}"
 THRESHOLD="${THRESHOLD:-0.5}"
 METRICS="${METRICS:-iou dice precision recall accuracy giou ciou}"
@@ -50,7 +50,7 @@ COMPARE="${COMPARE:-0}"   # set to 1 to compare all models on DATASET
 ALL="${ALL:-0}"           # set to 1 to run every model × dataset combination
 # Evaluate on BiomedParse official dataset (biomedparse_datasets/biomedParse/BiomedParseData)
 BIOMEDPARSE_OFFICIAL="${BIOMEDPARSE_OFFICIAL:-0}"
-BIOMEDPARSE_OFFICIAL_DATASETS="${BIOMEDPARSE_OFFICIAL_DATASETS:-all}"  # all | ACDC,DRIVE,ISIC,...
+BIOMEDPARSE_OFFICIAL_DATASETS="${BIOMEDPARSE_OFFICIAL_DATASETS:-ACDC,BreastUS,CAMUS,CDD-CESM,COVID-19_CT,COVID-QU-Ex,CXR_Masks_and_Labels,FH-PS-AOP,kits23,LGG,LIDC-IDRI,LiverUS,MMs,MSD,QaTa-COV19,Radiography}"
 
 # ---------------------------------------------------------------------------
 # Fixed paths
@@ -68,10 +68,10 @@ DUALPROTOSEG_DATASET="bcss"   # checkpoint was trained on BCSS
 
 # Histopath-style datasets (lung, colon, etc.) use contoured_instructions.json from test_data
 # BiomedParse official (ACDC, DRIVE, etc.) use BIOMEDPARSE_OFFICIAL=1
-BASE_DATA="${SCRIPT_DIR}/test_data/data_test"
+BASE_DATA="/home/roba/miccai26/biomedparse_datasets"
 BASE_RESULTS="${SCRIPT_DIR}/results/eval"
 BIOMEDPARSE_OFFICIAL_DATA="${SCRIPT_DIR}/biomedparse_datasets/biomedParse/BiomedParseData"
-BIOMEDPARSE_CHECKPOINT="/home/roba/miccai26/BiomedParse/output/histopath_full/biomed_seg_lang_v1.yaml_conf~/run_2/00006160"
+BIOMEDPARSE_CHECKPOINT="/home/roba/miccai26/BiomedParse/output/histopath_lanEnc_Pred_SegmH_LoRA_1e-6_50Epochs/biomed_seg_lang_v1.yaml_conf~/run_1/best_model"
 # ---------------------------------------------------------------------------
 # Dataset path table
 # Each dataset entry: IMAGES_DIR  MASKS_DIR  PROMPTS_JSON
@@ -80,29 +80,29 @@ resolve_dataset() {
     local ds="$1"
     case "$ds" in
         lung)
-            IMAGES_DIR="${BASE_DATA}/lung/all_images"
-            MASKS_DIR="${BASE_DATA}/lung/all_masks"
-            PROMPTS_JSON="${BASE_DATA}/lung/contoured_instructions.json"
+            IMAGES_DIR="${BASE_DATA}/lung/test"
+            MASKS_DIR="${BASE_DATA}/lung/test_mask"
+            PROMPTS_JSON="/home/roba/miccai26/test_data/instructions/test/lung.json"
             ;;
         colon)
-            IMAGES_DIR="${BASE_DATA}/colon/all_images"
-            MASKS_DIR="${BASE_DATA}/colon/all_masks"
-            PROMPTS_JSON="${BASE_DATA}/colon/contoured_instructions.json"
+            IMAGES_DIR="${BASE_DATA}/colon/test"
+            MASKS_DIR="${BASE_DATA}/colon/test_mask"
+            PROMPTS_JSON="/home/roba/miccai26/test_data/instructions/test/colon.json"
             ;;
         prostate)
-            IMAGES_DIR="${BASE_DATA}/prostate/all_images"
-            MASKS_DIR="${BASE_DATA}/prostate/labeled_masks"
-            PROMPTS_JSON="${BASE_DATA}/prostate/contoured_instructions.json"
+            IMAGES_DIR="${BASE_DATA}/prostate/test"
+            MASKS_DIR="${BASE_DATA}/prostate/test_mask"
+            PROMPTS_JSON="/home/roba/miccai26/test_data/instructions/test/prostate.json"
             ;;
         breast_bcss)
-            IMAGES_DIR="${BASE_DATA}/breast/bcss/all_images"
-            MASKS_DIR="${BASE_DATA}/breast/bcss/all_masks"
-            PROMPTS_JSON="${BASE_DATA}/breast/bcss/contoured_instructions.json"
+            IMAGES_DIR="${BASE_DATA}/breast_bcss/test"
+            MASKS_DIR="${BASE_DATA}/breast_bcss/test_mask"
+            PROMPTS_JSON="/home/roba/miccai26/test_data/instructions/test/breast_bcss.json"
             ;;
         breast_cells)
-            IMAGES_DIR="${BASE_DATA}/breast/cells/all_images"
-            MASKS_DIR="${BASE_DATA}/breast/cells/all_masks"
-            PROMPTS_JSON="${BASE_DATA}/breast/cells/contoured_instructions.json"
+            IMAGES_DIR="${BASE_DATA}/breast_cells/test"
+            MASKS_DIR="${BASE_DATA}/breast_cells/test_mask"
+            PROMPTS_JSON="/home/roba/miccai26/test_data/instructions/test/breast_cells.json"
             ;;
         *)
             echo "ERROR: Unknown dataset '${ds}'. Choose: lung, colon, prostate, breast_bcss, breast_cells"
@@ -157,7 +157,8 @@ run_eval() {
 
     resolve_dataset "$ds"
 
-    local out_dir="${BASE_RESULTS}/${ds}/${m}"
+    # local out_dir="/home/roba/miccai26/results/eval/histop_langEnc_Pred_SegmHead_NoLoRA"
+    local out_dir="/home/roba/miccai26/results/eval/histop_langEnc_Pred_SegmHead_NoLoRA_50Epochs/${ds}/${m}"
     mkdir -p "${out_dir}"
 
     echo "------------------------------------------------------------"
@@ -305,7 +306,26 @@ echo ""
 ALL_DATASETS="lung colon prostate breast_bcss breast_cells"
 ALL_MODELS="biomedparse sam3 medisee dualprotoseg"
 
-if [ "${BIOMEDPARSE_OFFICIAL}" = "1" ]; then
+HISTOPATH="${HISTOPATH:-0}"   # set to 1 to run biomedparse on all histopath test sets
+
+if [ "${BIOMEDPARSE_OFFICIAL}" = "1" ] && [ "${HISTOPATH}" = "1" ]; then
+    # Both: histopath test sets + official BiomedParse datasets
+    echo "Running biomedparse on all histopath test sets..."
+    echo ""
+    for ds in ${ALL_DATASETS}; do
+        run_eval "${MODEL}" "${ds}" || echo "  [SKIP] ${MODEL} on ${ds} failed, continuing..."
+    done
+    echo ""
+    run_biomedparse_official
+
+elif [ "${HISTOPATH}" = "1" ]; then
+    echo "Running biomedparse on all histopath test sets..."
+    echo ""
+    for ds in ${ALL_DATASETS}; do
+        run_eval "${MODEL}" "${ds}" || echo "  [SKIP] ${MODEL} on ${ds} failed, continuing..."
+    done
+
+elif [ "${BIOMEDPARSE_OFFICIAL}" = "1" ]; then
     run_biomedparse_official
 
 elif [ "${ALL}" = "1" ]; then

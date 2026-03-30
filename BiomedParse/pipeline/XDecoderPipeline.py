@@ -50,7 +50,8 @@ class XDecoderPipeline:
         if lora_cfg.get("ENABLED", False):
             n_replaced = apply_lora_to_model(model, lora_cfg)
             if is_main_process():
-                logger.info(f"LoRA: replaced {n_replaced} Linear layers in target modules")
+                # logger.info(f"LoRA: replaced {n_replaced} Linear layers in target modules")
+                pass
 
         if is_main_process():
             logger.info(model)

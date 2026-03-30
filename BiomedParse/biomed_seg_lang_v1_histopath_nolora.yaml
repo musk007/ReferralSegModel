@@ -1,0 +1,24 @@
+# ============================================================================
+# biomed_seg_lang_v1_histopath_nolora.yaml
+# ============================================================================
+# Stacked on top of biomed_seg_lang_v1_histopath_full.yaml.
+# Trains lang_encoder + predictor only (no LoRA — full weight fine-tuning).
+# backbone and pixel_decoder are frozen via FIX_PARAM.
+# ============================================================================
+
+# Disable LoRA — lang_encoder and predictor are trained at full precision.
+SOLVER.LORA:
+  ENABLED: false
+
+# Freeze backbone and pixel_decoder; lang_encoder + predictor remain trainable.
+SOLVER.FIX_PARAM:
+  backbone: true
+  pixel_decoder: true
+
+# Slightly more aggressive LR for the two trainable components now that they
+# are updated in full (no rank-limiting from LoRA).
+SOLVER.LR_MULTIPLIER:
+  backbone: 0.0
+  pixel_decoder: 1.0
+  predictor: 1.0
+  lang_encoder: 1.0

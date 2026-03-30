@@ -112,7 +112,8 @@ def apply_lora_to_model(
                 setattr(parent, child_name, lora_linear)
                 replaced += 1
                 if logger.isEnabledFor(logging.INFO):
-                    logger.info(f"LoRA: replaced {full_name} (in={module.in_features}, out={module.out_features}, r={r})")
+                    # logger.info(f"LoRA: replaced {full_name} (in={module.in_features}, out={module.out_features}, r={r})")
+                    pass
             except Exception as e:
                 logger.warning(f"LoRA: failed to replace {full_name}: {e}")
     return replaced
