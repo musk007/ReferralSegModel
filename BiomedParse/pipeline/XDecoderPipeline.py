@@ -55,6 +55,12 @@ class XDecoderPipeline:
 
         if is_main_process():
             logger.info(model)
+            with open("/home/roba/miccai26/BiomedParse/pipeline/model_arch.txt", "w") as f:
+                f.write(str(model))
+                f.close()
+            print("SAVED MODEL")
+            import sys
+            sys.exit()
 
         raw_models = {model_name: BaseModel(self._opt, model)}
         return raw_models
@@ -119,13 +125,18 @@ class XDecoderPipeline:
         sample_size_info = {'num_samples': len(batch)}
         loss = sum(loss for loss in loss.values())
         trainer.backward_loss(loss, model_names=['default'])
-        trainer.update_model(model_name='default')
+        # Only run the optimizer step on the last accumulation batch.
+        # Calling update_model (which contains unscale_ + step) on every
+        # accumulation batch causes "unscale_() called after step()" with FP16.
+        if grad_acc_index == len(grad_acc_batches) - 1:
+            trainer.update_model(model_name='default')
         return loss_info, sample_size_info, extra_info
 
     def evaluate_model(
         self,
         trainer: DefaultTrainer,
         save_folder,
+        epoch: int = None,
     ) -> Tuple[Dict, Dict[str, float], bool]:
 
         model = trainer.raw_models['default'].eval()
@@ -138,6 +149,8 @@ class XDecoderPipeline:
             torch.cuda.empty_cache()
             eval_batch_gen = self.get_dataloaders(trainer, dataset_label, is_evaluation=True)
             self.evaluator.reset()
+            if epoch is not None and hasattr(self.evaluator, 'set_epoch'):
+                self.evaluator.set_epoch(epoch)
             with torch.no_grad():
                 names = get_class_names(dataset_label)
                 if self._opt['MODEL']['ENCODER']['BINARY_CLASSES']:
@@ -231,6 +244,7 @@ class XDecoderPipeline:
         trainer: DefaultTrainer,
         save_folder,
         dataset_names: list,
+        epoch: int = None,
     ) -> dict:
         """
         Evaluate on an explicit list of dataset names (e.g. DATASETS.EVAL).
@@ -250,6 +264,8 @@ class XDecoderPipeline:
             eval_batch_gen = self.eval_split_loader[idx]
             evaluator = build_evaluator(self._opt, dataset_label, self._opt['SAVE_DIR'])
             evaluator.reset()
+            if epoch is not None and hasattr(evaluator, 'set_epoch'):
+                evaluator.set_epoch(epoch)
 
             with torch.no_grad():
                 names = get_class_names(dataset_label)

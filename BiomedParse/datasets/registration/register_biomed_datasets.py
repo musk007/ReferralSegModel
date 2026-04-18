@@ -109,8 +109,11 @@ register_all_biomed(_root)
 # This file is at datasets/registration/, so we need three levels up.
 # ---------------------------------------------------------------------------
 
-_BIOMEDPARSE_DATASETS_ROOT = os.path.normpath(
-    os.path.join(os.path.dirname(__file__), "..", "..", "..", "biomedparse_datasets")
+_BIOMEDPARSE_DATASETS_ROOT = os.environ.get(
+    "DETECTRON2_DATASETS",
+    os.path.normpath(
+        os.path.join(os.path.dirname(__file__), "..", "..", "..", "biomedparse_datasets")
+    ),
 )
 
 # Mapping from the registered dataset name to the folder name under
@@ -257,9 +260,14 @@ _register_all_histopath_datasets()
 # Path: biomedparse_datasets/biomedParse/BiomedParseData/<DatasetName>/{train,test}
 # ---------------------------------------------------------------------------
 
-_BIOMEDPARSE_OFFICIAL_ROOT = os.path.normpath(
-    os.path.join(os.path.dirname(__file__), "..", "..", "..", "biomedparse_datasets",
-                 "biomedParse", "BiomedParseData")
+_BIOMEDPARSE_OFFICIAL_ROOT = os.path.join(
+    os.environ.get(
+        "DETECTRON2_DATASETS",
+        os.path.normpath(
+            os.path.join(os.path.dirname(__file__), "..", "..", "..", "biomedparse_datasets")
+        ),
+    ),
+    "biomedParse", "BiomedParseData",
 )
 
 # Unzipped BiomedParse datasets (each has train/, train.json, train_mask/, test/, test.json, test_mask/)

@@ -1,0 +1,877 @@
+{
+  "train_10": {
+    "regions": {
+      "train_10_query_mask_all_glands": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_all_glands": {
+              "Histological Reasoning": [
+                "Segment the large central irregular gland with markedly dilated lumen filled by pale necrotic debris and lined by stratified hyperchromatic columnar epithelium."
+              ],
+              "Spatial Reasoning": [
+                "Select the dominant gland occupying the midline of the image, bordered superiorly and rightward by dense pink desmoplastic stroma."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most expansive and luminally dilated gland, larger and more centrally cavitated than surrounding crowded neoplastic glands."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_all_glands_aug1": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_all_glands_aug1": {
+              "diagnosis": "moderately differentiated",
+              "Histological Reasoning": [
+                "Segment the moderately differentiated adenocarcinoma glands that retain recognizable but irregular tubular architecture with partially preserved lumina, lined by pseudostratified, hyperchromatic nuclei showing nuclear crowding and mild to moderate pleomorphism, without the cribriform fusion or solid sheets characteristic of poorly differentiated (Grade 4–5) patterns."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_largest": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_largest": {
+              "Histological Reasoning": [
+                "Segment the large, irregularly angulated gland with crowded, stratified hyperchromatic nuclei and markedly reduced goblet mucin surrounding a pale, debris-filled lumen."
+              ],
+              "Spatial Reasoning": [
+                "Select the dominant complex gland occupying the central and inferior portion of the image, bordered by desmoplastic stroma on its right side."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most expansive, architecturally complex gland, larger and more irregular than the adjacent smaller rounder glands."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_largest_aug1": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_largest_aug1": {
+              "Histological Reasoning": [
+                "Segment the large irregular tubular carcinoma gland with crowded stratified hyperchromatic epithelium and partially preserved, debris-filled lumen adjacent to desmoplastic stroma."
+              ],
+              "Spatial Reasoning": [
+                "Select the dominant inferior-central gland abutting the fibrotic stromal band on its right side."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most expansive, broad-based neoplastic gland in this field, larger than the surrounding more compact glands."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_largest_top2": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_largest_top2": {
+              "Histological Reasoning": [
+                "Segment the large irregular malignant gland with markedly dilated pale lumen containing necrotic debris, lined by crowded stratified hyperchromatic epithelium with reduced goblet mucin."
+              ],
+              "Spatial Reasoning": [
+                "Located centrally, extending from the lower edge toward the mid-field, abutting desmoplastic stroma on its right side."
+              ],
+              "Hierarchical Reasoning": [
+                "This is the most expansive single dilated glandular structure in the field."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_largest_top2_aug1": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_largest_top2_aug1": {
+              "diagnosis": "moderately differentiated",
+              "Histological Reasoning": [
+                "Segment the moderately differentiated invasive glandular structures that still form recognizable but irregular glands with partially preserved luminal spaces, lined by crowded, pseudostratified, hyperchromatic nuclei and reduced mucin, showing complex, angulated outlines and back-to-back fusion consistent with Grade 3 carcinoma rather than benign or purely adenomatous epithelium."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_largest_top3": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_largest_top3": {
+              "Histological Reasoning": [
+                "Segment the large central irregular gland with markedly dilated pale lumen containing necrotic debris, lined by crowded stratified hyperchromatic epithelium with reduced goblet mucin."
+              ],
+              "Spatial Reasoning": [
+                "Located centrally, spanning from mid-lower to mid-upper field, bordered by desmoplastic stroma on its right side."
+              ],
+              "Hierarchical Reasoning": [
+                "This is the most expansive, most lumen-dilated gland compared with the smaller, more compact glands at the periphery."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_largest_top3_aug1": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_largest_top3_aug1": {
+              "Histological Reasoning": [
+                "Segment the centrally located irregular neoplastic gland with crowded, stratified, hyperchromatic nuclei and partially preserved pale lumen containing inflammatory and necrotic debris."
+              ],
+              "Spatial Reasoning": [
+                "Select the dominant glandular structure occupying the central field, bordered by desmoplastic stroma superiorly and adjacent atypical glands laterally."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the largest, most expansive irregular gland compared with the smaller adjacent moderately atypical glands."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_longest": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_longest": {
+              "Histological Reasoning": [
+                "Segment the elongated, irregular tubular gland along the left border, with crowded hyperchromatic epithelium, reduced goblet mucin, and partially slit-like lumen."
+              ],
+              "Spatial Reasoning": [
+                "Select the vertically oriented gland running parallel to the left image edge, extending from upper to lower field."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the longest continuous neoplastic gland, spanning the greatest vertical distance among adjacent glands."
+              ],
+              "Ambiguity Reasoning": [
+                "Identify the left-border gland that is more vertically continuous and less fragmented than nearby irregular glands toward the center."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_longest_aug1": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_longest_aug1": {
+              "Histological Reasoning": [
+                "Segment the large, irregular tubular gland in the central field with hyperchromatic, stratified nuclei and partially preserved, pale eosinophilic lumen."
+              ],
+              "Spatial Reasoning": [
+                "Select the dominant curved gland occupying the midline, arching from the lower-left toward the upper-right of the image."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the broadest, most continuous neoplastic gland, larger and more elongated than adjacent fragmented or smaller glands."
+              ],
+              "Ambiguity Reasoning": [
+                "Identify the central gland whose lumen is wider and more continuous than neighboring compressed, slit-like or cribriform structures."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_peripheral": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_peripheral": {
+              "Histological Reasoning": [
+                "Segment the small, irregular, moderately atypical gland in desmoplastic stroma, with narrow slit-like lumen and crowded hyperchromatic nuclei showing partial loss of polarity."
+              ],
+              "Spatial Reasoning": [
+                "Located at the extreme superior-right edge of the image, embedded within the fibrotic stromal band."
+              ],
+              "Hierarchical Reasoning": [
+                "This is the smallest infiltrative glandular structure within the surrounding fibrotic stroma in that corner."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_peripheral_aug1": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_peripheral_aug1": {
+              "Histological Reasoning": [
+                "Segment the moderately atypical, irregularly angulated gland abutting the dense eosinophilic stromal bundle, with stratified hyperchromatic nuclei and reduced intraluminal mucin."
+              ],
+              "Spatial Reasoning": [
+                "Select the small peripheral gland along the upper-right border, immediately adjacent to the horizontally oriented fibrous stroma."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the narrowest, most compressed malignant gland at the interface between tumor epithelium and fibrotic stroma."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_peripheral_top3": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_peripheral_top3": {
+              "Histological Reasoning": [
+                "Segment the small, irregular, moderately atypical gland at the superior edge, with crowded hyperchromatic nuclei and reduced intraluminal mucin."
+              ],
+              "Spatial Reasoning": [
+                "Located at the superior central margin, just above the fibrotic stromal band and separated from larger glands below."
+              ],
+              "Hierarchical Reasoning": [
+                "Smallest discrete neoplastic gland along the upper border, less elongated and less complex than adjacent deeper glands."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_peripheral_top3_aug1": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_peripheral_top3_aug1": {
+              "diagnosis": "moderately differentiated",
+              "Histological Reasoning": [
+                "Segment the infiltrative, irregularly angulated malignant glands at the superior edge that show cribriform and fused architecture, nuclear stratification with moderate pleomorphism and hyperchromasia, and only focal residual luminal formation consistent with moderately differentiated (Grade 3) adenocarcinoma rather than a benign or purely adenomatous process."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_roundest": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_roundest": {
+              "diagnosis": "moderately differentiated",
+              "Histological Reasoning": [
+                "Segment the round, cross-sectioned gland at the right edge with a relatively smooth contour, irregular but patent central lumen, and crowded, stratified, mucin-depleted epithelium."
+              ],
+              "Spatial Reasoning": [
+                "Select the solitary, round crypt located along the mid-to-lower right image border."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most circular, well-delimited gland among the more elongated, angulated glands in this field."
+              ]
+            }
+          }
+        }
+      },
+      "train_10_query_mask_roundest_aug1": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_roundest_aug1": {
+              "Histological Reasoning": [
+                "Segment the moderately atypical tubular gland at the right edge, with irregular angulated lumen and stratified hyperchromatic epithelium showing reduced goblet mucin."
+              ],
+              "Spatial Reasoning": [
+                "Select the elongated malignant gland along the superior-right border, immediately adjacent to the fibrotic stromal band."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most continuous, horizontally oriented glandular structure in this peripheral right-sided cluster."
+              ]
+            }
+          }
+        }
+        }
+      },
+      "train_10_query_mask_roundest_top3": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_roundest_top3": {
+              "Histological Reasoning": [
+                "Segment the large irregularly contoured malignant gland with partially preserved central lumen and stratified hyperchromatic epithelium showing reduced goblet mucin, surrounded by desmoplastic stroma."
+              ],
+              "Spatial Reasoning": [
+                "Select the dominant centrally located gland occupying the middle of the field, bordered by fibrotic stroma on its right side."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the largest and most expansive glandular structure compared with the smaller peripheral glands in this image."
+              ]
+            }
+          }
+        }
+        }
+      },
+      "train_10_query_mask_roundest_top3_aug1": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_10_query_mask_roundest_top3_aug1": {
+              "Histological Reasoning": [
+                "Segment the large irregular moderately differentiated gland with crowded hyperchromatic columnar epithelium, reduced goblet mucin, and partially preserved slit-like lumen along its inner border."
+              ],
+              "Spatial Reasoning": [
+                "Select the dominant irregular gland occupying the central-right portion of the image, abutting desmoplastic stroma superiorly."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the largest and most expansive glandular structure in the field, broader than adjacent smaller tubular glands."
+              ]
+            }
+          }
+        }
+    },
+    "diagnosis": "moderately differentiated"
+  },
+  "train_2": {
+    "regions": {
+      "train_2_query_mask_all_glands": {
+        "gpt": {
+          "diagnosis": "adenomatous",
+          "glands": {
+            "train_2_query_mask_all_glands": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment only non-dysplastic colonic crypts that retain regular tubular architecture with parallel alignment, smooth luminal contours, preserved basal-to-luminal nuclear polarity, and uniform round-to-oval nuclei without marked hyperchromasia, stratification, or atypia, while showing intact goblet cell mucin and no features of architectural complexity such as cribriforming, back-to-back crowding, or infiltrative growth."
+              ]
+            }
+          }
+        }
+      },
+      "train_2_query_mask_all_glands_aug1": {
+        "gpt": {
+          "diagnosis": "adenomatous",
+          "glands": {
+            "train_2_query_mask_all_glands_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the outlined colonic crypts that show intact, smoothly contoured tubular architecture with parallel alignment, preserved basal nuclear polarity, only mild nuclear crowding without true stratification or atypia, and plentiful goblet cell mucin, all features of non‑neoplastic benign colonic mucosa rather than dysplasia or carcinoma."
+              ]
+            }
+          }
+        }
+      },
+      "train_2_query_mask_largest": {
+        "gpt": {
+          "diagnosis": "adenomatous",
+          "glands": {
+            "train_2_query_mask_largest": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the long, left-sided tubular crypt with open continuous lumen, crowded hyperchromatic nuclei, and reduced goblet mucin consistent with adenomatous change."
+              ],
+              "Spatial Reasoning": [
+                "Select the elongated crypt complex occupying the inferior-left edge of the mucosa, running obliquely toward the image center."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most extensive, elongated adenomatous crypt structure, larger and longer than adjacent glands in the same field."
+              ]
+            }
+          }
+        }
+      },
+      "train_2_query_mask_largest_aug1": {
+        "gpt": {
+          "diagnosis": "adenomatous",
+          "glands": {
+            "train_2_query_mask_largest_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the rightmost elongated band of loose, hypocellular submucosal connective tissue with bland spindle-shaped stromal cells, delicate collagen bundles, and absence of epithelial glands, nuclear atypia, or infiltrative tumor structures, consistent with benign non-neoplastic colonic stroma rather than dysplastic or malignant epithelium."
+              ]
+            }
+          }
+        }
+      },
+      "train_2_query_mask_largest_top2": {
+        "gpt": {
+          "diagnosis": "adenomatous",
+          "glands": {
+            "train_2_query_mask_largest_top2": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the colonic crypt within the green outline that shows a regular tubular architecture with smooth luminal contours, preserved basal-to-luminal nuclear polarity, uniform round-to-oval nuclei lacking hyperchromasia or stratification, abundant well-formed goblet cells with intact mucin vacuoles, and no cribriforming, necrosis, or cytologic atypia, all consistent with benign non-dysplastic mucosa rather than dysplasia or carcinoma."
+              ]
+            }
+          }
+        }
+      },
+      "train_2_query_mask_largest_top2_aug1": {
+        "gpt": {
+          "diagnosis": "adenomatous",
+          "glands": {
+            "train_2_query_mask_largest_top2_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the elongated but architecturally regular colonic crypts in the left-central field that show smooth tubular contours, preserved nuclear polarity with basally oriented nuclei, intact goblet cell mucin, and absence of cribriforming, marked nuclear pleomorphism, or other features of high-grade dysplasia, consistent with benign non-neoplastic mucosa."
+              ]
+            }
+          }
+        }
+      },
+      "train_2_query_mask_longest": {
+        "gpt": {
+          "diagnosis": "adenomatous",
+          "glands": {
+            "train_2_query_mask_longest": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the elongated longitudinal crypt in the superior-left, with open continuous lumen, abundant goblet cell mucin, and preserved basal nuclear polarity."
+              ],
+              "Spatial Reasoning": [
+                "Select the most superior-left vertically oriented crypt adjacent to the left image border."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the longest, most continuous tubular crypt compared with the shorter neighboring glands."
+              ]
+            }
+          }
+        }
+      },
+      "train_2_query_mask_longest_aug1": {
+        "gpt": {
+          "diagnosis": "adenomatous",
+          "glands": {
+            "train_2_query_mask_longest_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the single, elongated colonic crypt at the upper-left edge that shows intact mucosal architecture with parallel, evenly spaced goblet cell–rich epithelium, uniform basally oriented nuclei lacking hyperchromasia or stratification, smooth non-complex glandular contours, and absence of dysplastic features such as cribriforming, nuclear pleomorphism, or mitotic crowding, all consistent with a benign, non-neoplastic gland."
+              ]
+            }
+          }
+        }
+      },
+      "train_2_query_mask_roundest": {
+        "gpt": {
+          "diagnosis": "adenomatous",
+          "glands": {
+            "train_2_query_mask_roundest": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the elongated adenomatous crypt with crowded, stratified, hyperchromatic nuclei and reduced goblet mucin, showing a partially collapsed lumen and intact outer contour."
+              ],
+              "Spatial Reasoning": [
+                "Select the elongated crypt in the lower-central field, immediately adjacent to the pale fibrous tissue on the right side."
+              ],
+              "Ambiguity Reasoning": [
+                "Isolate the crypt closest to the fibrous right-sided stroma, more elongated and compact than neighboring darker crowded glands."
+              ]
+            }
+          }
+        }
+      },
+      "train_2_query_mask_roundest_aug1": {
+        "gpt": {
+          "diagnosis": "adenomatous",
+          "glands": {
+            "train_2_query_mask_roundest_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the single, round colonic crypt cross-section showing orderly architecture with a smooth circular contour, uniform basally oriented nuclei, preserved goblet cell differentiation, and abundant apical mucin without nuclear stratification, pleomorphism, or cribriform complexity, consistent with benign non-dysplastic colonic mucosa."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "adenomatous"
+  },
+  "train_61": {
+    "regions": {
+      "train_61_query_mask_all_glands": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_all_glands": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the intact, regularly spaced colonic crypts with smooth round to oval contours, preserved glandular architecture and polarity, uniform small basally oriented nuclei without crowding or stratification, and abundant mucin-rich goblet cell cytoplasm, with no cribriforming, nuclear atypia, or infiltrative/destructive growth pattern, consistent with benign non-dysplastic mucosa."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_all_glands_aug1": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_all_glands_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the non-dysplastic colonic crypt epithelium and adjacent lamina propria along the central-right border, where glands maintain overall tubular architecture with intact basement membranes, only mild reactive nuclear crowding, preserved (though focally attenuated) basal nuclear polarity, absence of cribriform or back-to-back gland formation, no marked nuclear pleomorphism, atypical mitoses, or comedonecrosis, and no desmoplastic stromal response, all supporting benign/reactive mucosa rather than invasive or high-grade malignant epithelium."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_largest": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_largest": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the elongated, well-formed benign crypt in cross-section with abundant pale goblet cell mucin and orderly basally aligned nuclei."
+              ],
+              "Spatial Reasoning": [
+                "Select the prominent crypt located in the upper-left mucosa, directly adjacent to dense inflammatory stroma on its right side."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the largest, most expansile crypt in this field, broader and more mucin-filled than neighboring glands."
+              ],
+              "Ambiguity Reasoning": [
+                "Identify the crypt with the palest, most mucin-rich lumen, lacking the darker, more compact epithelial appearance of adjacent glands."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_largest_aug1": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_largest_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the non-dysplastic colonic mucosa at the far right, where crypts maintain regular tubular architecture with smooth contours, nuclei remain small, uniform, and basally oriented without crowding, stratification, or hyperchromatic atypia, and goblet cell mucin is preserved, all indicating benign/reactive mucosa rather than high-grade dysplasia or carcinoma."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_largest_top2": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_largest_top2": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the non-dysplastic colonic crypts with a single round-to-oval lumen, abundant pale goblet cell mucin, uniform small nuclei confined to the basal third of the epithelium with preserved polarity, and no nuclear stratification, crowding, cribriforming, or other features of high-grade dysplasia or carcinoma."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_largest_top2_aug1": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_largest_top2_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the circled superficial stromal/lamina propria region at the upper-right edge that lacks glandular crowding or complex architecture, shows only delicate collagenous stroma with scattered bland inflammatory cells, and contains no dysplastic epithelial lining, nuclear stratification, cribriforming, or other features of high-grade neoplasia, making this area unequivocally benign non-neoplastic tissue."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_largest_top3": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_largest_top3": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the three closely packed but architecturally normal colonic crypts in longitudinal/oblique section that show preserved round to oval tubular outlines, intact basement membrane, abundant mucin-filled goblet cells, and uniform basally oriented nuclei without nuclear stratification, pleomorphism, mitotic activity, or cribriform/complex glandular remodeling, consistent with non-dysplastic benign mucosa rather than neoplastic or high-grade dysplastic epithelium."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_largest_top3_aug1": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_largest_top3_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the circled colonic crypts that show intact benign architecture with evenly spaced, round to oval glands, smooth non-desmoplastic stroma, preserved basement membranes, and mucin-rich goblet cells; nuclei are small, uniform, basally oriented without hyperchromasia, prominent nucleoli, stratification, or cribriform/complex crowding, indicating a benign non-dysplastic mucosa rather than high-grade neoplasia."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_largest_top5": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_largest_top5": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the intact, non-dysplastic colonic crypts with preserved tubular architecture, smooth glandular contours, evenly spaced lumina, and cytologically bland epithelium showing basally aligned, uniform nuclei without hyperchromasia, stratification, or crowding, and with abundant intraluminal and supranuclear goblet cell mucin, indicating benign/reactive rather than neoplastic change."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_largest_top5_aug1": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_largest_top5_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the small, round, cross-sectioned crypt in the central-left mucosa that shows a smooth, regular circular lumen, preserved crypt architecture, abundant goblet cell mucin, and uniform basally oriented nuclei without nuclear stratification, pleomorphism, mitotic activity, or cribriform/complex glandular patterns, all of which are characteristic of a non-dysplastic benign colonic crypt rather than any grade of dysplasia."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_longest": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_longest": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the elongated longitudinal crypt with open continuous lumen, abundant mucin-filled goblet cells, and orderly single-layer epithelium with basal nuclei."
+              ],
+              "Spatial Reasoning": [
+                "Select the centrally located crypt in the upper half of the image, just left of center, extending vertically between adjacent similar glands."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most vertically elongated, slender crypt among the nearby well-formed glands."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_longest_aug1": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_longest_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the small, architecturally regular colonic crypt profile at the inferior-left mucosal edge, where epithelial cells show preserved glandular polarity, uniform round-to-oval nuclei without hyperchromasia or stratification, and intact mucin-containing goblet cells, all consistent with benign non-dysplastic colonic mucosa rather than high-grade dysplasia or carcinoma."
+              ]
+            }
+          }
+        },
+        "gemini_preds": {
+          "train_61_query_mask_longest_aug1": {
+            "predicted_class": "healthy",
+            "confidence": 0.99,
+            "rationale": "The text explicitly describes benign non-dysplastic colonic mucosa with preserved polarity, uniform nuclei, and intact goblet cells, which are classic features of healthy tissue."
+          }
+        }
+      },
+      "train_61_query_mask_longest_top3": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_longest_top3": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the circled, intact colonic crypts that show regular round-to-oval glandular profiles with smooth luminal borders, preserved mucin-rich goblet cells, and uniform basally oriented nuclei lacking stratification, pleomorphism, prominent nucleoli, or cribriform/solid growth, with no desmoplastic stromal reaction or other features of invasive carcinoma."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_longest_top3_aug1": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_longest_top3_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the non-dysplastic colonic crypt with preserved tubular contour, evenly spaced goblet and columnar cells, and nuclei that are small, uniform, and basally aligned without crowding, stratification, hyperchromasia, or architectural complexity indicative of high-grade dysplasia."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_median_area_group": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_median_area_group": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the single, intact colonic crypt in the upper-right that shows a smooth, rounded outline, evenly spaced nuclei confined to the basal half of the epithelium, preserved goblet cell mucin, and an open central lumen without crowding, budding, cribriforming, or nuclear pleomorphism, indicating non-dysplastic benign mucosa rather than neoplastic change."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_median_area_group_aug1": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_median_area_group_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the small, well-organized colonic crypt cross-section with smooth round contour, uniform basally oriented nuclei, preserved goblet cell mucin, and no features of dysplasia such as nuclear stratification, marked atypia, cribriforming, or glandular crowding, indicating non-neoplastic benign mucosa rather than carcinoma."
+              ]
+            }
+          }
+        },
+        "gemini_preds": {
+          "train_61_query_mask_median_area_group_aug1": {
+            "predicted_class": "healthy",
+            "confidence": 0.99,
+            "rationale": "The text explicitly describes non-neoplastic benign mucosa with well-organized crypts and an absence of dysplasia, which directly corresponds to healthy tissue."
+          }
+        }
+      },
+      "train_61_query_mask_peripheral": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_peripheral": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the small, well-formed longitudinal crypt at the inferior-right edge, with intact parallel epithelium and abundant mucin-rich goblet cells."
+              ],
+              "Spatial Reasoning": [
+                "Located at the extreme inferior-right margin, bordering the pale stromal-cleft space."
+              ],
+              "Hierarchical Reasoning": [
+                "This is the smallest, most peripherally placed crypt compared with the larger central glands."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_peripheral_aug1": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_peripheral_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the single, round to oval colonic crypt in cross-section that shows intact architecture with a smooth, continuous epithelial lining, preserved nuclear polarity with small, basally oriented uniform nuclei, abundant goblet cell mucin, and no nuclear stratification, crowding, or cytologic atypia, confirming a non-dysplastic benign crypt rather than neoplastic or high-grade dysplastic epithelium."
+              ]
+            }
+          }
+        }
+      },
+      "train_61_query_mask_peripheral_top3": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_peripheral_top3": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the non-dysplastic colonic crypt epithelium showing preserved tubular architecture, orderly single-layered nuclei confined to the basal third, absence of nuclear crowding or stratification, and abundant intracytoplasmic mucin with well-formed goblet cells, all of which indicate benign/reactive mucosa rather than dysplasia or carcinoma."
+              ]
+            }
+          }
+        },
+        "gemini_preds": {
+          "train_61_query_mask_peripheral_top3": {
+            "predicted_class": "healthy",
+            "confidence": 0.99,
+            "rationale": "The text explicitly describes non-dysplastic, benign mucosa with preserved architecture, orderly cells, and abundant mucin, indicating healthy tissue rather than dysplasia or carcinoma."
+          }
+        }
+      },
+      "train_61_query_mask_peripheral_top3_aug1": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_peripheral_top3_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the circled colonic crypts that show preserved tubular architecture with smooth, rounded contours, uniform spacing, intact epithelial lining with basally oriented nuclei, abundant intraluminal and intracellular mucin, and absence of nuclear stratification, pleomorphism, cribriforming, or complex glandular crowding, all of which support benign non-dysplastic colonic mucosa rather than neoplastic or high-grade dysplastic epithelium."
+              ]
+            }
+          }
+        },
+        "gemini_preds": {
+          "train_61_query_mask_peripheral_top3_aug1": {
+            "predicted_class": "healthy",
+            "confidence": 0.99,
+            "rationale": "The text explicitly describes benign, non-dysplastic colonic mucosa with preserved architecture and no signs of atypia, clearly indicating normal, healthy tissue."
+          }
+        }
+      },
+      "train_61_query_mask_roundest": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_roundest": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the centrally located, well-formed round crypt cross-section with open pale mucin-filled goblet cell lumen and basally aligned uniform nuclei."
+              ],
+              "Spatial Reasoning": [
+                "Select the mid-mucosal crypt in the upper central region, directly above the pale submucosal space."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most circular, compact crypt among adjacent similarly sized but slightly more elongated glands."
+              ]
+            }
+          }
+        },
+        "gemini_preds": {
+          "train_61_query_mask_roundest": {
+            "predicted_class": "healthy",
+            "confidence": 0.99,
+            "rationale": "The text explicitly describes non-dysplastic benign colonic mucosa with preserved architecture and normal basally oriented nuclei, indicating healthy tissue without any grade of carcinoma."
+          }
+        }
+      },
+      "train_61_query_mask_roundest_aug1": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_roundest_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the single, intact colonic crypt with preserved tubular shape, abundant intraluminal and intracytoplasmic mucin, smooth luminal border, and evenly spaced, basally oriented small nuclei lacking crowding, stratification, or architectural complexity, all indicating non-dysplastic benign colonic mucosa rather than any grade of dysplasia."
+              ]
+            }
+          }
+        },
+        "gemini_preds": {
+          "train_61_query_mask_roundest_aug1": {
+            "predicted_class": "healthy",
+            "confidence": 0.99,
+            "rationale": "The text explicitly describes the tissue as non-dysplastic benign colonic mucosa with preserved tubular shape, abundant mucin, and normal nuclei, ruling out any dysplasia."
+          }
+        }
+      },
+      "train_61_query_mask_roundest_top3": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_roundest_top3": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the single, round to oval colonic crypt with intact basement membrane, orderly columnar epithelium showing preserved nuclear polarity, uniform small basally oriented nuclei, and abundant intraluminal and cytoplasmic mucin without nuclear hyperchromasia, stratification, or architectural complexity, indicating benign non-dysplastic colonic mucosa rather than dysplasia or carcinoma."
+              ]
+            }
+          }
+        },
+        "gemini_preds": {
+          "train_61_query_mask_roundest_top3": {
+            "predicted_class": "healthy",
+            "confidence": 1.0,
+            "rationale": "The text explicitly describes benign, non-dysplastic colonic mucosa with uniform cells, normal architecture, and no dysplasia, indicating healthy tissue."
+          }
+        }
+      },
+      "train_61_query_mask_roundest_top3_aug1": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_61_query_mask_roundest_top3_aug1": {
+              "diagnosis": "benign",
+              "Histological Reasoning": [
+                "Segment the small, round crypt cross-section with a single smooth lumen, preserved glandular architecture, and cytologically bland columnar cells showing uniform, basally oriented nuclei without stratification, pleomorphism, mitotic activity, or cribriform/complex growth, indicating a non-dysplastic benign colonic crypt rather than dysplasia or carcinoma."
+              ]
+            }
+          }
+        },
+        "gemini_preds": {
+          "train_61_query_mask_roundest_top3_aug1": {
+            "predicted_class": "healthy",
+            "confidence": 0.99,
+            "rationale": "The text explicitly describes a non-dysplastic benign colonic crypt with preserved architecture and bland cells, clearly ruling out dysplasia or carcinoma."
+          }
+        }
+      }
+    },
+    "diagnosis": "healthy"
+  }
+}

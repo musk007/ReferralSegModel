@@ -68,10 +68,10 @@ DUALPROTOSEG_DATASET="bcss"   # checkpoint was trained on BCSS
 
 # Histopath-style datasets (lung, colon, etc.) use contoured_instructions.json from test_data
 # BiomedParse official (ACDC, DRIVE, etc.) use BIOMEDPARSE_OFFICIAL=1
-BASE_DATA="/home/roba/miccai26/biomedparse_datasets"
+BASE_DATA="${DATASETS_DIR:-/adialab/usr/roba/biomedparse_datasets}"
 BASE_RESULTS="${SCRIPT_DIR}/results/eval"
-BIOMEDPARSE_OFFICIAL_DATA="${SCRIPT_DIR}/biomedparse_datasets/biomedParse/BiomedParseData"
-BIOMEDPARSE_CHECKPOINT="/home/roba/miccai26/BiomedParse/output/histopath_lanEnc_Pred_SegmH_LoRA_1e-6_50Epochs/biomed_seg_lang_v1.yaml_conf~/run_1/best_model"
+BIOMEDPARSE_OFFICIAL_DATA="${BASE_DATA}/biomedParse/BiomedParseData"
+BIOMEDPARSE_CHECKPOINT="/adialab/usr/roba/train_output/histopath_staged_v4_colon/stage1_warmup/biomed_seg_lang_v1.yaml_conf~/run_1/best_model"
 # ---------------------------------------------------------------------------
 # Dataset path table
 # Each dataset entry: IMAGES_DIR  MASKS_DIR  PROMPTS_JSON
@@ -87,7 +87,8 @@ resolve_dataset() {
         colon)
             IMAGES_DIR="${BASE_DATA}/colon/test"
             MASKS_DIR="${BASE_DATA}/colon/test_mask"
-            PROMPTS_JSON="/home/roba/miccai26/test_data/instructions/test/colon.json"
+            PROMPTS_JSON="/home/roba/miccai26/instructions/test/colon.json"
+            # PROMPTS_JSON="/home/roba/miccai26/instructions/train/colon_train_filtered.json"
             ;;
         prostate)
             IMAGES_DIR="${BASE_DATA}/prostate/test"
@@ -158,7 +159,7 @@ run_eval() {
     resolve_dataset "$ds"
 
     # local out_dir="/home/roba/miccai26/results/eval/histop_langEnc_Pred_SegmHead_NoLoRA"
-    local out_dir="/home/roba/miccai26/results/eval/histop_langEnc_Pred_SegmHead_NoLoRA_50Epochs/${ds}/${m}"
+    local out_dir="/adialab/usr/roba/eval_results/staged_partial_v4/${ds}/${m}"
     mkdir -p "${out_dir}"
 
     echo "------------------------------------------------------------"
@@ -240,7 +241,7 @@ run_biomedparse_official() {
         exit 1
     fi
 
-    local out_dir="${BASE_RESULTS}/biomedparse_official/biomedparse"
+    local out_dir="/adialab/usr/roba/eval_results/staged_partial_v4/${ds}/${m}"
     mkdir -p "${out_dir}"
 
     # Datasets: all registered or comma-separated list

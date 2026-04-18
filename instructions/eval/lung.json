@@ -1,0 +1,88 @@
+{
+  "16": {
+    "regions": {
+      "16_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the eosinophilic fibrous tissue composed of collagen bundles and spindle stromal cells interposed between and surrounding the darker atypical epithelial cell clusters."
+          ],
+          "Ambiguity Reasoning": [
+            "Exclude the densely packed dark-blue epithelial nests and focus on the paler pink fibrous connective tissue separating them."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  },
+  "23": {
+    "regions": {
+      "23_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the pale eosinophilic desmoplastic stroma composed of collagenous matrix with scattered spindle fibroblasts surrounding and separating the darker atypical tumor glands."
+          ],
+          "Ambiguity Reasoning": [
+            "Select fibrotic connective tissue lacking cohesive epithelial nuclei, distinguishing it from the densely cellular, basophilic tumor epithelial structures."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  },
+  "31": {
+    "regions": {
+      "31_2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the delicate normal lung parenchyma with thin, almost acellular alveolar septa and wide open airspaces lacking epithelial atypia or desmoplastic stroma."
+          ],
+          "Spatial Reasoning": [
+            "Focus on the peripheral right-sided regions where airy, lace-like alveoli border denser atypical epithelial proliferation."
+          ],
+          "Ambiguity Reasoning": [
+            "Select areas with smooth, uniform septa and preserved alveolar outlines, avoiding thickened, crowded epithelial structures of tumor epithelium."
+          ],
+          "region_label": 2,
+          "region_class": "normal tissue"
+        }
+      }
+    }
+  },
+  "38": {
+    "regions": {
+      "38_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the pale eosinophilic fibrous connective tissue containing spindle fibroblasts and sparse inflammatory cells that surrounds and separates the densely cellular tumor epithelial nests."
+          ],
+          "Ambiguity Reasoning": [
+            "Exclude the darker purple cohesive epithelial tumor cells and the empty luminal or alveolar spaces, selecting only the intervening fibrotic stroma."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  },
+  "39": {
+    "regions": {
+      "39_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the eosinophilic fibrous tumor stroma composed of collagenous bands with spindle fibroblasts that surround and separate the densely cellular malignant epithelial nests."
+          ],
+          "Spatial Reasoning": [
+            "Select fibrous tissue interposed between and encasing tumor epithelial clusters throughout the central and lower portions of the image."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate stroma that is more collagenized and fibroblast-rich than the delicate normal alveolar septa and lacks cohesive atypical epithelial cell clusters."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  }
+}

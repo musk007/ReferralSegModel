@@ -1,0 +1,662 @@
+{
+  "train_14": {
+    "regions": {
+      "train_14_query_mask_largest": {
+        "gpt": {
+          "diagnosis": "moderately-to-poorly differentated",
+          "glands": {
+            "train_14_query_mask_largest": {
+              "Histological Reasoning": [
+                "Segment the irregular, elongated epithelial glandular structure along the inferior edge, showing crowded hyperchromatic nuclei with reduced goblet mucin against surrounding fibrous stroma."
+              ],
+              "Spatial Reasoning": [
+                "Select the continuous epithelial gland band running horizontally along the extreme lower border of the image."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "moderately-to-poorly differentated"
+  },
+  "train_16": {
+    "regions": {
+      "train_16_query_mask_longest": {
+        "gpt": {
+          "diagnosis": "poorly differentiated",
+          "glands": {
+            "train_16_query_mask_longest": {
+              "Histological Reasoning": [
+                "Segment the elongated, angulated malignant gland along the inferior-right border, with markedly stratified hyperchromatic nuclei and slit-like, partially obliterated lumen lacking goblet mucin."
+              ],
+              "Spatial Reasoning": [
+                "Select the long, irregular gland running parallel to the inferior-right tissue edge, immediately internal to the fibrous stromal boundary."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most continuous, longitudinally extensive neoplastic gland spanning nearly the entire inferior-right margin of the field."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "poorly differentiated"
+  },
+  "train_19": {
+    "regions": {
+      "train_19_query_mask_largest": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_19_query_mask_largest": {
+              "Histological Reasoning": [
+                "Segment the elongated, irregular tubular gland with partially open lumen and stratified hyperchromatic nuclei, showing reduced goblet mucin and moderate architectural atypia."
+              ],
+              "Spatial Reasoning": [
+                "Select the large, curved tubular gland located in the left-central portion of the image, arching downward toward the lower edge."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most elongated and expansive neoplastic gland, larger and more tortuous than the surrounding crowded glands."
+              ]
+            }
+          }
+        }
+      },
+      "train_19_query_mask_peripheral": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_19_query_mask_peripheral": {
+              "Histological Reasoning": [
+                "Segment the elongated peripheral tubular gland with irregular, partially slit-like lumen and crowded stratified nuclei showing reduced goblet mucin compared with benign crypts."
+              ],
+              "Spatial Reasoning": [
+                "Select the vertically oriented gland along the extreme right edge, extending from mid-field toward the lower border."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the longest continuous glandular profile at the right margin, spanning a greater vertical extent than adjacent glands."
+              ],
+              "Ambiguity Reasoning": [
+                "Identify the rightmost gland that parallels the image border, lacking the more rounded cross-sectional profiles of neighboring central glands."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "moderately differentiated"
+  },
+  "train_1": {
+    "regions": {
+      "train_1_query_mask_roundest": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_1_query_mask_roundest": {
+              "Histological Reasoning": [
+                "Segment the round cross-section crypt with a single central pale lumen, moderately stratified hyperchromatic nuclei, and reduced goblet mucin, surrounded by desmoplastic stroma."
+              ],
+              "Spatial Reasoning": [
+                "Select the solitary round crypt located in the upper-right quadrant of the image, separated from more elongated glands by intervening stroma."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most circular, well-delimited gland among nearby more elongated, irregular carcinoma glands."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "moderately differentiated"
+  },
+  "train_23": {
+    "regions": {
+      "train_23_query_mask_roundest": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_23_query_mask_roundest": {
+              "Histological Reasoning": [
+                "Segment the centrally located, round to slightly lobulated gland with irregular central lumen, stratified hyperchromatic nuclei, and reduced goblet mucin within desmoplastic stroma."
+              ],
+              "Spatial Reasoning": [
+                "Select the prominent round gland in the central upper portion of the image, surrounded by dense pink fibrous stroma."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most rounded, compact gland, smaller and more circumscribed than the elongated glands at the image bottom."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "moderately differentiated"
+  },
+  "train_25": {
+    "regions": {
+      "train_25_query_mask_longest": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_25_query_mask_longest": {
+              "Histological Reasoning": [
+                "Segment the superior-left, oval cross-section crypt with a single smooth central lumen, abundant goblet cell mucin, and orderly basally aligned nuclei."
+              ],
+              "Spatial Reasoning": [
+                "Select the well-formed crypt located near the upper-left image corner, slightly separated from adjacent glands by lamina propria."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "healthy"
+  },
+  "train_29": {
+    "regions": {
+      "train_29_query_mask_roundest": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_29_query_mask_roundest": {
+              "Histological Reasoning": [
+                "Segment the superior central irregular neoplastic gland with partially preserved luminal spaces, crowded hyperchromatic stratified nuclei, and reduced goblet mucin compared with benign-appearing tubular glands."
+              ],
+              "Spatial Reasoning": [
+                "Select the broad, lobulated gland occupying the upper central margin of the image, directly above more elongated basal glands."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the largest, most expansive irregular glandular structure in the field, spanning nearly the entire upper width."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "moderately differentiated"
+  },
+  "train_31": {
+    "regions": {
+      "train_31_query_mask_peripheral": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_31_query_mask_peripheral": {
+              "Histological Reasoning": [
+                "Segment the peripheral left elongated dysplastic crypt with irregular slit-like lumen, crowded hyperchromatic nuclei, reduced goblet mucin, and minimal intervening stroma."
+              ],
+              "Spatial Reasoning": [
+                "Select the partially visible longitudinal crypt along the extreme left edge of the image."
+              ],
+              "Ambiguity Reasoning": [
+                "Choose the left-edge crypt that is truncated by the image border, not the more centrally located complete glands."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "moderately differentiated"
+  },
+  "train_33": {
+    "regions": {
+      "train_33_query_mask_roundest": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_33_query_mask_roundest": {
+              "Histological Reasoning": [
+                "Segment the centrally located, round cross-section crypt with a pale, open central lumen and symmetrically arranged mucin-rich goblet cells and basal nuclei."
+              ],
+              "Spatial Reasoning": [
+                "Select the crypt slightly left of image center, surrounded by closely packed similar round glands."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the crypt of intermediate size compared with adjacent glands, neither the largest nor the smallest in this field."
+              ],
+              "Ambiguity Reasoning": [
+                "Identify the crypt whose lumen appears most uniformly circular and centrally pale compared with neighboring glands."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "healthy"
+  },
+  "train_37": {
+    "regions": {
+      "train_37_query_mask_roundest": {
+        "gpt": {
+          "diagnosis": "poorly differentiated",
+          "glands": {
+            "train_37_query_mask_roundest": {
+              "Histological Reasoning": [
+                "Segment the irregular, roughly triangular gland in the mid-right, with narrow central lumen and markedly stratified, hyperchromatic epithelium lacking goblet mucin."
+              ],
+              "Spatial Reasoning": [
+                "Select the solitary, irregular gland located slightly right of center, bordered by paler desmoplastic stroma and more elongated glands."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most compact, nearly round malignant gland in this area, smaller and less elongated than adjacent distorted glands."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "poorly differentiated"
+  },
+  "train_38": {
+    "regions": {
+      "train_38_query_mask_longest": {
+        "gpt": {
+          "diagnosis": "adenomatous",
+          "glands": {
+            "train_38_query_mask_longest": {
+              "Histological Reasoning": [
+                "Segment the elongated adenomatous crypt in the inferior region showing crowded, mildly irregular epithelium with reduced goblet mucin and partially compressed lumen."
+              ],
+              "Spatial Reasoning": [
+                "Select the horizontally oriented crypt along the inferior edge, slightly left of center, adjacent to inflamed stroma."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the longest, most horizontally stretched crypt among the lower-row glands."
+              ],
+              "Ambiguity Reasoning": [
+                "Identify the inferior elongated crypt lacking the more rounded, centrally open lumina seen in the superior glands."
+              ]
+            }
+          }
+        }
+      },
+      "train_38_query_mask_roundest": {
+        "gpt": {
+          "diagnosis": "adenomatous",
+          "glands": {
+            "train_38_query_mask_roundest": {
+              "Histological Reasoning": [
+                "Segment the inferior-left, nearly round cross-section crypt with open central lumen, crowded hyperchromatic nuclei, and relatively preserved goblet mucin compared with adjacent distorted glands."
+              ],
+              "Spatial Reasoning": [
+                "Select the solitary, well-circumscribed round crypt located at the extreme inferior-left edge of the tissue field."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the smallest, most circular crypt profile at the periphery, less elongated than neighboring adenomatous glands."
+              ],
+              "Ambiguity Reasoning": [
+                "Identify the inferior-left round crypt whose lumen remains centrally open, unlike nearby more irregular, angulated adenomatous structures."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "adenomatous"
+  },
+  "train_39": {
+    "regions": {
+      "train_39_query_mask_peripheral": {
+        "gpt": {
+          "diagnosis": "poorly differentiated",
+          "glands": {
+            "train_39_query_mask_peripheral": {
+              "Histological Reasoning": [
+                "Segment the superior peripheral elongated gland with irregular angulated contour, slit-like lumen, crowded hyperchromatic nuclei, and markedly reduced goblet mucin."
+              ],
+              "Spatial Reasoning": [
+                "Select the single elongated crypt along the upper edge of the image, near the pale stromal boundary."
+              ],
+              "Ambiguity Reasoning": [
+                "Isolate the uppermost gland that is more elongated and peripherally located than the deeper, more complex fused glands below."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "poorly differentiated"
+  },
+  "train_3": {
+    "regions": {
+      "train_3_query_mask_largest": {
+        "gpt": {
+          "diagnosis": "moderately-to-poorly differentated",
+          "glands": {
+            "train_3_query_mask_largest": {
+              "Histological Reasoning": [
+                "Segment the inferior, irregularly contoured tubular gland with crowded, stratified hyperchromatic nuclei and reduced goblet mucin, partially surrounded by desmoplastic stroma."
+              ],
+              "Spatial Reasoning": [
+                "Select the prominent angulated gland located along the inferior central border of the image."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "moderately-to-poorly differentated"
+  },
+  "train_41": {
+    "regions": {
+      "train_41_query_mask_peripheral": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_41_query_mask_peripheral": {
+              "Histological Reasoning": [
+                "Segment the small, irregular, moderately atypical gland at the superior edge, with crowded hyperchromatic nuclei and a narrow, slit-like lumen lacking goblet mucin."
+              ],
+              "Spatial Reasoning": [
+                "Select the peripheral gland located along the upper border of the image, just beneath the tissue edge."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the smallest peripheral glandular structure compared with the larger, more confluent tumor nests centrally."
+              ],
+              "Ambiguity Reasoning": [
+                "Identify the uppermost gland that is more discrete and less confluent than the adjacent central tumor clusters."
+              ]
+            }
+          }
+        }
+      },
+      "train_41_query_mask_roundest": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_41_query_mask_roundest": {
+              "Histological Reasoning": [
+                "Segment the compact, irregularly contoured epithelial cluster with crowded hyperchromatic nuclei and small slit-like lumina, showing reduced goblet mucin within desmoplastic stroma."
+              ],
+              "Spatial Reasoning": [
+                "Select the centrally located epithelial nest slightly right of image midline, surrounded by paler fibrotic stroma."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most compact, densely cellular glandular aggregate, smaller and more rounded than the adjacent irregular tumor nests."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "moderately differentiated"
+  },
+  "train_43": {
+    "regions": {
+      "train_43_query_mask_longest": {
+        "gpt": {
+          "diagnosis": "moderately-to-poorly differentated",
+          "glands": {
+            "train_43_query_mask_longest": {
+              "Histological Reasoning": [
+                "Segment the elongated, irregular tubular gland with partially collapsed lumen and densely stratified hyperchromatic nuclei, showing reduced goblet mucin and minimal stromal separation."
+              ],
+              "Spatial Reasoning": [
+                "Select the horizontally oriented elongated gland running along the right-central edge of the image."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most continuous, longest tubular gland compared with the shorter, more fragmented adjacent glands."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "moderately-to-poorly differentated"
+  },
+  "train_44": {
+    "regions": {
+      "train_44_query_mask_longest": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_44_query_mask_longest": {
+              "Histological Reasoning": [
+                "Segment the elongated, irregular tubular gland at the far left with open pale lumen, stratified hyperchromatic nuclei, and reduced goblet mucin within desmoplastic stroma."
+              ],
+              "Spatial Reasoning": [
+                "Select the prominent longitudinal gland along the extreme left border, extending from upper to lower edge of the image."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the longest continuous neoplastic gland in the field, more extensive than adjacent shorter crowded glands."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "moderately differentiated"
+  },
+  "train_55": {
+    "regions": {
+      "train_55_query_mask_peripheral": {
+        "gpt": {
+          "diagnosis": "adenomatous",
+          "glands": {
+            "train_55_query_mask_peripheral": {
+              "Histological Reasoning": [
+                "Segment the peripheral, irregular adenomatous gland cross-section with crowded, hyperchromatic, pseudostratified nuclei and reduced goblet mucin, partially compressed by surrounding inflamed stroma."
+              ],
+              "Spatial Reasoning": [
+                "Select the small distorted glandular profile along the far left edge of the tissue, adjacent to densely cellular inflammatory stroma."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the smallest, most compressed adenomatous gland compared with the larger, more luminally open glands toward the right side."
+              ],
+              "Ambiguity Reasoning": [
+                "Identify the left-edge gland that lacks the broad, pale, mucin-rich lumina seen in the more rounded glands on the right."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "adenomatous"
+  },
+  "train_5": {
+    "regions": {
+      "train_5_query_mask_roundest": {
+        "gpt": {
+          "diagnosis": "poorly differentiated",
+          "glands": {
+            "train_5_query_mask_roundest": {
+              "Histological Reasoning": [
+                "Segment the small round malignant gland in cross-section with a single central lumen and markedly stratified hyperchromatic nuclei, showing minimal goblet mucin."
+              ],
+              "Spatial Reasoning": [
+                "Located near the inferior-right edge of the image, surrounded by loose pale desmoplastic stroma."
+              ],
+              "Hierarchical Reasoning": [
+                "It is one of the smallest, most discrete round glands compared with the larger irregular fused structures nearby."
+              ],
+              "Ambiguity Reasoning": [
+                "Select the only compact round gland with a clean central lumen, lacking the elongated angulated contours of adjacent carcinoma glands."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "poorly differentiated"
+  },
+  "train_62": {
+    "regions": {
+      "train_62_query_mask_longest": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_62_query_mask_longest": {
+              "Histological Reasoning": [
+                "Segment the elongated longitudinal colonic crypt with an open pale mucin-filled lumen and orderly single-layer epithelium showing basal nuclei and preserved polarity."
+              ],
+              "Spatial Reasoning": [
+                "Select the most superior horizontally oriented crypt spanning across the upper central field."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the longest, most continuous crypt profile compared with the shorter parallel glands below."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "healthy"
+  },
+  "train_68": {
+    "regions": {
+      "train_68_query_mask_roundest": {
+        "gpt": {
+          "diagnosis": "poorly differentiated",
+          "glands": {
+            "train_68_query_mask_roundest": {
+              "Histological Reasoning": [
+                "Segment the small, round crypt cross-section with a single central lumen and markedly stratified, hyperchromatic epithelium showing reduced goblet mucin."
+              ],
+              "Spatial Reasoning": [
+                "Located in the upper-left quadrant, slightly medial, bordered by loose pale stroma separating it from larger irregular glands."
+              ],
+              "Hierarchical Reasoning": [
+                "This is the smallest, most circular and simplest glandular profile among the surrounding more complex, angulated glands."
+              ],
+              "Ambiguity Reasoning": [
+                "Prefer the isolated round crypt with one central lumen rather than adjacent elongated or branching glands with irregular luminal tracks."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "poorly differentiated"
+  },
+  "train_69": {
+    "regions": {
+      "train_69_query_mask_longest": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_69_query_mask_longest": {
+              "Histological Reasoning": [
+                "Segment the elongated longitudinal crypt at the inferior edge, with continuous lumen, abundant goblet cell mucin, and orderly basally aligned nuclei."
+              ],
+              "Spatial Reasoning": [
+                "Select the single elongated crypt running horizontally along the inferior border of the image."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most elongated gland in the field, contrasting with the surrounding predominantly round cross-sectioned crypts."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "healthy"
+  },
+  "train_75": {
+    "regions": {
+      "train_75_query_mask_longest": {
+        "gpt": {
+          "diagnosis": "moderately differentiated",
+          "glands": {
+            "train_75_query_mask_longest": {
+              "Histological Reasoning": [
+                "Segment the tall, elongated tubular gland along the right edge with irregular but continuous lumen and crowded, stratified, mucin-depleted epithelium."
+              ],
+              "Spatial Reasoning": [
+                "Select the vertically oriented crypt running along the rightmost border of the image."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the longest single tubular structure, extending further vertically than any adjacent glands."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "moderately differentiated"
+  },
+  "train_84": {
+    "regions": {
+      "train_84_query_mask_largest": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_84_query_mask_largest": {
+              "Histological Reasoning": [
+                "Segment the elongated longitudinal crypt with a continuous central lumen, abundant mucin-rich goblet cells, and orderly single-layer epithelium with basal nuclei."
+              ],
+              "Spatial Reasoning": [
+                "Select the vertically oriented crypt in the right half of the image, bordered on both sides by similar parallel glands."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the slightly broader crypt compared with adjacent glands, occupying more transverse width yet maintaining regular benign architecture."
+              ]
+            }
+          }
+        }
+      },
+      "train_84_query_mask_longest": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_84_query_mask_longest": {
+              "Histological Reasoning": [
+                "Segment the tall longitudinal colonic crypt with a continuous narrow lumen and orderly, mucin-rich goblet cells showing preserved basal nuclear polarity."
+              ],
+              "Spatial Reasoning": [
+                "Select the centrally located, vertically oriented crypt spanning nearly the full mucosal height between adjacent similar glands."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the most elongated crypt in the field, longer than the neighboring well-formed glands."
+              ]
+            }
+          }
+        }
+      },
+      "train_84_query_mask_peripheral": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_84_query_mask_peripheral": {
+              "Histological Reasoning": [
+                "Segment the peripheral, longitudinally oriented benign crypt with smooth parallel contours, abundant goblet cell mucin, and a clean continuous lumen, preserving basal nuclear polarity."
+              ],
+              "Spatial Reasoning": [
+                "Select the rightmost vertically oriented crypt along the image edge, partially truncated laterally by the field boundary."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the slender crypt that is narrower than the adjacent central glands but maintains intact, orderly architecture."
+              ],
+              "Ambiguity Reasoning": [
+                "Choose the edge crypt that mirrors neighboring benign morphology yet is uniquely cut off by the right image margin."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "healthy"
+  },
+  "train_8": {
+    "regions": {
+      "train_8_query_mask_largest": {
+        "gpt": {
+          "diagnosis": "healthy",
+          "glands": {
+            "train_8_query_mask_largest": {
+              "Histological Reasoning": [
+                "Segment the large oval cross-section crypt with open central lumen, abundant mucin-filled goblet cells, and uniformly basally aligned nuclei, surrounded by intact lamina propria."
+              ],
+              "Spatial Reasoning": [
+                "Select the prominent oval crypt located near the inferior-left edge of the mucosal glandular band."
+              ],
+              "Hierarchical Reasoning": [
+                "Isolate the largest, most expansile benign-appearing crypt among the adjacent similarly shaped glands."
+              ]
+            }
+          }
+        }
+      }
+    },
+    "diagnosis": "healthy"
+  }
+}

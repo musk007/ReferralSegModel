@@ -53,12 +53,17 @@ def align_and_update_state_dicts(model_state_dict, ckpt_state_dict):
         #     unloaded_log.append("*UNLOADED* {}, Model Shape: {}".format(model_key, model_weight.shape))
             
     if is_main_process():
-        logger.info("Loaded {}/{} weights from checkpoint.".format(
-            len(matched_log), len(matched_log) + len(unloaded_log)))
+        n_unused = len(ckpt_keys)
+        n_unloaded = len(unloaded_log)
+        n_unmatched = len(unmatched_log)
+        logger.info("Loaded {}/{} weights from checkpoint. "
+                     "(unused_ckpt={}, unloaded_model={}, shape_mismatch={})".format(
+                         len(matched_log), len(matched_log) + n_unloaded,
+                         n_unused, n_unloaded, n_unmatched))
         for info in unloaded_log:
-            logger.warning(info)
+            logger.debug(info)
         for key in ckpt_keys:
-            logger.warning("$UNUSED$ {}, Ckpt Shape: {}".format(key, ckpt_state_dict[key].shape))
+            logger.debug("$UNUSED$ {}, Ckpt Shape: {}".format(key, ckpt_state_dict[key].shape))
         for info in unmatched_log:
-            logger.warning(info)
+            logger.debug(info)
     return result_dicts

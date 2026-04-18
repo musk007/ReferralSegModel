@@ -53,7 +53,7 @@ DATASETS.PROMPT_COMBINE: true
 # ----------------------------------------------------------------------------
 
 SOLVER.LORA:
-  ENABLED: true
+  ENABLED: False
   R: 8                    # LoRA rank
   ALPHA: 16               # LoRA alpha (scaling)
   TARGET_MODULES: ["sem_seg_head", "lang_encoder", "predictor"]  # or more specific: query, key, value, c_proj
@@ -63,21 +63,25 @@ SOLVER.LORA:
 SOLVER.BEST_METRIC: "mIoU"         # metric used to select and save the best checkpoint
 
 SOLVER.BASE_LR: 0.000001         # 5x lower than text-only run to protect visual features
-SOLVER.MAX_NUM_EPOCHS: 10
+SOLVER.MAX_NUM_EPOCHS: 100
 SOLVER.WARMUP_ITERS: 96        # longer warmup: more params need to settle
 
 # Nothing is frozen — all modules are trainable.
-SOLVER.FIX_PARAM: {}
+SOLVER.FIX_PARAM: 
+  backbone: true
+  lang_encoder: true
+  pixel_decoder: false
+  predictor: true
 SOLVER.IGNORE_FIX: []
 
 # Differential learning rates per component.
 # Any param whose name contains the key gets BASE_LR * multiplier.
 # Params not matching any key receive BASE_LR (1.0x) by default.
 SOLVER.LR_MULTIPLIER:
-  backbone: 0.1         # visual backbone  → 1e-6  (most conservative)
-  pixel_decoder: 0.2    # pixel / FPN decoder → 2e-6
-  predictor: 0.5        # transformer decoder → 5e-6
-  lang_encoder: 1.0     # text encoder        → 1e-5 (most aggressive)
+  backbone: 0         # visual backbone  → 1e-6  (most conservative)
+  pixel_decoder: 1.0    # pixel / FPN decoder → 2e-6
+  predictor: 0        # transformer decoder → 5e-6
+  lang_encoder: 0     # text encoder        → 1e-5 (most aggressive)
 
 # Load the pretrained BiomedParse v1 checkpoint before fine-tuning.
 WEIGHT: true

@@ -1,0 +1,776 @@
+{
+  "TCGA-A2-A04T-01Z-00-DX1.71444266-BD56-4183-9603-C7AC20C9DA1E_[36075,19541,39828,21434]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-A2-A04T-01Z-00-DX1.71444266-BD56-4183-9603-C7AC20C9DA1E_[36075,19541,39828,21434]_2": {
+        "gpt": {
+          "tumor-associated stroma": {
+            "Histological Reasoning": [
+              "Segment the eosinophilic, collagen-rich desmoplastic stroma composed of spindle fibroblasts and delicate vessels interposed between and cuffing invasive carcinoma nests."
+            ],
+            "Ambiguity Reasoning": [
+              "Select fibrotic stromal bands with relatively sparse inflammatory cells, distinguishing them from densely lymphocyte-rich inflamed stroma and hypercellular epithelial tumor nests."
+            ]
+          },
+          "region_label": 2,
+          "region_class": "tumor-associated stroma"
+        }
+      }
+    }
+  },
+  "TCGA-A2-A0CM-01Z-00-DX1.AC4901DE-4B6D-4185-BB9F-156033839828_[9283,28428,11819,30374]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-A2-A0CM-01Z-00-DX1.AC4901DE-4B6D-4185-BB9F-156033839828_[9283,28428,11819,30374]_6": {
+        "gpt": {
+          "inflamed stroma": {
+            "Histological Reasoning": [
+              "Identify loose, pale stromal tissue with dense lymphocytic infiltrates and scattered plasma cells, showing edematous character and relatively reduced collagen bundles."
+            ],
+            "Spatial Reasoning": [
+              "Focus on the small stromal focus at the inferior-right edge, interposed between adjacent invasive tumor nests."
+            ],
+            "Ambiguity Reasoning": [
+              "Distinguish from tumor-associated stroma by its higher density of small dark lymphocytes and less fibrotic, less hyalinized collagen background."
+            ]
+          },
+          "region_label": 6,
+          "region_class": "inflamed stroma"
+        }
+      }
+    }
+  },
+  "TCGA-A2-A0D0-01Z-00-DX1.4FF6B8E5-703B-400F-920A-104F56E0F874_[34243,19538,38681,23646]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-A2-A0D0-01Z-00-DX1.4FF6B8E5-703B-400F-920A-104F56E0F874_[34243,19538,38681,23646]_1": {
+        "gpt": {
+          "invasive tumor": {
+            "Histological Reasoning": [
+              "Segment the densely cellular epithelial tumor forming solid sheets and irregular nests with marked nuclear atypia infiltrating through fibrotic desmoplastic stroma, lacking ductal confinement or myoepithelial rims."
+            ],
+            "Spatial Reasoning": [
+              "Focus on the broad, continuous tumor mass occupying the right and lower portions of the field, extending between intersecting fibrotic stromal bands."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from adjacent tumor-associated stroma by selecting hypercellular epithelial areas with cohesive nests and visible cytoplasm, not the paler collagenous spindle-cell background."
+            ]
+          },
+          "region_label": 1,
+          "region_class": "invasive tumor"
+        }
+      }
+    }
+  },
+  "TCGA-A2-A0D2-01Z-00-DX1.ECD890F5-BA01-4998-B472-7B683BD6D7B1_[48446,11152,50492,12610]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-A2-A0D2-01Z-00-DX1.ECD890F5-BA01-4998-B472-7B683BD6D7B1_[48446,11152,50492,12610]_1": {
+        "gpt": {
+          "invasive tumor": {
+            "Histological Reasoning": [
+              "Segment cohesive nests and sheets of markedly atypical epithelial cells infiltrating between eosinophilic desmoplastic stroma, lacking ductal confinement or a continuous myoepithelial rim."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate tumor cells from surrounding tumor-associated stroma by their darker hyperchromatic nuclei, higher cellular density, and cohesive epithelial clustering."
+            ]
+          },
+          "region_label": 1,
+          "region_class": "invasive tumor"
+        }
+      },
+      "TCGA-A2-A0D2-01Z-00-DX1.ECD890F5-BA01-4998-B472-7B683BD6D7B1_[48446,11152,50492,12610]_5": {
+        "gpt": {
+          "necrosis not in-situ": {
+            "Histological Reasoning": [
+              "Segment acellular pale eosinophilic areas with granular necrotic debris and ghost cell outlines, lacking preserved viable tumor nuclei or ductal confinement."
+            ],
+            "Spatial Reasoning": [
+              "Select necrotic foci occurring as irregular geographic zones interposed between and peripheral to surrounding viable invasive tumor nests."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from viable tumor by absence of intact nuclear detail and from in-situ comedo necrosis by non-ductal, free stromal distribution."
+            ]
+          },
+          "region_label": 5,
+          "region_class": "necrosis not in-situ"
+        }
+      }
+    }
+  },
+  "TCGA-A2-A0T0-01Z-00-DX1.51F904DA-A4B5-4451-8AEF-58E7EF7651DB_[36435,29731,38871,31236]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-A2-A0T0-01Z-00-DX1.51F904DA-A4B5-4451-8AEF-58E7EF7651DB_[36435,29731,38871,31236]_1": {
+        "gpt": {
+          "invasive tumor": {
+            "Histological Reasoning": [
+              "Segment cohesive nests and solid sheets of pleomorphic hyperchromatic tumor cells infiltrating desmoplastic stroma, lacking intact myoepithelial rims or ductal confinement."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from surrounding fibrotic stroma by selecting only densely cellular epithelial aggregates, not the pale collagenous spindle-cell areas."
+            ]
+          },
+          "region_label": 1,
+          "region_class": "invasive tumor"
+        }
+      }
+    }
+  },
+  "TCGA-A2-A0T2-01Z-00-DX1.29A5C4C8-6AE8-44EE-98C2-ACBCBFBE9D60_[31781,28378,34880,30287]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-A2-A0T2-01Z-00-DX1.29A5C4C8-6AE8-44EE-98C2-ACBCBFBE9D60_[31781,28378,34880,30287]_4": {
+        "gpt": {
+          "Healthy glands": {
+            "Histological Reasoning": [
+              "Segment small, round to oval breast glands with central lumina and orderly dual epithelial-myoepithelial cell layers, lacking cytologic atypia or desmoplastic reaction."
+            ],
+            "Spatial Reasoning": [
+              "Focus on scattered, discrete glandular units predominantly in the left-central portion of the tissue, embedded within more fibrotic and inflamed surrounding stroma."
+            ],
+            "Ambiguity Reasoning": [
+              "Select only glands with uniform nuclei and intact lobular architecture, excluding adjacent densely cellular tumor nests or lymphocyte-rich stromal aggregates."
+            ]
+          },
+          "region_label": 4,
+          "region_class": "Healthy glands"
+        }
+      }
+    }
+  },
+  "TCGA-A2-A0YM-01Z-00-DX1.A48B4C96-2CC5-464C-98B7-F0F92AE56533_[22262,33460,26138,35893]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-A2-A0YM-01Z-00-DX1.A48B4C96-2CC5-464C-98B7-F0F92AE56533_[22262,33460,26138,35893]_5": {
+        "gpt": {
+          "necrosis not in-situ": {
+            "Histological Reasoning": [
+              "Segment acellular pale eosinophilic areas with ghost cell outlines and karyorrhectic debris lying within stromal spaces, not confined by ductal structures."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from viable tumor nests by absence of intact nuclei and from in-situ comedo necrosis by lack of surrounding ductal epithelial rim."
+            ]
+          },
+          "region_label": 5,
+          "region_class": "necrosis not in-situ"
+        }
+      }
+    }
+  },
+  "TCGA-A2-A3XX-01Z-00-DX1.03C6D70F-2833-4E97-91B7-DE70CD083D92_[34973,20782,36819,22322]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-A2-A3XX-01Z-00-DX1.03C6D70F-2833-4E97-91B7-DE70CD083D92_[34973,20782,36819,22322]_5": {
+        "gpt": {
+          "necrosis not in-situ": {
+            "Histological Reasoning": [
+              "Segment the pale eosinophilic, acellular geographic necrotic areas with ghost cell outlines and karyorrhectic debris, not confined within recognizable ducts or glands."
+            ],
+            "Spatial Reasoning": [
+              "Select the large confluent necrotic zone occupying the upper-right portion of the image and any smaller similar foci elsewhere."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from viable invasive tumor by absence of intact nuclei and from comedo-type DCIS by lack of ductal boundaries or myoepithelial rims."
+            ]
+          },
+          "region_label": 5,
+          "region_class": "necrosis not in-situ"
+        }
+      }
+    }
+  },
+  "TCGA-A7-A5ZV-01Z-00-DX1.21F2EA4A-4F31-43D6-A036-E20E326AF37E_[51507,13293,53870,14902]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-A7-A5ZV-01Z-00-DX1.21F2EA4A-4F31-43D6-A036-E20E326AF37E_[51507,13293,53870,14902]_6": {
+        "gpt": {
+          "inflamed stroma": {
+            "Histological Reasoning": [
+              "Segment loose, edematous stromal areas densely infiltrated by small dark lymphocytes and mixed inflammatory cells, lacking cohesive atypical epithelial nests or solid tumor sheets."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from tumor-associated stroma by selecting regions where inflammatory cells dominate over collagenous fibrosis and are not forming epithelial tumor structures."
+            ]
+          },
+          "region_label": 6,
+          "region_class": "inflamed stroma"
+        }
+      }
+    }
+  },
+  "TCGA-A8-A07O-01Z-00-DX1.3D657129-F2A7-4BC1-A910-805FBDCE2212_[5891,8116,9033,9727]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-A8-A07O-01Z-00-DX1.3D657129-F2A7-4BC1-A910-805FBDCE2212_[5891,8116,9033,9727]_5": {
+        "gpt": {
+          "necrosis not in-situ": {
+            "Histological Reasoning": [
+              "Segment acellular pale eosinophilic areas with ghost cell outlines and granular debris within tumor, lacking intact viable nuclei or ductal confinement."
+            ],
+            "Spatial Reasoning": [
+              "Focus on scattered pale necrotic foci along the inferior-left portion of the tumor cell sheet."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from viable tumor by absence of crisp nuclear detail and from in-situ comedo necrosis by non-ductal, irregular geographic distribution."
+            ]
+          },
+          "region_label": 5,
+          "region_class": "necrosis not in-situ"
+        }
+      }
+    }
+  },
+  "TCGA-AN-A0G0-01Z-00-DX1.BE0BB5DF-DEDA-48D8-B5D8-2735C767F28F_[16373,7275,18771,9102]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-AN-A0G0-01Z-00-DX1.BE0BB5DF-DEDA-48D8-B5D8-2735C767F28F_[16373,7275,18771,9102]_2": {
+        "gpt": {
+          "tumor-associated stroma": {
+            "Histological Reasoning": [
+              "Segment the eosinophilic fibrotic stroma composed of collagen bundles and spindle fibroblasts interposed between invasive carcinoma nests, lacking dense lymphoid aggregates or viable tumor cells."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from invasive tumor by selecting only hypocellular pink collagenous areas without cohesive atypical epithelial clusters or prominent nuclear pleomorphism."
+            ]
+          },
+          "region_label": 2,
+          "region_class": "tumor-associated stroma"
+        }
+      },
+      "TCGA-AN-A0G0-01Z-00-DX1.BE0BB5DF-DEDA-48D8-B5D8-2735C767F28F_[16373,7275,18771,9102]_5": {
+        "gpt": {
+          "necrosis not in-situ": {
+            "Histological Reasoning": [
+              "Segment acellular pale eosinophilic areas with ghost cell outlines and karyorrhectic debris lying free within stroma, not confined by ductal structures."
+            ],
+            "Spatial Reasoning": [
+              "Focus on pale granular regions predominantly along the right and lower edges where viable tumor nests transition into acellular debris."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from viable tumor by absence of intact nuclei and cell borders, and from in-situ comedo necrosis by lacking a surrounding ductal wall."
+            ]
+          },
+          "region_label": 5,
+          "region_class": "necrosis not in-situ"
+        }
+      }
+    }
+  },
+  "TCGA-AO-A1KR-01Z-00-DX1.BFB2E69B-E23C-4542-9CBF-EDD040B985AC_[19596,37672,23302,39556]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-AO-A1KR-01Z-00-DX1.BFB2E69B-E23C-4542-9CBF-EDD040B985AC_[19596,37672,23302,39556]_1": {
+        "gpt": {
+          "invasive tumor": {
+            "Histological Reasoning": [
+              "Segment cohesive nests and sheets of atypical epithelial cells with pleomorphic hyperchromatic nuclei infiltrating desmoplastic stroma, lacking intact ductal or lobular architecture."
+            ],
+            "Hierarchical Reasoning": [
+              "Select the dominant cellular component occupying most of the field, excluding the more collagenous stromal bands between tumor nests."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from tumor-associated stroma by focusing on densely packed epithelial cells rather than fibrotic collagen with scattered spindle cells."
+            ]
+          },
+          "region_label": 1,
+          "region_class": "invasive tumor"
+        }
+      },
+      "TCGA-AO-A1KR-01Z-00-DX1.BFB2E69B-E23C-4542-9CBF-EDD040B985AC_[19596,37672,23302,39556]_4": {
+        "gpt": {
+          "Healthy glands": {
+            "Histological Reasoning": [
+              "Identify small, well-formed terminal duct-lobular units with round to oval lumina, dual epithelial-myoepithelial cell layers, uniform nuclei, and lacking desmoplastic or inflamed stromal reaction."
+            ],
+            "Spatial Reasoning": [
+              "Focus on scattered, discrete glandular profiles embedded within the more fibrotic, inflamed stromal band along the lower half of the image."
+            ],
+            "Ambiguity Reasoning": [
+              "Distinguish these orderly, bilayered glands from adjacent invasive tumor nests that show solid growth, marked nuclear atypia, and absence of a continuous myoepithelial rim."
+            ]
+          },
+          "region_label": 4,
+          "region_class": "Healthy glands"
+        }
+      }
+    }
+  },
+  "TCGA-AR-A0U4-01Z-00-DX1.DE722DC5-859D-4866-ADCC-ED98EDBFB588_[20573,34895,23914,36058]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-AR-A0U4-01Z-00-DX1.DE722DC5-859D-4866-ADCC-ED98EDBFB588_[20573,34895,23914,36058]_1": {
+        "gpt": {
+          "invasive tumor": {
+            "Histological Reasoning": [
+              "Segment cohesive sheets and nests of large atypical epithelial cells with pleomorphic hyperchromatic nuclei and mitoses infiltrating desmoplastic stroma, lacking ductal confinement or myoepithelial rims."
+            ],
+            "Spatial Reasoning": [
+              "Select the broad central and left-sided tumor cell population extending across the field, excluding the peripheral lymphocyte-rich aggregates and necrotic debris."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate invasive tumor from inflamed stroma by higher epithelial cellularity, nuclear atypia, and cohesive nests rather than loose collagenous or lymphocyte-dense areas."
+            ]
+          },
+          "region_label": 1,
+          "region_class": "invasive tumor"
+        }
+      }
+    }
+  },
+  "TCGA-AR-A256-01Z-00-DX1.950D4546-4BF4-4380-9877-51D86A93D755_[20791,8540,22182,9848]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-AR-A256-01Z-00-DX1.950D4546-4BF4-4380-9877-51D86A93D755_[20791,8540,22182,9848]_2": {
+        "gpt": {
+          "tumor-associated stroma": {
+            "Histological Reasoning": [
+              "Segment the pale eosinophilic, collagen-rich desmoplastic stroma containing spindle fibroblasts that surrounds and separates invasive carcinoma nests, lacking dense sheet-like lymphocytic aggregates."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate tumor-associated stroma from inflamed stroma by selecting collagenized areas with scattered rather than densely packed lymphocytes."
+            ]
+          },
+          "region_label": 2,
+          "region_class": "tumor-associated stroma"
+        }
+      }
+    }
+  },
+  "TCGA-AR-A2LH-01Z-00-DX1.40D4FD67-FB13-46D9-A202-56A5791EA11C_[39242,21155,41904,23046]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-AR-A2LH-01Z-00-DX1.40D4FD67-FB13-46D9-A202-56A5791EA11C_[39242,21155,41904,23046]_2": {
+        "gpt": {
+          "tumor-associated stroma": {
+            "Histological Reasoning": [
+              "Segment the pale eosinophilic, collagen-rich desmoplastic stroma containing scattered spindle fibroblasts surrounding and separating invasive epithelial tumor nests and ducts."
+            ],
+            "Ambiguity Reasoning": [
+              "Exclude densely lymphocyte-packed inflamed stroma and the darker hypercellular epithelial tumor nests themselves, selecting only the fibrotic intervening stromal tissue."
+            ]
+          },
+          "region_label": 2,
+          "region_class": "tumor-associated stroma"
+        }
+      },
+      "TCGA-AR-A2LH-01Z-00-DX1.40D4FD67-FB13-46D9-A202-56A5791EA11C_[39242,21155,41904,23046]_6": {
+        "gpt": {
+          "inflamed stroma": {
+            "Histological Reasoning": [
+              "Segment loose pale-pink stromal areas densely infiltrated by small dark lymphocytes and mixed inflammatory cells, lacking cohesive epithelial nests or ductal structures."
+            ],
+            "Spatial Reasoning": [
+              "Focus on the right-sided and lower peripheral stromal regions where inflammatory cells form broad sheets and clusters within edematous collagen."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from tumor-associated stroma by higher inflammatory cell density and absence of well-formed desmoplastic collagen cuffing invasive tumor nests."
+            ]
+          },
+          "region_label": 6,
+          "region_class": "inflamed stroma"
+        }
+      }
+    }
+  },
+  "TCGA-AR-A5QQ-01Z-00-DX1.4185D6D2-498E-4E71-8CB3-EDB4739C6229_[53568,24934,55870,27273]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-AR-A5QQ-01Z-00-DX1.4185D6D2-498E-4E71-8CB3-EDB4739C6229_[53568,24934,55870,27273]_6": {
+        "gpt": {
+          "inflamed stroma": {
+            "Histological Reasoning": [
+              "Segment the loose, edematous stromal areas densely infiltrated by small lymphocytes and plasma cells, lacking cohesive epithelial tumor nests or solid necrotic pools."
+            ],
+            "Spatial Reasoning": [
+              "Select the broad lymphocyte-rich stromal compartment surrounding and interdigitating between the central epithelial tumor aggregates."
+            ],
+            "Ambiguity Reasoning": [
+              "Isolate regions where inflammatory cells dominate over collagen bundles, distinguishing them from more fibrotic tumor-associated stroma or acellular necrotic zones."
+            ]
+          },
+          "region_label": 6,
+          "region_class": "inflamed stroma"
+        }
+      }
+    }
+  },
+  "TCGA-BH-A0B3-01Z-00-DX1.90CB0ED5-FBB7-4ABF-93A0-DD88D60D3D55_[41265,21094,44251,22437]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-BH-A0B3-01Z-00-DX1.90CB0ED5-FBB7-4ABF-93A0-DD88D60D3D55_[41265,21094,44251,22437]_6": {
+        "gpt": {
+          "inflamed stroma": {
+            "Histological Reasoning": [
+              "Segment loose, edematous stromal areas densely infiltrated by small lymphocytes and plasma cells, lacking cohesive epithelial tumor nests or organized glandular structures."
+            ],
+            "Spatial Reasoning": [
+              "Focus on stromal bands interposed between compact lymphoid aggregate at lower left and solid invasive carcinoma on the right side of the field."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from tumor-associated stroma by its higher density of inflammatory cells and less collagenized, less hyalinized background matrix."
+            ]
+          },
+          "region_label": 6,
+          "region_class": "inflamed stroma"
+        }
+      }
+    }
+  },
+  "TCGA-BH-A0BG-01Z-00-DX1.0838FB7F-8C85-4687-9F70-D136A1063383_[32012,12490,33451,15564]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-BH-A0BG-01Z-00-DX1.0838FB7F-8C85-4687-9F70-D136A1063383_[32012,12490,33451,15564]_5": {
+        "gpt": {
+          "necrosis not in-situ": {
+            "Histological Reasoning": [
+              "Identify acellular eosinophilic necrotic debris within tumor stroma, showing ghost cell outlines and karyorrhectic fragments, not confined by ductal structures."
+            ],
+            "Ambiguity Reasoning": [
+              "Select necrotic foci free in desmoplastic stroma, lacking a surrounding intact duct wall or organized intraductal comedo pattern."
+            ]
+          },
+          "region_label": 5,
+          "region_class": "necrosis not in-situ"
+        }
+      }
+    }
+  },
+  "TCGA-BH-A0E0-01Z-00-DX1.01E88024-83DF-4282-ABAF-F4E35807DA06_[8323,21884,11270,24747]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-BH-A0E0-01Z-00-DX1.01E88024-83DF-4282-ABAF-F4E35807DA06_[8323,21884,11270,24747]_1": {
+        "gpt": {
+          "invasive tumor": {
+            "Histological Reasoning": [
+              "Segment infiltrative sheets and nests of markedly atypical epithelial cells with pleomorphic hyperchromatic nuclei invading desmoplastic stroma, lacking intact myoepithelial or ductal boundaries."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from surrounding stroma by selecting only densely cellular epithelial areas, excluding collagen-rich fibrous or lymphocyte-predominant regions."
+            ]
+          },
+          "region_label": 1,
+          "region_class": "invasive tumor"
+        }
+      },
+      "TCGA-BH-A0E0-01Z-00-DX1.01E88024-83DF-4282-ABAF-F4E35807DA06_[8323,21884,11270,24747]_2": {
+        "gpt": {
+          "tumor-associated stroma": {
+            "Histological Reasoning": [
+              "Segment fibrotic, eosinophilic desmoplastic stroma with spindle fibroblasts and collagen bundles interposed between and cuffing invasive carcinoma nests, with relatively sparse inflammatory cells."
+            ],
+            "Spatial Reasoning": [
+              "Select stromal bands and sheets surrounding and separating tumor cell\u2013rich areas, especially along the lower-left and central portions of the field."
+            ],
+            "Ambiguity Reasoning": [
+              "Isolate collagen-rich stroma adjacent to tumor nests while excluding more densely lymphocyte-packed inflamed stromal aggregates."
+            ]
+          },
+          "region_label": 2,
+          "region_class": "tumor-associated stroma"
+        }
+      }
+    }
+  },
+  "TCGA-C8-A131-01Z-00-DX1.5CB27A29-9951-40B9-B4DB-26A4D2EA89B8_[21527,5449,23121,6792]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-C8-A131-01Z-00-DX1.5CB27A29-9951-40B9-B4DB-26A4D2EA89B8_[21527,5449,23121,6792]_1": {
+        "gpt": {
+          "invasive tumor": {
+            "Histological Reasoning": [
+              "Segment cohesive sheets and nests of large atypical epithelial cells with pleomorphic nuclei and prominent nucleoli infiltrating desmoplastic stroma, lacking ductal confinement or myoepithelial rims."
+            ],
+            "Spatial Reasoning": [
+              "Focus on the broad central and upper portions of the image where tumor cells form confluent solid fields overlying more lymphocyte-rich areas."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from adjacent inflamed stroma by selecting regions dominated by enlarged epithelial cells rather than small dark lymphocytes or fibrotic collagen."
+            ]
+          },
+          "region_label": 1,
+          "region_class": "invasive tumor"
+        }
+      }
+    }
+  },
+  "TCGA-C8-A3M7-01Z-00-DX1.846C75F1-2E7E-44F7-B21F-C246141558FA_[20841,33467,22326,37425]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-C8-A3M7-01Z-00-DX1.846C75F1-2E7E-44F7-B21F-C246141558FA_[20841,33467,22326,37425]_3": {
+        "gpt": {
+          "in-situ tumor": {
+            "Histological Reasoning": [
+              "Segment intraductal epithelial proliferations filling pre-existing ducts, with crowded atypical cells and luminal spaces, retaining a smooth circumferential boundary without stromal invasion."
+            ],
+            "Spatial Reasoning": [
+              "Select the well-circumscribed oval ductal structures embedded within the fibrotic stromal background, one near the upper region and another more centrally located."
+            ],
+            "Ambiguity Reasoning": [
+              "Isolate tumor confined within ductal contours, lacking irregular infiltrative edges into surrounding desmoplastic stroma or free geographic necrotic pools."
+            ]
+          },
+          "region_label": 3,
+          "region_class": "in-situ tumor"
+        }
+      },
+      "TCGA-C8-A3M7-01Z-00-DX1.846C75F1-2E7E-44F7-B21F-C246141558FA_[20841,33467,22326,37425]_5": {
+        "gpt": {
+          "necrosis not in-situ": {
+            "Histological Reasoning": [
+              "Segment the irregular pale eosinophilic acellular area with ghost cell outlines and karyorrhectic debris within stroma, not confined by ductal structures."
+            ],
+            "Spatial Reasoning": [
+              "Focus on the central upper portion of the image where this necrotic zone is surrounded by more cellular desmoplastic stroma."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from in-situ comedo necrosis by its free stromal location and lack of an enclosing epithelial or myoepithelial ductal rim."
+            ]
+          },
+          "region_label": 5,
+          "region_class": "necrosis not in-situ"
+        }
+      }
+    }
+  },
+  "TCGA-D8-A13Z-01Z-00-DX1.517140BB-D34C-42F8-952C-340EF16D382F_[15495,24671,19559,27355]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-D8-A13Z-01Z-00-DX1.517140BB-D34C-42F8-952C-340EF16D382F_[15495,24671,19559,27355]_4": {
+        "gpt": {
+          "Healthy glands": {
+            "Histological Reasoning": [
+              "Identify small, round to oval breast glands with open lumina, dual epithelial-myoepithelial cell layers, uniform nuclei, and lacking desmoplastic or inflamed stromal reaction."
+            ],
+            "Spatial Reasoning": [
+              "Select the discrete lobular glandular units situated in the upper central portion of the tissue, surrounded by more cellular tumor and inflamed stroma."
+            ],
+            "Ambiguity Reasoning": [
+              "Isolate glands showing preserved TDLU-like architecture and uniform cytology, contrasting with adjacent atypical, crowded invasive tumor nests and dense lymphocytic stroma."
+            ]
+          },
+          "region_label": 4,
+          "region_class": "Healthy glands"
+        }
+      }
+    }
+  },
+  "TCGA-D8-A143-01Z-00-DX1.4697FB2F-91D5-4506-AF23-7DE304D44A3F_[26217,9741,29939,12599]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-D8-A143-01Z-00-DX1.4697FB2F-91D5-4506-AF23-7DE304D44A3F_[26217,9741,29939,12599]_2": {
+        "gpt": {
+          "tumor-associated stroma": {
+            "Histological Reasoning": [
+              "Segment the pale eosinophilic fibrous stroma composed of collagen bundles and spindle fibroblasts interposed between invasive carcinoma nests, with relatively sparse inflammatory cells."
+            ],
+            "Spatial Reasoning": [
+              "Select the broad central and peritumoral fibrous bands that weave between and surround adjacent hypercellular malignant epithelial clusters."
+            ],
+            "Ambiguity Reasoning": [
+              "Isolate collagen-rich stromal areas lacking dense lymphoid aggregates that distinguish them from nearby inflamed, lymphocyte-packed stromal regions."
+            ]
+          },
+          "region_label": 2,
+          "region_class": "tumor-associated stroma"
+        }
+      }
+    }
+  },
+  "TCGA-D8-A147-01Z-00-DX1.159094F2-BB78-4910-B7AE-3D7CAAB1DAD9_[33200,9652,34733,11013]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-D8-A147-01Z-00-DX1.159094F2-BB78-4910-B7AE-3D7CAAB1DAD9_[33200,9652,34733,11013]_1": {
+        "gpt": {
+          "invasive tumor": {
+            "Histological Reasoning": [
+              "Segment cohesive nests, cords, and solid sheets of atypical epithelial cells infiltrating desmoplastic stroma, lacking a continuous myoepithelial or ductal boundary."
+            ],
+            "Ambiguity Reasoning": [
+              "Exclude surrounding fibrotic or inflamed stroma that contains mainly spindle or lymphoid cells without cohesive epithelial nests or marked cytologic atypia."
+            ]
+          },
+          "region_label": 1,
+          "region_class": "invasive tumor"
+        }
+      }
+    }
+  },
+  "TCGA-E2-A14N-01Z-00-DX1.15F5644F-CA9F-4688-B56E-BCC00CA4769B_[10694,33422,14754,36031]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-E2-A14N-01Z-00-DX1.15F5644F-CA9F-4688-B56E-BCC00CA4769B_[10694,33422,14754,36031]_5": {
+        "gpt": {
+          "necrosis not in-situ": {
+            "Histological Reasoning": [
+              "Segment acellular pale eosinophilic areas with ghost cell outlines and karyorrhectic debris lying freely within stroma, not confined by ductal structures."
+            ],
+            "Spatial Reasoning": [
+              "Focus on the broad pale pink region along the right peripheral aspect of the tissue, abutting but distinct from viable tumor nests."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from invasive tumor by absence of intact nuclei and cohesive cell borders, and from DCIS by lacking a surrounding ductal wall."
+            ]
+          },
+          "region_label": 5,
+          "region_class": "necrosis not in-situ"
+        }
+      }
+    }
+  },
+  "TCGA-E2-A1LK-01Z-00-DX1.5EBAA1F4-F1B4-4938-A51F-0246621BB0ED_[37809,13799,40829,17747]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-E2-A1LK-01Z-00-DX1.5EBAA1F4-F1B4-4938-A51F-0246621BB0ED_[37809,13799,40829,17747]_2": {
+        "gpt": {
+          "tumor-associated stroma": {
+            "Histological Reasoning": [
+              "Segment the eosinophilic, collagen-rich desmoplastic stroma containing scattered spindle fibroblasts that separates and surrounds adjacent invasive carcinoma nests, lacking dense lymphoid aggregates."
+            ],
+            "Spatial Reasoning": [
+              "Focus on the obliquely oriented fibrous band running from upper right toward lower left between tumor cell sheets and overlying tissue."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from inflamed stroma by its predominantly fibrotic collagen bundles with only sparse inflammatory cells rather than dense lymphocytic aggregates."
+            ]
+          },
+          "region_label": 2,
+          "region_class": "tumor-associated stroma"
+        }
+      },
+      "TCGA-E2-A1LK-01Z-00-DX1.5EBAA1F4-F1B4-4938-A51F-0246621BB0ED_[37809,13799,40829,17747]_6": {
+        "gpt": {
+          "inflamed stroma": {
+            "Histological Reasoning": [
+              "Segment loose, edematous stromal areas densely infiltrated by small lymphocytes and plasma cells, lacking cohesive epithelial tumor nests or prominent collagenized desmoplasia."
+            ],
+            "Spatial Reasoning": [
+              "Select stromal bands and patches adjacent to but not within the solid invasive carcinoma cell sheets occupying the lower left portion of the image."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from tumor-associated stroma by higher inflammatory cell density and softer, less hyalinized collagen not tightly cuffing tumor nests."
+            ]
+          },
+          "region_label": 6,
+          "region_class": "inflamed stroma"
+        }
+      }
+    }
+  },
+  "TCGA-EW-A1OV-01Z-00-DX1.93698123-5B34-4163-848B-2D75A5F7B001_[63016,32569,66793,37935]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-EW-A1OV-01Z-00-DX1.93698123-5B34-4163-848B-2D75A5F7B001_[63016,32569,66793,37935]_6": {
+        "gpt": {
+          "inflamed stroma": {
+            "Histological Reasoning": [
+              "Segment stromal areas with loose edematous collagen heavily infiltrated by small dark lymphocytes and plasma cells, lacking cohesive epithelial tumor nests or glandular structures."
+            ],
+            "Spatial Reasoning": [
+              "Select inflammatory stromal bands interposed between adipose tissue and more collagenized fibrotic stroma, extending as irregular vertical streaks across the field."
+            ],
+            "Ambiguity Reasoning": [
+              "Isolate regions where inflammatory cells dominate over collagen fibers, distinguishing them from adjacent denser pink desmoplastic tumor-associated stroma."
+            ]
+          },
+          "region_label": 6,
+          "region_class": "inflamed stroma"
+        }
+      }
+    }
+  },
+  "TCGA-EW-A1P7-01Z-00-DX1.97575C9F-C318-45A5-A4B7-1A902B93FA3F_[4906,23200,6692,25690]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-EW-A1P7-01Z-00-DX1.97575C9F-C318-45A5-A4B7-1A902B93FA3F_[4906,23200,6692,25690]_2": {
+        "gpt": {
+          "tumor-associated stroma": {
+            "Histological Reasoning": [
+              "Segment the eosinophilic, collagen-rich desmoplastic stroma with spindle fibroblasts cuffing and separating invasive epithelial nests, lacking dense sheet-like lymphoid aggregates."
+            ],
+            "Spatial Reasoning": [
+              "Select stromal bands encircling and radiating between tumor cell clusters, including the broad fibrotic arc traversing the central and left portions of the image."
+            ],
+            "Hierarchical Reasoning": [
+              "Prioritize the most extensive fibrotic stromal network forming continuous bands around multiple tumor nests across the field."
+            ]
+          },
+          "region_label": 2,
+          "region_class": "tumor-associated stroma"
+        }
+      }
+    }
+  },
+  "TCGA-GM-A2DI-01Z-00-DX1.5E9715EA-9D2B-49D0-8F1D-972CF24B1960_[11403,25532,12833,26110]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-GM-A2DI-01Z-00-DX1.5E9715EA-9D2B-49D0-8F1D-972CF24B1960_[11403,25532,12833,26110]_2": {
+        "gpt": {
+          "tumor-associated stroma": {
+            "Histological Reasoning": [
+              "Segment the pale eosinophilic, collagen-rich desmoplastic stroma containing spindle fibroblasts and scattered inflammatory cells that surrounds and separates invasive carcinoma nests."
+            ],
+            "Spatial Reasoning": [
+              "Select the broad fibrotic stromal bands occupying most of the central and right portions, interdigitating between darker epithelial tumor clusters."
+            ],
+            "Hierarchical Reasoning": [
+              "Isolate the dominant stromal component forming the largest continuous background matrix relative to smaller intervening epithelial tumor islands."
+            ],
+            "Ambiguity Reasoning": [
+              "Identify collagenized stroma adjacent to tumor nests, lacking the dense sheet-like epithelial cellularity of invasive carcinoma or the loose edematous pattern of inflamed stroma."
+            ]
+          },
+          "region_label": 2,
+          "region_class": "tumor-associated stroma"
+        }
+      }
+    }
+  },
+  "TCGA-LL-A73Y-01Z-00-DX1.50C20931-3AA9-40B4-8A73-56B1976423A8_[34061,24725,35279,25785]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-LL-A73Y-01Z-00-DX1.50C20931-3AA9-40B4-8A73-56B1976423A8_[34061,24725,35279,25785]_6": {
+        "gpt": {
+          "inflamed stroma": {
+            "Histological Reasoning": [
+              "Segment the loose, edematous stromal areas densely infiltrated by small dark lymphocytes and plasma cells, lacking cohesive atypical epithelial nests or desmoplastic collagen."
+            ],
+            "Spatial Reasoning": [
+              "Focus on the broad central and right-sided regions where lymphocytes diffusely permeate the stroma between scattered tumor cell clusters."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate from tumor-associated stroma by its higher density of inflammatory cells and less collagenized, non-fibrotic background."
+            ]
+          },
+          "region_label": 6,
+          "region_class": "inflamed stroma"
+        }
+      }
+    }
+  },
+  "TCGA-OL-A5D6-01Z-00-DX1.6B11331B-4A0D-4E13-B054-A5C7A6FC3AAC_[57556,20279,59015,21782]": {
+    "diagnosis": null,
+    "regions": {
+      "TCGA-OL-A5D6-01Z-00-DX1.6B11331B-4A0D-4E13-B054-A5C7A6FC3AAC_[57556,20279,59015,21782]_1": {
+        "gpt": {
+          "invasive tumor": {
+            "Histological Reasoning": [
+              "Segment cohesive nests and sheets of markedly atypical epithelial cells infiltrating desmoplastic stroma, lacking a continuous myoepithelial rim or intact ductal boundaries."
+            ],
+            "Spatial Reasoning": [
+              "Select the tumor cell aggregates occupying the central and lower portions of the image, interdigitating with surrounding pink fibrotic stroma."
+            ],
+            "Hierarchical Reasoning": [
+              "Isolate the dominant epithelial component forming the bulk of cellular tissue, excluding smaller purely stromal or necrotic areas."
+            ],
+            "Ambiguity Reasoning": [
+              "Differentiate invasive tumor from tumor-associated stroma by including only hypercellular epithelial clusters, not the collagen-rich spindle-cell background."
+            ]
+          },
+          "region_label": 1,
+          "region_class": "invasive tumor"
+        }
+      }
+    }
+  }
+}

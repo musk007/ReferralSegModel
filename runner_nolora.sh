@@ -28,16 +28,41 @@ set -e
 # Paths
 # ---------------------------------------------------------------------------
 BIOMEDPARSE_DIR="${BIOMEDPARSE_DIR:-/home/roba/miccai26/BiomedParse}"
-DATASETS_DIR="${DATASETS_DIR:-/home/roba/miccai26/biomedparse_datasets}"
-OUTPUT_DIR="${OUTPUT_DIR:-${BIOMEDPARSE_DIR}/output/histopath_nolora}"
+DATASETS_DIR="${DATASETS_DIR:-/adialab/usr/roba/biomedparse_datasets}"
+OUTPUT_DIR="${OUTPUT_DIR:-${DATASETS_DIR}/output/histopath_nolora}"
 PRETRAINED_WEIGHTS="${PRETRAINED_WEIGHTS:-hf_hub:microsoft/BiomedParse}"
 
 # ---------------------------------------------------------------------------
 # GPU setup
 # ---------------------------------------------------------------------------
-NUM_GPUS="${SLURM_GPUS_ON_NODE:-8}"
-BATCH_SIZE_PER_GPU=12
+NUM_GPUS="${SLURM_GPUS_ON_NODE:-1}"
+BATCH_SIZE_PER_GPU="${BATCH_SIZE_PER_GPU:-2}"  # reduce if OOM; effective batch = BATCH_SIZE_TOTAL × GRAD_ACC_STEPS
 BATCH_SIZE_TOTAL=$(( NUM_GPUS * BATCH_SIZE_PER_GPU ))
+# Gradient accumulation: effective batch = BATCH_SIZE_TOTAL × GRAD_ACC_STEPS
+# Override at submission: GRAD_ACC_STEPS=4 sbatch runner_nolora.sh
+GRAD_ACC_STEPS="${GRAD_ACC_STEPS:-1}"
+GRAD_CLIP="${GRAD_CLIP:-False}"    # set to False to disable gradient clipping
+
+# ---------------------------------------------------------------------------
+# LR warmup  (override any of these at submission time)
+#
+#   BASE_LR       – peak learning rate reached after warmup
+#   WARMUP_ITERS  – iterations to ramp from start LR → BASE_LR
+#   WARMUP_FACTOR – start LR = BASE_LR × WARMUP_FACTOR
+#
+#   start LR = BASE_LR × WARMUP_FACTOR
+#   e.g. default: 1e-7 × 0.001 = 1e-10  → ramps to 1e-7 over 500 iters
+#
+#   To raise the peak only:
+#     BASE_LR=1e-5 sbatch runner_nolora.sh          → 1e-8 → 1e-5
+#
+#   To raise the peak while keeping start fixed at 1e-8:
+#     BASE_LR=1e-5  WARMUP_FACTOR=0.001  sbatch runner_nolora.sh
+#     BASE_LR=1e-4  WARMUP_FACTOR=0.0001 sbatch runner_nolora.sh
+# ---------------------------------------------------------------------------
+BASE_LR="${BASE_LR:-0.0001}"
+WARMUP_ITERS="${WARMUP_ITERS:-0}"
+WARMUP_FACTOR="${WARMUP_FACTOR:-1}"   # start LR = BASE_LR × WARMUP_FACTOR
 
 # ---------------------------------------------------------------------------
 # Environment
@@ -59,7 +84,7 @@ export OMPI_MCA_orte_tmpdir_base="/tmp"
 export PMIX_MCA_gds="^ds12,ds21"
 export OMPI_MCA_btl="^openib"
 export OMPI_MCA_pml="ob1"
-export WANDB_KEY="${WANDB_KEY:?Set WANDB_KEY in your environment}"
+export WANDB_KEY="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"
 
 mkdir -p /home/roba/miccai26/logs
 
@@ -96,11 +121,11 @@ echo "BiomedParse – lang_encoder + predictor fine-tuning (no LoRA)"
 echo "Job ID     : ${SLURM_JOB_ID}"
 echo "Node       : $(hostname)"
 echo "GPUs       : ${NUM_GPUS}  (CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES})"
-echo "Batch total: ${BATCH_SIZE_TOTAL}  (${BATCH_SIZE_PER_GPU} per GPU)"
+echo "Batch total: ${BATCH_SIZE_TOTAL}  (${BATCH_SIZE_PER_GPU} per GPU × ${GRAD_ACC_STEPS} grad-acc steps = effective $(( BATCH_SIZE_TOTAL * GRAD_ACC_STEPS )))"
 echo "Output     : ${OUTPUT_DIR}"
 echo "Datasets   : ${DATASETS_DIR}"
 echo "Trainable  : lang_encoder + predictor (backbone + pixel_decoder FROZEN)"
-echo "LR         : predictor=1e-5 | lang_encoder=1e-5  (backbone/pixel_decoder=0)"
+echo "LR         : warmup 1e-8 → ${BASE_LR} over ${WARMUP_ITERS} iters  |  predictor=0.5× lang_encoder=1.0×  (backbone/pixel_decoder frozen)"
 echo "============================================================"
 
 # ---------------------------------------------------------------------------
@@ -108,14 +133,19 @@ echo "============================================================"
 # Three config files are stacked in order (each overrides the previous):
 #   1. configs/biomed_seg_lang_v1.yaml          – base BiomedParse config
 #   2. biomed_seg_lang_v1_histopath_full.yaml   – dataset + training settings
-#   3. biomed_seg_lang_v1_histopath_nolora.yaml – disables LoRA, freezes backbone
+#   3. NOLORA_CONF (default: biomed_seg_lang_v1_histopath_nolora.yaml)
+#
+# To use a custom config variant at submission time:
+#   NOLORA_CONF=my_experiment.yaml sbatch runner_nolora.sh
 # ---------------------------------------------------------------------------
+NOLORA_CONF="${NOLORA_CONF:-biomed_seg_lang_v1_histopath_nolora.yaml}"
+
 cd "${BIOMEDPARSE_DIR}"
 
 mpirun -n ${NUM_GPUS} --oversubscribe --bind-to none python entry.py train \
     --conf_files configs/biomed_seg_lang_v1.yaml \
                  biomed_seg_lang_v1_histopath_full.yaml \
-                 biomed_seg_lang_v1_histopath_nolora.yaml \
+                 "${NOLORA_CONF}" \
     "${CONFIG_OVERRIDES_ARGS[@]}" \
     --overrides \
     SAVE_DIR "${OUTPUT_DIR}" \
@@ -128,13 +158,17 @@ mpirun -n ${NUM_GPUS} --oversubscribe --bind-to none python entry.py train \
     TRAIN.BATCH_SIZE_TOTAL ${BATCH_SIZE_TOTAL} \
     TRAIN.BATCH_SIZE_PER_GPU ${BATCH_SIZE_PER_GPU} \
     TEST.BATCH_SIZE_TOTAL ${BATCH_SIZE_TOTAL} \
-    SOLVER.MAX_NUM_EPOCHS 50 \
-    SOLVER.BASE_LR 0.000001 \
+    SOLVER.MAX_NUM_EPOCHS 330 \
+    SOLVER.BASE_LR ${BASE_LR} \
+    SOLVER.WARMUP_ITERS ${WARMUP_ITERS} \
+    SOLVER.WARMUP_FACTOR ${WARMUP_FACTOR} \
+    GRADIENT_ACCUMULATE_STEP ${GRAD_ACC_STEPS} \
+    GRAD_CLIP ${GRAD_CLIP} \
     MODEL.DECODER.GROUNDING.ENABLED True \
     MODEL.DECODER.SPATIAL.ENABLED True \
     MODEL.DECODER.SPATIAL.MAX_ITER 0 \
     LOADER.SAMPLE_PROB prop \
-    BioMed.INPUT.RANDOM_ROTATE True \
+    BioMed.INPUT.AUGMENT False \
     FIND_UNUSED_PARAMETERS True \
     ATTENTION_ARCH.SPATIAL_MEMORIES 32 \
     ATTENTION_ARCH.QUERY_NUMBER 3 \

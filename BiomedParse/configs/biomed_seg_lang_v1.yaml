@@ -25,6 +25,8 @@ FIND_UNUSED_PARAMETERS: false
 
 # Speed up training
 FP16: false
+GRADIENT_ACCUMULATE_STEP: 1
+GRAD_CLIP: true    # set to false to disable gradient clipping entirely
 PORT: '36873'
 
 # misc
@@ -290,6 +292,7 @@ BioMed:
     SIZE_DIVISIBILITY: 32
     RANDOM_FLIP: "none"
     RANDOM_ROTATE: False
+    AUGMENT: True
     MASK_FORMAT: "polygon"
     MIN_AREA: 30
     FORMAT: "RGB"

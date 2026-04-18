@@ -1,11 +1,27 @@
 import numpy as np
 from skimage import transform
-import pydicom
 from io import BytesIO
 from PIL import Image
-import nibabel as nib
-import SimpleITK as sitk
-from skimage import measure
+
+try:
+    import pydicom
+except ImportError:
+    pydicom = None
+
+try:
+    import nibabel as nib
+except ImportError:
+    nib = None
+
+try:
+    import SimpleITK as sitk
+except ImportError:
+    sitk = None
+
+try:
+    from skimage import measure
+except ImportError:
+    measure = None
     
 
 """

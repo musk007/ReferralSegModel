@@ -6,6 +6,7 @@ import random
 
 import numpy as np
 import torch
+from PIL import Image as PILImage
 
 from transformers import AutoTokenizer, LlamaForCausalLM
 
@@ -24,6 +25,7 @@ from modeling.language.misc import text_noun_with_prompt_all
 from modeling.utils import configurable
 
 from ..visual_sampler.sampler import build_shape_sampler
+from inference_utils.processing_utils import read_rgb
 
 __all__ = ["BioMedDatasetMapper"]
 
@@ -42,7 +44,7 @@ def build_transform_gen(cfg, is_train):
     max_scale = cfg_input['MAX_SCALE']
 
     augmentation = []
-    
+
     if cfg_input['RANDOM_FLIP'] != "none":
         augmentation.append(
             T.RandomFlip(
@@ -57,7 +59,7 @@ def build_transform_gen(cfg, is_train):
         ),
         T.FixedSizeCrop(crop_size=(image_size, image_size)),
     ])
-    
+
     return augmentation
 
 def build_transform_gen_se(cfg, is_train):
@@ -123,6 +125,8 @@ class BioMedDatasetMapper:
         binary_classes: bool,
         rotate: bool,
         prompt_combine: bool = False,
+        image_size: int = 1024,
+        augment: bool = True,
     ):
         """
         NOTE: this interface is experimental.
@@ -134,14 +138,15 @@ class BioMedDatasetMapper:
             image_format: an image format supported by :func:`detection_utils.read_image`.
         """
         self.tfm_gens = tfm_gens
+        self.augment = augment
         logging.getLogger(__name__).info(
-            "[COCOPanopticNewBaselineDatasetMapper] Full TransformGens used in training: {}".format(
-                str(self.tfm_gens)
-            )
+            "[BioMedDatasetMapper] augment=%s  TransformGens: %s",
+            self.augment, str(self.tfm_gens),
         )
 
         self.img_format = image_format
         self.is_train = is_train
+        self.image_size = image_size
         self.caption_thres = caption_thres
         self.grounding = grounding
         self.lvis = lvis
@@ -160,11 +165,11 @@ class BioMedDatasetMapper:
 
     @classmethod
     def from_config(cls, cfg, is_train=True):
-        # Build augmentation
-        if is_train:
+        augment = cfg['INPUT'].get('AUGMENT', True)
+        if is_train and augment:
             tfm_gens = build_transform_gen(cfg, is_train)
         else:
-            tfm_gens = build_transform_gen_se(cfg, is_train)
+            tfm_gens = []
             
         shape_sampler = build_shape_sampler(cfg)
 
@@ -195,6 +200,8 @@ class BioMedDatasetMapper:
             "binary_classes": cfg['MODEL']['ENCODER']['BINARY_CLASSES'],
             "rotate": cfg['INPUT']['RANDOM_ROTATE'],
             "prompt_combine": cfg.get('DATASETS', {}).get('PROMPT_COMBINE', False),
+            "image_size": cfg['INPUT']['IMAGE_SIZE'],
+            "augment": cfg['INPUT'].get('AUGMENT', True),
         }
         return ret
 
@@ -215,15 +222,48 @@ class BioMedDatasetMapper:
                 print('Image loading error:', dataset_dict["file_name"])
 
         utils.check_image_size(dataset_dict, image)
+        sz = self.image_size
+        # print("<<<<<<<<<< 1 >>>>>>>>>>")
+        # print("image size is : ",self.image_size)
+        # print("\n")
 
-        image, transforms = T.apply_transform_gens(self.tfm_gens, image)
-        image_shape = image.shape[:2]  # h, w
-
-        rotate_time = 0
-        if self.is_train and self.rotate and random.random() < 0.5:
-            rotate_time = random.randint(1, 3)
-        if rotate_time > 0:
-            image = np.rot90(image, rotate_time)
+        if self.augment:
+            orig_h, orig_w = image.shape[:2]
+            image, transforms = T.apply_transform_gens(self.tfm_gens, image)
+            image_shape = image.shape[:2]
+            rotate_time = 0
+            _mask_pad = None
+            if self.is_train and self.rotate and random.random() < 0.5:
+                rotate_time = random.randint(1, 3)
+            if rotate_time > 0:
+                image = np.rot90(image, rotate_time)
+        else:
+            # Record original dims so masks can receive identical padding.
+            orig_h, orig_w = image.shape[:2]
+            # print("<<<<<<<<<< 2 >>>>>>>>>>")
+            # print("original height : ",orig_h)
+            # print("original width : ",orig_w)
+            # print("\n")
+            if orig_h > orig_w:
+                _pad_amt = (orig_h - orig_w) // 2
+                _mask_pad = ((0, 0), (_pad_amt, _pad_amt))
+            elif orig_w > orig_h:
+                _pad_amt = (orig_w - orig_h) // 2
+                _mask_pad = ((_pad_amt, _pad_amt), (0, 0))
+            else:
+                _mask_pad = None
+            # Use read_rgb: pad shorter side to square then bicubic resize to 1024×1024.
+            image = read_rgb(dataset_dict["file_name"])
+            # print("<<<<<<<<<< 3 >>>>>>>>>>")
+            # print("original type : ",type(image))
+            # print("image shape is  : ",image.shape)
+            # print("\n")
+            image_shape = (sz, sz)
+            dataset_dict['height'] = sz
+            dataset_dict['width'] = sz
+            transforms = None
+            orig_h, orig_w = sz, sz
+            rotate_time = 0
 
         # Pytorch's dataloader is efficient on torch.Tensor due to shared-memory,
         # but not efficient on large generic data structures due to the use of pickle & mp.Queue.
@@ -242,6 +282,9 @@ class BioMedDatasetMapper:
         classes = []
         masks_orig = []
         for ann in grounding_anno:
+            # print("<<<<<<<<<< 4 >>>>>>>>>>")
+            # print("ann keys : ",ann.keys())
+            # print("\n")
             if 'segmentation' in ann:
                 if len(ann['segmentation']) == 0:
                     print('Empty segmentation!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
@@ -262,11 +305,26 @@ class BioMedDatasetMapper:
                         print('Image loading error:', ann["mask_file"])
                 m = np.sum(m, axis=2)
                 m = 1 * (m > 0)
-            m = m.astype(np.uint8)  # convert to np.uint8
-            m = transforms.apply_segmentation(255*m[:,:,None])[:,:,0]
-            if rotate_time > 0:
-                m = np.rot90(m, rotate_time)
+            m = m.astype(np.uint8)
+            # print("<<<<<<<<<< 5 >>>>>>>>>>")
+            # print("Augmentation enabled : ",self.augment)
+            # print("\n")
+            if self.augment:
+                if m.shape[0] != orig_h or m.shape[1] != orig_w:
+                    m = np.array(PILImage.fromarray(m).resize((orig_w, orig_h), PILImage.NEAREST))
+                m = transforms.apply_segmentation(255 * m[:, :, None])[:, :, 0]
+                if rotate_time > 0:
+                    m = np.rot90(m, rotate_time)
+            else:
+                # Apply the same pad-to-square as read_rgb, then NEAREST resize.
+                if _mask_pad is not None:
+                    m = np.pad(m, _mask_pad, 'constant', constant_values=0)
+                m = np.array(PILImage.fromarray(m * 255).resize((sz, sz), PILImage.NEAREST))
             masks_grd += [m]
+            # print("<<<<<<<<<< 6 >>>>>>>>>>")
+            # print("masks_grd is a : ",type(masks_grd))
+            # print("shape of masks_grd : ",len(masks_grd))
+            # print("\n")
             if self.prompt_combine:
                 text_grd = " ".join(s['raw'].lower() for s in ann['sentences'] if s.get('raw'))
             else:
@@ -281,6 +339,11 @@ class BioMedDatasetMapper:
         boxes_grd = torch.tensor(boxes_grd)
         groundings = {'masks': masks_grd, 'texts': texts_grd, 'hash': hash_grd, 'mode': 'text'}
         dataset_dict["groundings"] = groundings
+        # print("<<<<<<<<<< 7 >>>>>>>>>>")
+        # print("groundings masks : ",groundings["masks"][0].shape)
+        # print("groundings texts : ",groundings["texts"])
+        # print("shape of masks_grd : ",masks_grd[0].shape)
+        # print("\n")
 
         masks_grd = torch.stack([torch.from_numpy(np.ascontiguousarray(x.copy())) for x in masks_grd])
 
@@ -308,6 +371,11 @@ class BioMedDatasetMapper:
             dataset_dict['tokens'] = {"input_ids": tokens["input_ids"], "attention_mask": tokens["attention_mask"]}
 
         if self.grounding:
+            # print("<<<<<<<<<< 8 >>>>>>>>>>")
+            # print("witin the grounding loop @ 375 : ")
+            # print("grounding annotations : ",dataset_dict["grounding_info"])
+            
+            # print("\n")
             grounding_anno = dataset_dict['grounding_info']
             grounding_len = random.randint(1, self.max_grounding_num-1)
             if len(grounding_anno) > 0:
@@ -335,11 +403,26 @@ class BioMedDatasetMapper:
                                 print('Image loading error:', ann["mask_file"])
                         m = np.sum(m, axis=2)
                         m = 1 * (m > 0)
-
-                    m = m.astype(np.uint8)  # convert to np.uint8
-                    m = transforms.apply_segmentation(m[:,:,None])[:,:,0]
-                    if rotate_time > 0:
-                        m = np.rot90(m, rotate_time)
+                    # print("<<<<<<<<<< 9 >>>>>>>>>>")
+                    # print("m is a : ",type(m))
+                    # print("shape of m : ",m.shape)
+                    # print("\n")
+                    m = m.astype(np.uint8)
+                    # print("<<<<<<<<<< 9 >>>>>>>>>>")
+                    # print("m is a : ",type(m))
+                    # print("shape of m : ",m.shape)
+                    # print("\n")
+                    if self.augment:
+                        if m.shape[0] != orig_h or m.shape[1] != orig_w:
+                            m = np.array(PILImage.fromarray(m).resize((orig_w, orig_h), PILImage.NEAREST))
+                        m = transforms.apply_segmentation(m[:, :, None])[:, :, 0]
+                        if rotate_time > 0:
+                            m = np.rot90(m, rotate_time)
+                    else:
+                        # Apply the same pad-to-square as read_rgb, then NEAREST resize.
+                        if _mask_pad is not None:
+                            m = np.pad(m, _mask_pad, 'constant', constant_values=0)
+                        m = np.array(PILImage.fromarray(m).resize((sz, sz), PILImage.NEAREST))
                     masks_grd += [m]
                     if self.prompt_combine:
                         texts_grd += [" ".join(s['raw'].lower() for s in ann['sentences'] if s.get('raw'))]
@@ -348,6 +431,9 @@ class BioMedDatasetMapper:
                         texts_grd += [ann['sentences'][rand_index]['raw'].lower()]
                 # max_len = min(grounding_len, len(texts_grd))
                 max_len = len(masks_grd)
+                # print("<<<<<<<<<< 10 >>>>>>>>>>")
+                # print("max_len : ",max_len)
+                # print("\n")
                 indices = np.random.permutation(max_len)
                 texts_grd = list(np.array(texts_grd)[indices])
                 masks_grd = torch.tensor(np.stack(masks_grd)[indices])
@@ -378,6 +464,7 @@ class BioMedDatasetMapper:
                     masks_grd = masks_grd[selected_mask]
                     texts_grd = [prompt_engineering(text.replace('-other','').replace('-merged','').replace('-stuff',''), topk=10000, suffix='.') \
                                         for text in texts_grd]
+            
             groundings = {'masks': masks_grd, 'texts': texts_grd, 'mode': mode, 'hash': hash_grd}
             dataset_dict["groundings"] = groundings
             assert len(masks_grd) == len(dataset_dict['grounding_info']), f"len(masks_grd)={len(masks_grd)}, len(dataset_dict['grounding_info'])={len(dataset_dict['grounding_info'])}, mask shape={masks_grd.shape}, max_len={max_len}, grounding_len={grounding_len}, len(texts_grd)={len(texts_grd)}, len(hash_grd)={len(hash_grd)}"

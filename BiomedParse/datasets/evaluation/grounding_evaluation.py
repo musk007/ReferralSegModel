@@ -29,13 +29,20 @@ class GroundingEvaluator(DatasetEvaluator):
         dataset_name,
         compute_box=False,
         distributed=True,
+        save_dir=None,
     ):
         self._logger = logging.getLogger(__name__)
         self._dataset_name = dataset_name
         self._distributed = distributed
         self._cpu_device = torch.device("cpu")
         self._compute_box = compute_box
+        self._save_dir = save_dir
+        self._epoch = None
         meta = MetadataCatalog.get(dataset_name)
+
+    def set_epoch(self, epoch: int):
+        """Call before each eval pass to stamp predictions with the epoch number."""
+        self._epoch = epoch
 
     def reset(self):
         self.cum_I = 0
@@ -86,16 +93,30 @@ class GroundingEvaluator(DatasetEvaluator):
 
         return filtered_input
 
+    def _save_predictions(self, input, pred):
+        """Save binary prediction masks to <save_dir>/epoch_<N>/<image_stem>_<text>.png"""
+        if self._save_dir is None:
+            return
+        epoch_tag = f"epoch_{self._epoch:04d}" if self._epoch is not None else "epoch_unknown"
+        out_dir = os.path.join(self._save_dir, epoch_tag)
+        os.makedirs(out_dir, exist_ok=True)
+
+        img_stem = os.path.splitext(os.path.basename(input['file_name']))[0]
+        texts = input['groundings']['texts']
+        for i, mask in enumerate(pred):
+            text_tag = texts[i].replace(' ', '_')[:40] if i < len(texts) else str(i)
+            fname = f"{img_stem}__{text_tag}.png"
+            plt.imsave(
+                os.path.join(out_dir, fname),
+                mask.cpu().numpy().astype(np.uint8) * 255,
+                cmap='gray',
+            )
+
     def process(self, inputs, outputs):
         for input, output in zip(inputs, outputs):
             pred = output['grounding_mask'].sigmoid() > 0.5
-            # # save pixel probability
-            # prob = output['grounding_mask'].sigmoid().cpu().numpy()[0] * 255
-            # pred_file = input['file_name'].split('.')[0].replace('test/', 'test_pred/') + '_' + input['groundings']['texts'][0].replace(' ', '+') + '.png'
-            # if not os.path.exists('/'.join(pred_file.split('/')[:-1])):
-            #     os.makedirs('/'.join(pred_file.split('/')[:-1]), exist_ok=True)
-            # plt.imsave(pred_file, 
-            #            prob.astype(np.uint8), cmap='gray')
+
+            self._save_predictions(input, pred)
 
             gt = input['groundings']['masks'].bool()
             bsi = len(pred)

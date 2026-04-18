@@ -1,0 +1,4262 @@
+{
+  "ZT111_4_A_1_12": {
+    "regions": {
+      "ZT111_4_A_1_12_(1090, 790, 2321, 1778)_region11": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the elongated focus of poorly differentiated carcinoma composed of scattered single cells and tiny cords infiltrating dense fibromuscular stroma without recognizable glandular lumina."
+          ],
+          "Spatial Reasoning": [
+            "Select the narrow infiltrative band running obliquely across the central-left portion of the core between more gland-forming tumor at both ends."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area where tumor cells are most dispersed within stroma, lacking the larger cribriform or microacinar gland spaces seen in adjacent regions."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      },
+      "ZT111_4_A_1_12_(1143, 748, 3093, 2521)_region8": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the elongated focus of poorly formed, angulated glands with scant slit-like lumina infiltrating within dense fibromuscular stroma, lacking well-formed rounded acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the narrow, curving band of atypical glands running obliquely along the central-to-inferior left fibromuscular stromal tract."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_A_1_12_(1569, 822, 1788, 1005)_region4": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small, well-formed round prostatic gland with a single open lumen and relatively uniform epithelial lining within the fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the isolated microacinar gland located slightly left of center, embedded within the dense pink fibromuscular stromal band away from larger crowded glands."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_1_12_(206, 1190, 704, 1800)_region6": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small cluster of well-formed round glands with open lumina and relatively uniform nuclei embedded within fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact acinar group located near the superior edge of the tissue disc, overlying a broad pale fibromuscular band."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_1_12_(2215, 437, 2505, 726)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small cluster of well-formed round microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid growth."
+          ],
+          "Spatial Reasoning": [
+            "Located in the inferior-left peripheral portion of the tissue disc, embedded within dense pink fibromuscular stroma away from the large central epithelial aggregates."
+          ],
+          "Ambiguity Reasoning": [
+            "Select the discrete microacinar focus that appears more separated and less crowded than the adjacent larger, more complex epithelial proliferations."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_1_12_(2263, 1195, 2578, 1494)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small, well-formed round prostatic gland with a single open lumen and circumferential epithelial lining embedded within dense fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the isolated microacinar gland located in the inferior-left stromal band, away from the larger clustered glands at the right side."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_1_12_(2378, 1616, 2747, 2084)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of well-formed, round to oval microacinar glands with open lumina embedded within dense fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the small elongated glandular focus located near the inferior edge of the tissue disc, running obliquely within a stromal band."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_1_12_(2664, 606, 3056, 1300)_region7": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact focus of poorly formed, angulated malignant glands with narrow irregular lumina infiltrating between dense fibromuscular stroma at the tissue edge."
+          ],
+          "Spatial Reasoning": [
+            "Select the small infiltrative gland cluster located along the inferior peripheral rim of the tissue disc."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_A_1_12_(432, 16, 2414, 989)_region9": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the irregular, fused glands with cribriform-like epithelial bridges and reduced, angulated lumina embedded within desmoplastic stroma, lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Focus on the superior-left peripheral cluster of crowded atypical glands adjacent to dense fibromuscular stroma."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_A_1_12_(647, 1327, 2700, 3099)_region5": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the large, well-formed acinar glands with open lumina and relatively uniform nuclei, separated by fibromuscular stroma, lacking solid or fused cribriform areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad epithelial glandular complex occupying the right-central to inferior-right portion of the tissue disc, bordering the pale stromal band on its left side."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_1_12_(95, 613, 335, 1398)_region10": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the thin, elongated band of fused grade 4 glands with crowded epithelial cells and slit-like lumina embedded along a fibromuscular stromal edge."
+          ],
+          "Spatial Reasoning": [
+            "Select the narrow epithelial strip running along the superior outer rim of the circular tissue profile."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT111_4_A_1_5": {
+    "regions": {
+      "ZT111_4_A_1_5_(200, 1, 3084, 3084)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking confluent fused or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the peripheral band of crowded microacinar glands encircling the lower and right outer edge of the tissue core, adjacent to dense central stroma."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more discrete, individually separated glands rather than the central region of predominantly fibrous stroma with sparse or distorted glands."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_A_1_6": {
+    "regions": {
+      "ZT111_4_A_1_6_(101, 16, 3067, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing predominantly well-formed, separate prostatic glands with open lumina embedded in fibromuscular stroma, lacking fused or solid tumor areas."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tissue disc occupying nearly all of the field, excluding the surrounding blank slide background."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_A_1_9": {
+    "regions": {
+      "ZT111_4_A_1_9_(653, 16, 3083, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral band of well-formed, round to oval prostatic glands with open lumina and intervening fibromuscular stroma surrounding the central nodular glands."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous outer rim of glands and stroma along the circular tissue edge, excluding the larger central glandular nodules."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_A_2_10": {
+    "regions": {
+      "ZT111_4_A_2_10_(100, 11, 3084, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, discrete prostatic glands with open round to oval lumina separated by intervening fibromuscular stroma, lacking confluent fusion or solid sheets."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_A_2_13": {
+    "regions": {
+      "ZT111_4_A_2_13_(147, 101, 3078, 3089)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular core containing predominantly fused, poorly formed malignant glands with irregular narrow lumina embedded in abundant fibromuscular stroma."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_A_2_1": {
+    "regions": {
+      "ZT111_4_A_2_1_(1, 1179, 441, 2231)_region6": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to slightly angulated microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact band of glands located along the superior edge of the tissue disc, just inside the outer stromal rim."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_2_1_(1090, 164, 3088, 1710)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral band of well-formed, separate microacinar glands with open lumina infiltrating fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous crescent-shaped glandular focus along the inferior-left outer edge of the circular tissue core."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_2_1_(116, 2285, 568, 2826)_region8": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of fused, poorly formed glands with irregular narrow lumina and crowded nuclei embedded in fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the small glandular cluster located along the superior-right peripheral edge of the circular tissue core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_A_2_1_(1584, 1832, 1794, 2163)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small, well-circumscribed round prostatic gland with a single open pale lumen and uniform epithelial lining, separated by intervening stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the discrete gland located slightly right of center, bordering the large central stromal cleft on its right side."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_2_1_(2015, 1195, 2931, 2726)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the elongated glandular cluster located along the inferior peripheral edge of the tissue disc."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_2_1_(585, 479, 1888, 1436)_region5": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round prostatic glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid growth."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular cluster located in the superior-left quadrant, just peripheral to the central stromal area."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_2_1_(921, 1616, 2489, 3078)_region7": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative area of fused, poorly formed glands with irregular narrow lumina and minimal intervening stroma, lacking well-circumscribed round benign acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad confluent glandular focus along the inferior-right peripheral portion of the tissue disc."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the region where glands appear more crowded and fused compared with the better-separated benign-appearing acini elsewhere."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_A_2_1_(969, 1243, 1483, 1626)_region4": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small cluster of well-formed, round microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid growth."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular cluster located just above the large central stromal cleft, slightly left of image center."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_A_2_2": {
+    "regions": {
+      "ZT111_4_A_2_2_(6, 17, 3099, 3066)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative carcinoma composed of crowded, irregular, and focally fused glands with reduced, angulated lumina embedded within prominent fibromuscular stroma."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_A_2_8": {
+    "regions": {
+      "ZT111_4_A_2_8_(17, 128, 3037, 2955)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core showing predominantly fused, crowded glands with irregular, poorly formed lumina and minimal intervening stroma consistent with Gleason grade 4 carcinoma."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tissue disc occupying nearly all stained area, excluding the surrounding blank slide background."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_A_3_13": {
+    "regions": {
+      "ZT111_4_A_3_13_(184, 1, 3099, 2927)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative carcinoma composed of fused, irregular glands and poorly formed lumina embedded within dense fibromuscular stroma, lacking well-circumscribed round benign acini."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_A_4_13": {
+    "regions": {
+      "ZT111_4_A_4_13_(1295, 1039, 2604, 2238)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina and relatively uniform nuclei embedded in moderately cellular fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the central-lower epithelial gland cluster situated between more fibrotic stroma and larger, more dilated benign-appearing glands toward the periphery."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the smaller, more crowded microacini that remain discrete and well-formed, contrasting with the larger, cystically dilated benign glands nearby."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_4_13_(1967, 289, 3065, 2038)_region4": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact band of fused, crowded glands with irregular, slit-like lumina and minimal intervening stroma forming a continuous cluster of Gleason pattern 4 carcinoma."
+          ],
+          "Spatial Reasoning": [
+            "Select the elongated glandular cluster running along the inferior peripheral edge of the tissue disc."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more confluent, back-to-back glands lacking round, well-separated lumina seen in adjacent better-formed acini."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_A_4_13_(2305, 2378, 2816, 2966)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral cluster of well-formed, round microacinar glands with open lumina and relatively uniform nuclei, separated by fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact acinar cluster located along the inferior-right edge of the tissue disc, abutting the outer stromal boundary."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_4_13_(67, 978, 460, 2350)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of well-formed round microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the narrow band of glands located along the superior edge of the circular tissue core, just beneath the outer stromal rim."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_A_5_10": {
+    "regions": {
+      "ZT111_4_A_5_10_(34, 1, 2154, 2927)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the superior band of well-formed, round to oval microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking gland fusion or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous epithelial-glandular rim along the upper edge of the tissue core, immediately above the broad central fibromuscular bundle."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_A_5_11": {
+    "regions": {
+      "ZT111_4_A_5_11_(1427, 234, 3066, 1794)_region4": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the inferior-left cluster of fused, irregular glands with poorly formed, slit-like lumina embedded in fibromuscular stroma, lacking well-separated round acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad glandular area along the inferior-left peripheral edge of the tissue disc."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more confluent, irregularly contoured glands rather than the better-formed, rounder glands elsewhere."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_A_5_11_(16, 278, 1777, 1844)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad band of glands occupying the upper and central-left portion of the tissue core, bordering the large stromal area below."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_5_11_(178, 2284, 1204, 3099)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral wedge-shaped cluster of well-formed, round microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the elongated wedge of glands along the superior-right tissue edge, tapering toward the outer blank background."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_5_11_(2027, 2539, 2272, 2677)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small, well-formed round prostatic gland with a single open lumen and circumferential crowded nuclei, embedded within moderately fibrotic stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the isolated microacinar gland located in the inferior-right peripheral stroma, adjacent to a larger pale fibrous area and luminal space."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_A_5_12": {
+    "regions": {
+      "ZT111_4_A_5_12_(95, 6, 3099, 3083)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core showing diffusely infiltrative Gleason grade 4 carcinoma with fused, poorly formed glands and scant, irregular lumina within fibromuscular stroma."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tumor tissue encompassing nearly the whole core, excluding the surrounding blank slide background."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_A_5_5": {
+    "regions": {
+      "ZT111_4_A_5_5_(2000, 1384, 2761, 2288)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of well-formed round glands with open lumina and crowded malignant nuclei embedded within fibromuscular stroma, lacking gland fusion."
+          ],
+          "Spatial Reasoning": [
+            "Select the small acinar cluster located in the inferior-central portion of the tissue core, aligned along stromal fibers."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_A_6_12": {
+    "regions": {
+      "ZT111_4_A_6_12_(17, 145, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the expansile cribriform and fused glandular proliferation with irregular, punched-out lumina and minimal intervening stroma, lacking discrete well-formed separate acini."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tumor component occupying most of the tissue core, excluding only the thin peripheral stromal rim."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_A_6_4": {
+    "regions": {
+      "ZT111_4_A_6_4_(34, 1517, 1350, 2250)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact focus of fused, poorly formed glands with crowded atypical nuclei and irregular slit-like lumina embedded within fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the superior-central epithelial cluster along the inner rim of the tissue circle, between larger benign-appearing round glands."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area where glands are more confluent and irregular, lacking the round, well-spaced lumina of adjacent benign glands."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_A_6_4_(405, 2162, 2727, 3050)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral cluster of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the elongated epithelial-glandular focus along the right outer edge of the tissue circle, extending from mid-height toward the inferior margin."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_6_4_(45, 123, 3076, 2044)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral band of well-formed, round to oval microacinar glands with open lumina separated by fibromuscular stroma, lacking gland fusion or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous outer circumferential rim of glands along the left and inferior edge of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_A_6_8": {
+    "regions": {
+      "ZT111_4_A_6_8_(234, 173, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central pale necrotic-appearing area composed of finely granular eosinophilic debris lacking recognizable glandular lumina or cohesive tumor cell nests."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad irregular zone occupying the middle of the tissue core, surrounded circumferentially by more basophilic viable tumor at the periphery."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the acellular granular center that is lighter and less basophilic than the surrounding solid sheets of malignant cells."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT111_4_A_7_10": {
+    "regions": {
+      "ZT111_4_A_7_10_(167, 173, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral band of fused, back-to-back small glands with reduced, irregular lumina and minimal intervening stroma, lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous outer rim of tumor glands encircling the tissue disk along the capsule-facing edge."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_A_7_10_(2239, 295, 2710, 1538)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the inferior peripheral focus of solid, poorly differentiated tumor composed of densely packed cells with virtually absent glandular lumina and sheet-like growth."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad band of tumor along the inferior rim of the tissue disc, abutting the outer edge."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area where tumor cells lose rounded acinar contours and open lumina seen in adjacent more gland-forming regions."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_A_7_12": {
+    "regions": {
+      "ZT111_4_A_7_12_(12, 73, 3099, 3016)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing numerous well-formed, round to oval microacinar glands with open lumina separated by intervening fibromuscular stroma."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_A_7_14": {
+    "regions": {
+      "ZT111_4_A_7_14_(223, 6, 3099, 2922)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the round to oval, well-formed microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid growth."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_A_7_1": {
+    "regions": {
+      "ZT111_4_A_7_1_(78, 89, 3099, 2900)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing closely packed, well-formed microacinar glands with open lumina and intervening fibromuscular stroma, lacking fused or solid growth."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_A_8_11": {
+    "regions": {
+      "ZT111_4_A_8_11_(144, 651, 1777, 1638)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina separated by abundant fibromuscular stroma, lacking gland fusion or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the relatively stromal-rich glandular focus located in the superior-left portion of the tissue core, adjacent to the outer curved edge."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more widely spaced, discrete acini contrasting with the denser, more crowded benign-appearing glands toward the central and inferior regions."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_A_8_11_(227, 1, 3099, 2905)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the area of closely packed, irregular, and partially fused glands with reduced, angulated lumina embedded in prominent fibromuscular stroma, lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad peripheral band of atypical glands encircling the outer right and inferior aspect of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_A_8_13": {
+    "regions": {
+      "ZT111_4_A_8_13_(123, 6, 3099, 3044)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking confluent fusion or solid sheets."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_A_8_3": {
+    "regions": {
+      "ZT111_4_A_8_3_(23, 106, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative carcinoma glands showing fused, irregular, and angulated lumina with scant intervening stroma, lacking well-formed round benign-appearing acini."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_A_8_5": {
+    "regions": {
+      "ZT111_4_A_8_5_(12, 12, 3099, 3088)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative carcinoma composed of crowded, fused and cribriform glands with irregular, poorly formed lumina within desmoplastic stroma, lacking solid sheets."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_A_8_9": {
+    "regions": {
+      "ZT111_4_A_8_9_(162, 234, 2049, 3072)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central broad area of fused, poorly formed glands with crowded epithelial cells and irregular slit-like lumina lacking discrete intervening stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the dominant central cluster of tumor glands extending from the superior edge toward the midline of the circular tissue core."
+          ],
+          "Hierarchical Reasoning": [
+            "Identify the largest confluent focus of carcinoma, more expansive than the surrounding smaller, better-formed peripheral glands."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_A_8_9_(2134, 95, 3099, 2266)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the inferior peripheral cluster of fused, irregularly contoured glands with poorly formed, slit-like lumina and minimal intervening stroma, lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad wedge-shaped tumor focus along the inferior edge of the tissue disc, abutting the outer stromal rim."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area where glands are more confluent and irregular compared with the more discrete, rounded glands elsewhere."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_A_8_9_(961, 1, 3088, 3099)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral tumor composed of scattered single cells and loose cords within fibrotic stroma, lacking well-formed glandular lumina or acinar structures."
+          ],
+          "Spatial Reasoning": [
+            "Select the discontinuous infiltrative carcinoma along the outer left and right rim of the tissue disc, surrounding the central nodular tumor mass."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the more subtle, less cellular peripheral component rather than the dominant central solid tumor nodule."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_B_1_10": {
+    "regions": {
+      "ZT111_4_B_1_10_(45, 17, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core composed of closely packed, well-formed microacinar glands with open lumina separated by thin fibromuscular stroma, lacking fused or solid areas."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_B_1_11": {
+    "regions": {
+      "ZT111_4_B_1_11_(133, 1173, 1211, 2916)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma showing infiltrative but non-fused architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact band of crowded glands located along the superior peripheral edge of the circular tissue core."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more cellular, microacinar glandular focus contrasting with the looser, predominantly stromal areas containing fewer benign-appearing glands."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_B_1_11_(166, 12, 1615, 1016)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the superior-left band of well-formed, round to oval microacinar glands with open lumina, separated by intervening fibromuscular stroma, lacking gland fusion."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous epithelial strip along the superior-left peripheral edge of the tissue disc."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_B_1_11_(1888, 1151, 2872, 2038)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round prostatic glands with open lumina and relatively uniform crowded nuclei embedded within fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular cluster located in the inferior-central portion of the tissue disc, surrounded by dense pink stromal bundles."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_B_1_1": {
+    "regions": {
+      "ZT111_4_B_1_1_(1555, 1467, 2194, 2100)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact focus of fused, irregular glands with poorly formed, slit-like lumina and crowded epithelial cells lacking intervening fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the irregular cluster in the right-central portion of the core, just medial to the more fibrotic peripheral stroma."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area showing more confluent, complex gland fusion compared with the adjacent rounder, better-formed glands."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_B_1_1_(2066, 106, 2833, 566)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the elongated focus of fused, poorly formed glands with crowded atypical cells and narrow irregular lumina embedded within desmoplastic stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact, wedge-shaped tumor cluster located along the inferior-left peripheral edge of the circular tissue core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_B_1_1_(2127, 1095, 2700, 1555)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of fused, irregular glands with poorly formed, slit-like lumina and crowded epithelial cells lacking intervening fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the small fused glandular focus located in the inferior-central portion of the tissue core, adjacent to more fibrotic stroma."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_B_1_1_(511, 89, 3099, 3050)_region5": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact sheet-like tumor focus composed of densely packed atypical cells with essentially absent true glandular lumina, infiltrating within fibromyxoid stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad inferior-left tumor band running along the outer edge of the tissue disc, deep to the capsule-like stromal rim."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      },
+      "ZT111_4_B_1_1_(594, 412, 2144, 1416)_region4": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the elongated band of Gleason grade 4 carcinoma with fused, crowded glands and irregular slit-like lumina embedded within desmoplastic stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the obliquely oriented epithelial tract extending from the upper-left toward the central-lower portion of the tissue disc."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the largest continuous focus of fused carcinoma glands, more extensive than any other tumor cluster in the section."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_B_1_3": {
+    "regions": {
+      "ZT111_4_B_1_3_(45, 478, 3099, 3083)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_B_1_5": {
+    "regions": {
+      "ZT111_4_B_1_5_(134, 34, 3093, 2855)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central tumor composed of crowded, irregular, poorly formed glands with slit-like or abortive lumina embedded within abundant fibromuscular stroma, lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the dominant carcinoma occupying nearly the entire circular core, sparing only the thin peripheral rim of denser fibromuscular tissue."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the largest, diffuse area of fused, poorly formed glands that constitutes the bulk of tumor within this tissue core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_B_1_7": {
+    "regions": {
+      "ZT111_4_B_1_7_(378, 12, 3054, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, round to oval microacinar glands with open lumina, separated by intervening fibromuscular stroma and lacking gland fusion or solid sheets."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_B_1_8": {
+    "regions": {
+      "ZT111_4_B_1_8_(316, 223, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral band of well-formed, discrete microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous rim of tumor glands along the outer circumference of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_B_1_8_(95, 601, 1115, 2327)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the superior band of fused, irregular glands with poorly formed, slit-like lumina and crowded epithelial cells lacking discrete round microacini."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous epithelial focus along the upper edge of the tissue disc, just beneath the overlying pale stromal and empty space."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area where glands are more confluent and irregular compared with the better-formed, rounder glands in the deeper tissue."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_B_1_9": {
+    "regions": {
+      "ZT111_4_B_1_9_(334, 239, 2618, 2252)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the contiguous band of these glands running obliquely across the central-left portion of the tissue disc."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_B_1_9_(495, 1458, 985, 2085)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of fused, poorly formed glands with irregular narrow lumina and minimal intervening stroma, lacking well-separated round benign acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the irregular nodular focus located in the superior central portion of the tissue, just above more rounded benign-appearing glands."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area where glands appear more crowded and fused compared with the adjacent, more circular and widely spaced benign glands below."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_B_2_1": {
+    "regions": {
+      "ZT111_4_B_2_1_(136, 818, 975, 2105)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of fused, poorly formed glands with irregular slit-like lumina embedded in desmoplastic stroma, lacking well-circumscribed round benign acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact epithelial focus located in the superior central portion of the tissue disc, just beneath the outer fibromuscular rim."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_B_2_1_(42, 242, 788, 1070)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small cluster of well-formed, round prostatic glands with open lumina and relatively uniform nuclei embedded in fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact group of glands located along the superior-left peripheral edge of the tissue disc, adjacent to the outer stromal rim."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_B_2_1_(576, 24, 3099, 3029)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the expansile area of solid, sheet-like malignant cells with virtually absent glandular lumina embedded in densely fibrotic stroma, lacking discrete acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad peripheral tumor zone occupying most of the right and inferior aspects of the tissue core."
+          ],
+          "Hierarchical Reasoning": [
+            "Identify the dominant, most extensive region of poorly differentiated carcinoma forming the bulk of the core."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_B_3_10": {
+    "regions": {
+      "ZT111_4_B_3_10_(113, 154, 1826, 1640)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral band of Gleason grade 4 carcinoma composed of small, poorly formed and fused glands infiltrating within dense fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the elongated tumor focus along the superior and left outer edge of the core, embedded in the pink stromal rim."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate glands that are more separated by dense stroma and less confluent than the central, more cellular tumor area."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_B_3_10_(206, 207, 3099, 2913)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the expansile area of fused, poorly formed glands with crowded atypical nuclei and irregular slit-like lumina lacking intervening benign-appearing fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the dominant central-right epithelial proliferation bordered on the left by more collagenous, hypocellular fibromuscular tissue."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the largest continuous tumor region forming the bulk of epithelial cells within the tissue core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_B_3_5": {
+    "regions": {
+      "ZT111_4_B_3_5_(1273, 2734, 2053, 3020)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact peripheral focus of solid tumor cells forming sheets and cords with virtually absent luminal spaces and marked nuclear atypia."
+          ],
+          "Spatial Reasoning": [
+            "Select the narrow band of tumor along the outer right edge of the tissue, bordering the adjacent pale stromal-cleft space."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area where tumor cells lack discernible glandular lumina, contrasting with the more gland-forming carcinoma toward the upper right."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      },
+      "ZT111_4_B_3_5_(480, 1841, 1913, 2833)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral band of fused, irregular glands with crowded nuclei and reduced, angulated lumina infiltrating along the fibromuscular stromal seam."
+          ],
+          "Spatial Reasoning": [
+            "Select the elongated epithelial cluster along the right outer edge of the core, bordering the broad central fibromuscular band."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT111_4_B_4_10": {
+    "regions": {
+      "ZT111_4_B_4_10_(41, 7, 3099, 2860)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral band of Gleason grade 4 carcinoma showing fused, poorly formed glands with irregular slit-like lumina embedded in dense eosinophilic fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous outer rim of tumor along the capsule-facing edge of the tissue disc, excluding the more central acinar areas."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the region where glands are more confluent and angulated with less distinct luminal spaces than the relatively more rounded central glands."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_B_4_3": {
+    "regions": {
+      "ZT111_4_B_4_3_(2248, 312, 3081, 1929)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the inferior peripheral cluster of fused, poorly formed glands with irregular narrow lumina and minimal intervening stroma, lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular focus along the inferior-left edge of the circular core, abutting the external blank background."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area where glands are more confluent and irregular compared with the relatively better-formed, more separated glands centrally."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_B_4_3_(5, 6, 2987, 3041)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral band of well-formed, round to oval microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking gland fusion."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous rim of tumor glands along the outer circumference of the tissue core, sparing the more central stromal-rich area."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_B_4_7": {
+    "regions": {
+      "ZT111_4_B_4_7_(119, 1, 3099, 2970)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral band of fused, crowded malignant glands with reduced, irregular lumina and minimal intervening stroma surrounding the central corpora amylacea structure."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous crescent of tumor epithelium encircling the large central eosinophilic oval luminal concretion along the outer tissue edge."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant circumferential tumor component forming nearly the entire epithelial rim of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_B_5_14": {
+    "regions": {
+      "ZT111_4_B_5_14_(1558, 42, 2029, 423)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of well-formed round microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the peripheral glandular cluster located along the inferior-left edge of the circular tissue core."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more discrete, regularly spaced acini contrasting with the surrounding more irregular, distorted glands."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_B_5_14_(23, 95, 3099, 3099)_region4": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the dominant central area of solid, poorly differentiated carcinoma composed of sheets and cords of cells with virtually absent true glandular lumina."
+          ],
+          "Spatial Reasoning": [
+            "Select the expansive tumor occupying the central and superior portion of the core, excluding the more peripheral zones with larger open lumina."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the largest, most diffuse region representing the bulk of tumor rather than the smaller peripheral foci."
+          ],
+          "Ambiguity Reasoning": [
+            "Identify the area where tumor cells grow mainly as solid nests and cords, lacking the more conspicuous rounded lumina seen in adjacent regions."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      },
+      "ZT111_4_B_5_14_(835, 1989, 2182, 2952)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the elongated area of fused, irregular glands with poorly formed, slit-like lumina and crowded atypical epithelium lacking discrete round benign-appearing acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the vertically oriented glandular strip along the right peripheral edge of the tissue core, extending from mid-height toward the inferior margin."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the region where glands are more confluent and irregular compared with the more rounded, microacinar glands in the central portions of the core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_B_5_14_(859, 489, 1728, 1176)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of well-formed round glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the relatively compact glandular cluster located in the upper-left central portion of the tissue core."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area showing more discrete, regularly spaced microacinar glands compared with the surrounding more irregular, distorted glandular structures."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_B_5_5": {
+    "regions": {
+      "ZT111_4_B_5_5_(18, 12, 3099, 3023)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative carcinoma composed of crowded, fused and poorly formed glands with irregular narrow lumina embedded in desmoplastic fibromuscular stroma."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_B_6_10": {
+    "regions": {
+      "ZT111_4_B_6_10_(95, 136, 3075, 2417)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the dominant central sheet of tumor composed of densely packed malignant cells with absent true glandular lumina, forming solid, poorly differentiated growth without recognizable acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad central and left-sided solid tumor area, sparing the peripheral rim of more gland-forming epithelium at the outer edge."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the largest continuous expanse of solid carcinoma that occupies most of the tissue core."
+          ],
+          "Ambiguity Reasoning": [
+            "Identify the region where tumor cells grow in solid sheets lacking lumina, contrasting with adjacent areas showing partially preserved glandular spaces."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT111_4_B_6_13": {
+    "regions": {
+      "ZT111_4_B_6_13_(165, 124, 3099, 3017)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad peripheral band of crowded microacinar glands encircling the lower and right outer edge of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_B_6_13_(24, 112, 1899, 2035)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative band of fused, poorly formed glands with irregular slit-like lumina embedded in dense fibromuscular stroma, lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad arcuate epithelial-stromal band spanning the superior and superolateral aspect of the tissue disc."
+          ],
+          "Hierarchical Reasoning": [
+            "Identify the dominant, most extensive area of fused grade 4 glands forming a continuous curving tract across the upper tumor."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_B_6_5": {
+    "regions": {
+      "ZT111_4_B_6_5_(260, 6, 3095, 1515)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval malignant glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact group of microacinar glands located in the inferior-left portion of the tissue, away from the pale necrotic-appearing gland on the right."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more regularly spaced, discrete glands rather than the surrounding more fibrotic stroma with scattered, less organized epithelial elements."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_B_6_5_(295, 1611, 1250, 2805)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of well-formed microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid growth."
+          ],
+          "Spatial Reasoning": [
+            "Select the small acinar cluster located in the superior-right peripheral portion of the tissue, just above the large pale eosinophilic nodule."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_B_7_14": {
+    "regions": {
+      "ZT111_4_B_7_14_(101, 7, 3099, 2937)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking confluent fusion or solid sheets."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_B_8_11": {
+    "regions": {
+      "ZT111_4_B_8_11_(94, 7, 2742, 2868)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, round to oval prostatic glands with open lumina and intervening fibromuscular stroma, lacking confluent fusion or solid sheets."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_B_8_1": {
+    "regions": {
+      "ZT111_4_B_8_1_(1087, 2207, 2162, 2943)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral right-sided area where small, poorly formed infiltrative glands with narrow irregular lumina are embedded within densely eosinophilic fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact wedge-shaped focus along the right outer edge of the tissue disc, tapering inferiorly toward the torn margin."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_B_8_1_(1181, 13, 2281, 2750)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central band of poorly differentiated carcinoma showing scattered single cells and small cords infiltrating fibromuscular stroma without recognizable glandular lumina."
+          ],
+          "Spatial Reasoning": [
+            "Select the elongated midline zone running horizontally across the core, between more collagenized fibromuscular tissue above and below."
+          ],
+          "Hierarchical Reasoning": [
+            "Identify the dominant continuous area of most densely packed malignant cells within the core."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      },
+      "ZT111_4_B_8_1_(1837, 163, 3099, 2375)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact inferior band of tumor showing predominantly solid single cells and small cords infiltrating between dense fibromuscular stroma without recognizable glandular lumina."
+          ],
+          "Spatial Reasoning": [
+            "Select the elongated wedge-shaped tumor focus along the inferior edge of the core, paralleling the capsule-like outer contour."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_C_1_14": {
+    "regions": {
+      "ZT111_4_C_1_14_(823, 228, 1549, 2144)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact area of poorly differentiated carcinoma composed of solid nests and cords of cells with virtually absent luminal spaces within desmoplastic stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the elongated band of tumor running horizontally across the upper central portion of the tissue core, just above the more fibrous stroma."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the region where tumor cells form solid cords lacking round glandular lumina, contrasting with adjacent areas showing more open gland-like spaces."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT111_4_C_1_6": {
+    "regions": {
+      "ZT111_4_C_1_6_(16, 131, 3064, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing closely packed but discrete, well-formed microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking solid or cribriform areas."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_1_8": {
+    "regions": {
+      "ZT111_4_C_1_8_(1775, 1126, 2985, 2015)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative cluster of poorly formed, angulated glands with reduced, slit-like lumina embedded within dense fibromuscular stroma lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the elongated focus along the inferior-right peripheral edge where tumor glands track parallel to the surrounding stromal bundles."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_C_1_8_(240, 1556, 1615, 2975)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking gland fusion or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the moderately compact glandular focus located in the upper-right portion of the tissue core, bordering dense eosinophilic stromal bundles."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_C_1_8_(306, 91, 2734, 1570)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina separated by fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact band-like area along the inferior-left peripheral edge of the core, extending obliquely toward the central upper-left region."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_C_1_8_(420, 821, 910, 1175)_region4": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of fused, poorly formed glands with irregular narrow lumina embedded in desmoplastic stroma, lacking well-separated round benign-appearing acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the small irregular gland cluster located in the superior-left portion of the tissue core, just internal to the outer stromal rim."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area where glands are more confluent and angulated compared with the slightly larger, more open acini in the adjacent tumor regions."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_C_2_12": {
+    "regions": {
+      "ZT111_4_C_2_12_(1180, 1046, 2420, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the elongated cluster of well-formed, round to oval microacinar glands with open lumina embedded within fibromuscular stroma, lacking gland fusion."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact band of glands running obliquely along the right peripheral edge of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_C_2_12_(145, 161, 1405, 2885)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the superior band of fused, irregular glands with poorly formed, angulated lumina and minimal intervening stroma, showing a confluent Gleason pattern 4 architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad, continuous epithelial band along the upper edge of the tissue, lying above the central fibromuscular stromal bundle."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant, most extensive focus of fused carcinoma glands occupying the main superior portion of the core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_2_2": {
+    "regions": {
+      "ZT111_4_C_2_2_(26, 181, 3079, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core showing diffusely infiltrative Gleason grade 4 carcinoma with fused, irregular glands separated by fibromuscular stroma and reduced, angulated lumina."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tissue disc, excluding the surrounding blank slide background."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_C_2_7": {
+    "regions": {
+      "ZT111_4_C_2_7_(11, 23, 3099, 3083)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the circumscribed nodule of well-formed, round to oval microacinar glands with open lumina, separated by pink fibromuscular stroma and lacking gland fusion or solid sheets."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_3_13": {
+    "regions": {
+      "ZT111_4_C_3_13_(23, 139, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular core containing well-formed, separate microacinar glands with open lumina infiltrating fibromuscular stroma, lacking fused or solid tumor areas."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_3_1": {
+    "regions": {
+      "ZT111_4_C_3_1_(150, 173, 3099, 3088)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, round to oval microacinar glands with open lumina separated by fibromuscular stroma, lacking gland fusion or solid growth."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_4_12": {
+    "regions": {
+      "ZT111_4_C_4_12_(6, 153, 3093, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core composed of well-formed, separate prostatic glands with open lumina and intervening fibromuscular stroma, lacking fused or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the complete round tissue section centrally located within the image, bounded peripherally by a clear pale background."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_4_1": {
+    "regions": {
+      "ZT111_4_C_4_1_(18, 36, 3051, 2794)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, round to oval microacinar glands with open lumina infiltrating fibromuscular stroma, maintaining discrete, non-fused glandular architecture consistent with Gleason grade three."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_4_3": {
+    "regions": {
+      "ZT111_4_C_4_3_(53, 136, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing predominantly well-formed, discrete microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking fused or cribriform architecture."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tissue disc occupying nearly all of the field, excluding the surrounding blank background."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_4_6": {
+    "regions": {
+      "ZT111_4_C_4_6_(1036, 153, 2840, 1252)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral cluster of fused, irregularly contoured glands with poorly formed, slit-like lumina and minimal intervening stroma, lacking solid sheet-like areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular focus along the inferior-left edge of the tissue core, abutting the outer rounded contour."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more crowded, confluent glands that appear less well-formed and more compact than the relatively rounder, better-separated glands centrally."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_C_4_6_(759, 553, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the contiguous cluster of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad band of crowded acini occupying the inferior and right peripheral portion of the tissue disc, deep to the fibrous stromal cap."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_C_4_9": {
+    "regions": {
+      "ZT111_4_C_4_9_(6, 171, 3099, 3088)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the dominant area of fused, irregularly contoured glands with complex, cribriform-like and back-to-back architecture, showing reduced, slit-like lumina and minimal intervening stroma."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the main central tumor region occupying nearly the entire tissue core, excluding only the thin peripheral rim of non-neoplastic tissue or blank background."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_C_5_11": {
+    "regions": {
+      "ZT111_4_C_5_11_(2676, 2112, 2952, 2364)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small cluster of well-formed, round microacinar glands with open lumina and relatively uniform nuclei embedded within fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the discrete acinar cluster along the inferior outer edge of the tissue, adjacent to the large luminal space containing pale eosinophilic debris."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_C_5_11_(459, 189, 2999, 2805)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina infiltrating fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the peripheral band of microacinar glands along the left and upper outer edge of the tissue disc, adjacent to dense pink stromal bundles."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_5_4": {
+    "regions": {
+      "ZT111_4_C_5_4_(148, 142, 3057, 2952)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, discrete prostatic glands with open round to oval lumina separated by intervening fibromuscular stroma, lacking confluent fused or solid growth."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_6_11": {
+    "regions": {
+      "ZT111_4_C_6_11_(77, 12, 3099, 2994)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the expansile area of fused, back-to-back malignant glands with irregular, poorly formed lumina and minimal intervening fibromuscular stroma across the tissue core."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant confluent carcinoma pattern occupying nearly the entire tissue disc, excluding only peripheral blank background."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_C_6_13": {
+    "regions": {
+      "ZT111_4_C_6_13_(1335, 2183, 2647, 3047)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of fused, irregular glands with poorly formed, slit-like lumina and minimal intervening stroma, lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the inferior-right peripheral tumor focus bordering the pale acellular space and adjacent loose stroma."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more crowded, fused glands here, distinguishing them from the better-formed, rounder glands in the remaining tissue."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_C_6_13_(41, 24, 2729, 2570)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina separated by thin fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad peripheral band of crowded but discrete glands encircling the central pale stromal and luminal space of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_C_6_2": {
+    "regions": {
+      "ZT111_4_C_6_2_(217, 453, 3041, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid growth."
+          ],
+          "Spatial Reasoning": [
+            "Select the peripheral band of glands along the outer left and right edges of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT111_4_C_6_2_(247, 1101, 2247, 2799)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the elongated glands with cribriform and fused architecture, containing irregular slit-like lumina and crowded epithelial cells with minimal intervening stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad, vertically oriented glandular tract running from the superior-right toward the central portion of the tissue disc."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_6_6": {
+    "regions": {
+      "ZT111_4_C_6_6_(42, 448, 3057, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the irregular, fused glands with complex, angulated lumina and minimal intervening stroma, lacking well-formed round benign-appearing acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad peripheral band of atypical glands occupying the upper and right outer portion of the circular tissue core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_C_7_10": {
+    "regions": {
+      "ZT111_4_C_7_10_(48, 42, 3087, 2911)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the circumscribed nodule of well-formed, round to oval microacinar glands with open lumina separated by thin fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_7_13": {
+    "regions": {
+      "ZT111_4_C_7_13_(0, 89, 3088, 3082)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative carcinoma composed of crowded, irregular, and partially fused glands with reduced, angulated lumina embedded within dense fibromuscular stroma."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_C_7_1": {
+    "regions": {
+      "ZT111_4_C_7_1_(118, 1, 3093, 2923)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire tissue core showing predominantly fused, poorly formed glands with irregular slit-like lumina embedded in desmoplastic fibromuscular stroma, lacking solid sheets."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_C_7_4": {
+    "regions": {
+      "ZT111_4_C_7_4_(305, 595, 2935, 3058)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral band of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous epithelial rim along the outer right and inferior circumference of the tissue core, bordering the large central stromal and luminal spaces."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_7_8": {
+    "regions": {
+      "ZT111_4_C_7_8_(95, 18, 3099, 2994)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire prostatic tissue core containing well-formed, round to oval microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking fused or solid growth."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT111_4_C_8_12": {
+    "regions": {
+      "ZT111_4_C_8_12_(1364, 900, 2500, 2294)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central-lower cluster of crowded, irregular, partially fused glands with reduced, angulated lumina and scant intervening stroma, lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular focus in the central-lower portion, abutting the fibromuscular stroma and away from the peripheral rounded epithelial nests."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more confluent, fused acinar area rather than the adjacent better-separated benign-appearing glands with rounder, more open lumina."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT111_4_C_8_12_(1923, 483, 3099, 2470)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the inferior compact tumor area composed of solid nests and cords of markedly atypical cells with virtually absent true glandular lumina."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad continuous tumor band occupying the lower margin of the tissue section, directly beneath more fibrotic and gland-forming areas."
+          ],
+          "Hierarchical Reasoning": [
+            "Identify the dominant, most extensive poorly differentiated tumor component forming the main bulk of carcinoma in this field."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_C_8_13": {
+    "regions": {
+      "ZT111_4_C_8_13_(6, 30, 3099, 3064)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the expansile carcinoma composed of crowded, irregular, and partially fused glands with reduced, angulated lumina infiltrating around the broad central fibromuscular band."
+          ],
+          "Spatial Reasoning": [
+            "Select all tumor glands distributed both above and below the thick horizontal fibromuscular band within the circular tissue core, excluding surrounding blank background."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant neoplastic component occupying nearly the entire tissue core, sparing only the central fibromuscular band and peripheral stromal rim."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT111_4_C_8_1": {
+    "regions": {
+      "ZT111_4_C_8_1_(112, 30, 3075, 3017)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular core of well-formed, discrete microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking fused or cribriform architecture."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_1_3": {
+    "regions": {
+      "ZT199_1_A_1_3_(10, 10, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the benign fibromuscular stroma with interspersed benign prostatic acini showing round, uniform nuclei and well-formed lumina lacking infiltrative malignant architecture."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_A_1_5": {
+    "regions": {
+      "ZT199_1_A_1_5_(111, 27, 3093, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circumscribed tissue core composed of predominantly well-formed, separate microacinar glands with open lumina embedded in fibromuscular stroma."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_1_6": {
+    "regions": {
+      "ZT199_1_A_1_6_(56, 181, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the benign prostatic glands and intervening fibromuscular stroma showing relatively uniform nuclei, preserved glandular architecture, and absence of infiltrative malignant-appearing small acini."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_A_2_13": {
+    "regions": {
+      "ZT199_1_A_2_13_(10, 10, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the benign fibromuscular stroma with scattered small benign glands showing smooth rounded contours, uniform nuclei, and preserved luminal spaces without infiltrative or fused architecture."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_A_2_1": {
+    "regions": {
+      "ZT199_1_A_2_1_(10, 10, 3032, 3061)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular benign prostate tissue core showing well-formed, variably sized glands with open lumina separated by fibromuscular stroma, excluding the surrounding blank slide background."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous round tissue disc occupying the central field, bounded peripherally by a sharp interface with the pale background."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_A_2_3": {
+    "regions": {
+      "ZT199_1_A_2_3_(10, 10, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire benign prostatic tissue core showing well-formed, regularly spaced glands with intact luminal architecture and intervening fibromuscular stroma, excluding the surrounding blank background."
+          ],
+          "Spatial Reasoning": [
+            "Select the circular tissue section occupying the central field, bounded by a sharp outer edge against the pale, empty slide background."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_A_2_7": {
+    "regions": {
+      "ZT199_1_A_2_7_(132, 1, 3067, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central nodular area of closely packed, well-formed microacinar glands with open lumina, separated by thin fibromuscular stroma, lacking solid or cribriform growth."
+          ],
+          "Spatial Reasoning": [
+            "Select the large oval tissue core occupying the central field, excluding the surrounding blank background and peripheral torn edges."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant contiguous glandular proliferation forming nearly the entire tissue core rather than any small peripheral fragments."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_3_12": {
+    "regions": {
+      "ZT199_1_A_3_12_(11, 69, 3077, 3063)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the round tissue core containing closely packed but discrete, well-formed microacinar glands with open lumina separated by thin fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the entire circular tissue profile centrally located within the image, bounded peripherally by a sharp interface with the surrounding blank background."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_3_2": {
+    "regions": {
+      "ZT199_1_A_3_2_(18, 124, 3099, 3099)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the benign peripheral prostate tissue rim composed of well-formed, round glands with intact luminal spaces and intervening fibromuscular stroma, lacking fused or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous outer circumferential band of glandular tissue encircling the central fibromuscular and glandular structures."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT199_1_A_3_2_(2525, 2314, 2673, 2471)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small benign prostatic gland cluster with round open lumen and orderly double-layered epithelium surrounded by delicate fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular cluster located near the inferior-right peripheral edge of the tissue disc, separated from larger central glands by intervening stroma."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_A_3_5": {
+    "regions": {
+      "ZT199_1_A_3_5_(10, 10, 3099, 3009)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the benign prostatic tissue composed of crowded but orderly glands with relatively uniform nuclei and preserved luminal spaces separated by fibromuscular stroma, lacking fused or solid malignant areas."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT199_1_A_3_5_(10, 2100, 1724, 3099)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the elongated peripheral benign fibromuscular stroma band with sparse spindle cells and minimal glandular epithelium along its inner border."
+          ],
+          "Spatial Reasoning": [
+            "Select the superior-right crescent-shaped tissue strip abutting the blank background and curving along the outer edge of the section."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT199_1_A_3_5_(1350, 407, 1550, 614)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact benign prostatic acinus showing a round lumen, orderly epithelial lining, and intact surrounding fibromuscular stroma without infiltrative edges."
+          ],
+          "Spatial Reasoning": [
+            "Select the small, well-circumscribed round gland located toward the inferior-left peripheral area of the tissue section."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_A_3_9": {
+    "regions": {
+      "ZT199_1_A_3_9_(99, 26, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral benign urothelial-lined tissue showing orderly, crowded nuclei overlying dense fibromuscular stroma without infiltrative atypical glands or solid tumor nests."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous epithelial and fibromuscular rim along the outer circumference of the circular tissue core, sparing the central stromal area."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_A_4_12": {
+    "regions": {
+      "ZT199_1_A_4_12_(401, 22, 3093, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the circumscribed nodule of closely packed, well-formed microacinar glands with open lumina and intervening fibromuscular stroma, lacking solid or cribriform areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the entire central tissue disc bounded by pale periprostatic fat and blank background along the outer circumference of the image."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_4_1": {
+    "regions": {
+      "ZT199_1_A_4_1_(127, 85, 3077, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing numerous well-formed, separate prostatic glands with open lumina embedded in fibromuscular stroma, lacking fused or solid tumor areas."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT199_1_A_4_1_(373, 958, 1521, 2342)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central area showing poorly formed, small, angulated glands and epithelial nests embedded in abundant fibromuscular stroma with reduced luminal spaces."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad irregular zone occupying the upper central portion of the tissue disc, between more well-formed peripheral glands."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the region where glands are less differentiated and more fragmented compared with the surrounding larger, rounder, well-formed glands."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_4_2": {
+    "regions": {
+      "ZT199_1_A_4_2_(10, 10, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the benign prostatic tissue showing well-formed round glands with intact basal cell layers separated by abundant fibromuscular stroma, lacking fused or solid malignant architecture."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_A_4_4": {
+    "regions": {
+      "ZT199_1_A_4_4_(0, 195, 2984, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the contiguous area of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking fused or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad peripheral band of glands following the outer curved edge of the tissue core, sparing the more central crowded glands."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more discretely separated, better-formed acini rather than the centrally located glands that appear more compact and closely apposed."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_4_8": {
+    "regions": {
+      "ZT199_1_A_4_8_(47, 132, 3005, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the broad peripheral band of well-formed, separate microacinar glands with open lumina and intervening fibromuscular stroma, lacking fused or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous circumferential rim of tumor glands encircling the tissue core and abutting the outer stromal edge."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_5_11": {
+    "regions": {
+      "ZT199_1_A_5_11_(1637, 90, 2835, 835)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of fused, poorly formed glands with irregular narrow lumina embedded in dense fibromuscular stroma, lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the inferior-left peripheral tumor focus abutting the tissue edge, distinct from more scattered malignant glands centrally and superiorly."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT199_1_A_5_11_(1648, 2348, 1857, 2452)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small cluster of fused, poorly formed glands with narrow irregular lumina embedded within densely collagenized fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular cluster located in the inferior-right quadrant, just medial to the outer stromal rim of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT199_1_A_5_11_(27, 1, 3067, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing scattered, well-formed microacinar glands with open lumina embedded within densely fibromuscular, collagenous stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the complete central tissue disc bounded by a smooth outer edge, excluding any peripheral blank background outside the core."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT199_1_A_5_14": {
+    "regions": {
+      "ZT199_1_A_5_14_(136, 432, 3078, 3078)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, discrete prostatic glands with open lumina and intervening fibromuscular stroma, lacking fused, cribriform, or solid growth patterns."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_5_1": {
+    "regions": {
+      "ZT199_1_A_5_1_(112, 1547, 207, 1655)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small benign prostatic gland cluster at the superior central edge, with smooth rounded lumina and orderly basal and luminal cell layers."
+          ],
+          "Spatial Reasoning": [
+            "Located at the extreme superior central margin of the tissue section, slightly left of center, separated from deeper fibromuscular stroma."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT199_1_A_5_1_(188, 57, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral benign prostatic glands showing round to oval open lumina with orderly, uniform epithelial lining separated by abundant fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous rim of benign glands and intervening stroma encircling the outer edge of the circular tissue core."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_A_5_7": {
+    "regions": {
+      "ZT199_1_A_5_7_(12, 573, 2566, 2944)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the central-right prostatic glands situated between dense peripheral fibromuscular stroma and larger, more dilated benign-appearing glands at the outer edge."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more crowded, microacinar malignant glands rather than the larger, smoothly contoured benign glands with wider lumina near the capsule."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_6_14": {
+    "regions": {
+      "ZT199_1_A_6_14_(112, 84, 3099, 3088)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the circumscribed nodule of closely packed, well-formed microacinar glands with open lumina and intervening fibromuscular stroma, lacking fused or cribriform architecture."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_6_1": {
+    "regions": {
+      "ZT199_1_A_6_1_(10, 62, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the benign prostatic tissue ring composed of smooth fibromuscular stroma surrounding large and smaller benign glands with orderly, uniform epithelial lining and open lumina."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous circular tissue profile occupying nearly the entire field, excluding the surrounding blank background."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_A_6_3": {
+    "regions": {
+      "ZT199_1_A_6_3_(17, 51, 3071, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular core containing closely packed but discrete, well-formed microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking fused or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the complete round tissue core bounded by a sharp peripheral edge, excluding the small detached stromal fragment at the superior margin."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant central tissue area that occupies nearly all tissue within the core, representing the main neoplastic focus."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_7_2": {
+    "regions": {
+      "ZT199_1_A_7_2_(1, 23, 3099, 3072)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire nodular area of closely packed, well-formed microacinar glands with open lumina and intervening fibromuscular stroma, lacking fused or cribriform architecture."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT199_1_A_7_2_(233, 323, 2527, 2038)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central cluster of crowded, irregular, partially fused glands with reduced, angulated lumina and minimal intervening stroma, lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Focus on the broad, vertically oriented glandular cluster occupying the central-left portion of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_7_5": {
+    "regions": {
+      "ZT199_1_A_7_5_(433, 84, 2833, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina separated by thin fibromuscular stroma, lacking gland fusion or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the relatively compact band of glands running obliquely across the central portion of the tissue disc, between more papillary-appearing glands inferiorly and looser stroma superiorly."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_7_6": {
+    "regions": {
+      "ZT199_1_A_7_6_(50, 28, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core composed of scattered small, well-formed prostatic glands with open lumina infiltrating abundant fibromuscular stroma."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tissue core occupying nearly all visible tissue within the image field."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT199_1_A_7_6_(761, 456, 3072, 2511)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central area of poorly formed, angulated glands and small epithelial clusters infiltrating dense fibromuscular stroma with reduced, irregular lumina."
+          ],
+          "Spatial Reasoning": [
+            "Select the elongated central-lower region spanning from midline toward the inferior-right edge, surrounded by relatively less crowded stromal tissue."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_A_8_4": {
+    "regions": {
+      "ZT199_1_A_8_4_(158, 11, 3088, 2942)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the dominant area of closely packed, elongated and fused glands with irregular, slit-like lumina and minimal intervening stroma, consistent with Gleason grade 4 architecture."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the confluent glandular proliferation occupying nearly the entire tissue core, excluding only peripheral blank background and non-tissue space."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT199_1_A_8_6": {
+    "regions": {
+      "ZT199_1_A_8_6_(326, 6, 3068, 2684)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central and inferior area of fused, poorly formed glands with irregular narrow lumina embedded in dense fibromuscular stroma, lacking well-formed round benign acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad central-to-inferior band of tumor between the relatively looser stroma superiorly and the tissue edge inferiorly."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant confluent tumor region forming the main bulk of atypical glands in this core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT199_1_A_8_6_(94, 1737, 1247, 3089)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small, well-formed, round to oval microacinar glands with open lumina embedded in relatively loose fibromuscular stroma, lacking gland fusion."
+          ],
+          "Spatial Reasoning": [
+            "Select the discrete microacinar gland cluster located in the superior-right peripheral portion of the tissue section."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT199_1_B_1_11": {
+    "regions": {
+      "ZT199_1_B_1_11_(101, 27, 3088, 3036)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing closely packed, well-formed microacinar glands with open lumina and intervening fibromuscular stroma, consistent with Gleason grade three architecture."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tissue disc, excluding the surrounding blank slide background."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_B_1_4": {
+    "regions": {
+      "ZT199_1_B_1_4_(10, 10, 3099, 3028)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the benign prostatic tissue ring composed of orderly round glands with intact luminal spaces surrounding a central fibromuscular stromal core."
+          ],
+          "Spatial Reasoning": [
+            "Select the circumferential peripheral epithelial band encasing the centrally located dense pink fibromuscular stroma."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_B_2_3": {
+    "regions": {
+      "ZT199_1_B_2_3_(122, 48, 3083, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_B_2_6": {
+    "regions": {
+      "ZT199_1_B_2_6_(10, 10, 3086, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire benign prostatic tissue core showing well-organized glands with intact basal layers embedded in dense fibromuscular stroma, excluding surrounding blank background."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous central tissue island occupying nearly the full field, bounded on all sides by clear white background."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_B_3_1": {
+    "regions": {
+      "ZT199_1_B_3_1_(128, 10, 3099, 3018)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular benign prostate tissue core, containing well-formed round glands with intact basal cell layers separated by fibromuscular stroma, excluding surrounding blank slide background."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous circular tissue profile centrally located within the image, bounded peripherally by uniform white background."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_B_3_2": {
+    "regions": {
+      "ZT199_1_B_3_2_(106, 48, 3067, 2984)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core showing predominantly fused, poorly formed glands and irregular slit-like lumina within fibromuscular stroma, consistent with Gleason pattern four carcinoma."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tissue disc occupying nearly the full field, excluding the surrounding blank slide background."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT199_1_B_3_3": {
+    "regions": {
+      "ZT199_1_B_3_3_(10, 10, 3099, 3030)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire benign tissue core showing fibromuscular stroma with scattered benign glands and ducts, lacking infiltrative carcinoma or fused malignant glands."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_B_3_6": {
+    "regions": {
+      "ZT199_1_B_3_6_(164, 6, 3093, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative carcinoma composed of crowded, fused glands and cribriform epithelial nests with reduced, irregular lumina within desmoplastic stroma."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT199_1_B_3_7": {
+    "regions": {
+      "ZT199_1_B_3_7_(195, 27, 3083, 3073)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circumscribed tissue core showing predominantly fused, irregular, poorly formed glands with reduced lumina in desmoplastic stroma, consistent with Gleason grade 4 carcinoma."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tumor area occupying nearly all tissue within the circular core, excluding only peripheral blank background."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT199_1_B_3_8": {
+    "regions": {
+      "ZT199_1_B_3_8_(10, 68, 3099, 3099)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the broad central fibromuscular stromal area with elongated eosinophilic smooth muscle bundles and sparse benign scattered nuclei, lacking discrete prostatic glands."
+          ],
+          "Spatial Reasoning": [
+            "Select the dominant stromal core occupying the mid-portion of the tissue disc, situated between peripheral glandular epithelial rims."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT199_1_B_3_8_(1007, 125, 1120, 223)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small benign prostatic gland cluster with round open lumina and orderly double-layered epithelium embedded within dense fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular focus located near the superior-left edge of the tissue, adjacent to the surrounding fibromuscular stroma."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_B_4_10": {
+    "regions": {
+      "ZT199_1_B_4_10_(69, 16, 3088, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the circumscribed nodule of closely packed, well-formed microacinar glands with open lumina and intervening fibromuscular stroma, lacking fused or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the central round tissue core bounded by pale retraction artifact and peripheral stromal tissue at the outer edge of the field."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_B_4_12": {
+    "regions": {
+      "ZT199_1_B_4_12_(315, 237, 2994, 2810)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative Gleason grade 4 carcinoma with fused, irregular glands showing reduced, angulated lumina embedded within dense fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad peripheral band of tumor along the left and inferior margins, sparing the more compact glandular cluster on the right side."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant, most extensive carcinoma component forming the largest continuous area of fused glands in the section."
+          ],
+          "Ambiguity Reasoning": [
+            "Identify the region where glands are more confluent and irregular, with less well-formed lumina than the adjacent smaller, rounder acini."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT199_1_B_4_12_(615, 2069, 2052, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina separated by thin fibromuscular stroma and lacking gland fusion."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular cluster along the right peripheral edge of the tissue, abutting dense pink fibromuscular stroma."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT199_1_B_4_1": {
+    "regions": {
+      "ZT199_1_B_4_1_(10, 10, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral benign prostatic glands showing round, well-formed lumina with uniform cuboidal epithelium and intact intervening fibromuscular stroma, lacking fused or solid growth."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous rim of glands along the outer edge of the tissue profile, surrounding the central fibromuscular stromal core."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT199_1_B_4_1_(10, 1023, 208, 1247)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small benign acinar cluster with round open lumina and uniform cuboidal epithelium, separated by delicate fibromuscular stroma without gland fusion."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact acinar group located at the superior central edge of the tissue, just above the broad fibromuscular stromal band."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_B_4_3": {
+    "regions": {
+      "ZT199_1_B_4_3_(10, 10, 3099, 2962)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the continuous benign fibromuscular stromal tissue with elongated bland spindle cells and scattered benign-appearing epithelial cells lining irregular luminal spaces."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_B_4_6": {
+    "regions": {
+      "ZT199_1_B_4_6_(11, 6, 3088, 2921)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative carcinoma glands showing fused, irregular, and angulated lumina embedded within dense fibromuscular stroma, lacking well-formed round benign acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the atypical fused glands distributed throughout the central tissue core between broad pink stromal bands, sparing the peripheral blank background."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant carcinoma component forming the bulk of epithelial tissue within the core, excluding smaller scattered benign-appearing glands."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT199_1_B_4_8": {
+    "regions": {
+      "ZT199_1_B_4_8_(10, 10, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral benign urothelial-type epithelium lining the left concave edge, with orderly nuclei overlying a fibromuscular stromal band."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous epithelial strip along the superior-left curved margin, bordering the large central fibromuscular stroma and adjacent to the blank lumen."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_B_5_12": {
+    "regions": {
+      "ZT199_1_B_5_12_(167, 73, 3087, 3027)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the expansile carcinoma composed of fused, irregular glands and cribriform-like epithelial nests with reduced, angulated lumina within desmoplastic fibromuscular stroma, lacking solid sheets."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tumor mass occupying nearly the entire tissue core, excluding only peripheral fibromuscular or artifactually separated areas."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT199_1_B_5_1": {
+    "regions": {
+      "ZT199_1_B_5_1_(101, 23, 3099, 3005)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circumscribed prostatic tissue core containing closely packed, well-formed microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking fused or solid growth."
+          ],
+          "Spatial Reasoning": [
+            "Select the complete circular tissue disc within the image, excluding the surrounding blank background outside the tissue edge."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_B_5_2": {
+    "regions": {
+      "ZT199_1_B_5_2_(10, 2622, 244, 2989)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small benign prostatic gland cluster at the superior-right edge, with smooth round lumina and a single uniform epithelial layer."
+          ],
+          "Spatial Reasoning": [
+            "Located at the extreme superior-right periphery, forming a narrow strip of glands projecting beyond the main circular tissue profile."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT199_1_B_5_2_(1832, 865, 2392, 1150)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small benign prostatic gland with smooth continuous basal cell layer and round open lumen, embedded within dense fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the narrow elongated gland located inferior-left within the tissue ring, abutting the inner stromal border between two larger open glands."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT199_1_B_5_2_(66, 40, 3089, 3099)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the benign prostatic stroma and fibromuscular tissue with scattered benign glands showing smooth luminal contours and uniform basal-to-luminal nuclear alignment."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_B_5_3": {
+    "regions": {
+      "ZT199_1_B_5_3_(45, 23, 3093, 3072)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative carcinoma composed of crowded, irregular, and focally fused glands with reduced, slit-like lumina within desmoplastic fibromuscular stroma, lacking solid sheets."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT199_1_B_5_9": {
+    "regions": {
+      "ZT199_1_B_5_9_(17, 34, 3021, 3050)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central nodular carcinoma composed of crowded, fused glands with irregular, reduced lumina and minimal intervening fibromuscular stroma, lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the dominant tumor nodule occupying the central field, bounded peripherally by more fibrotic, cellular stromal tissue toward the outer rim."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the largest, most confluent glandular tumor aggregate that constitutes the bulk of epithelial tissue within the core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT199_1_B_6_1": {
+    "regions": {
+      "ZT199_1_B_6_1_(23, 28, 3087, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing numerous well-formed, discrete microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking fused or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the complete round tissue section bounded by the outer tissue edge, excluding the surrounding blank slide background."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_B_7_10": {
+    "regions": {
+      "ZT199_1_B_7_10_(106, 39, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment all well-formed, discrete microacinar glands with open lumina infiltrating fibromuscular stroma, lacking confluent fusion, cribriform structures, or solid sheets."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_B_7_2": {
+    "regions": {
+      "ZT199_1_B_7_2_(206, 6, 3099, 3072)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire central nodule of well-formed, round to oval microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking fused or solid areas."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_B_8_3": {
+    "regions": {
+      "ZT199_1_B_8_3_(61, 162, 2971, 3083)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the circumferential band of well-formed, discrete microacinar glands with open lumina and intervening fibromuscular stroma surrounding the more central tissue."
+          ],
+          "Spatial Reasoning": [
+            "Select the peripheral rim of tumor glands along the outer edge of the circular core, sparing the more central stromal-rich area."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT199_1_B_8_6": {
+    "regions": {
+      "ZT199_1_B_8_6_(10, 10, 3099, 3099)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the benign prostatic glands showing smooth, round to oval lumina lined by a single orderly epithelial layer separated by abundant fibromuscular stroma."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT199_1_B_8_6_(10, 2719, 274, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the benign prostatic glands showing well-formed, round to irregular lumina with intact basal cell layers separated by abundant fibromuscular stroma."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT199_1_B_8_7": {
+    "regions": {
+      "ZT199_1_B_8_7_(23, 39, 3082, 3061)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circumscribed tissue core showing predominantly fused, poorly formed glands with irregular narrow lumina infiltrating between dense eosinophilic fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the complete round tissue disc occupying the central field, excluding the surrounding blank background."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT199_1_B_8_9": {
+    "regions": {
+      "ZT199_1_B_8_9_(10, 10, 3099, 3099)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the benign prostatic urethral/ductal epithelium forming tall, pseudostratified columnar lining with smooth luminal surface and intact basal layer, lacking infiltrative glands."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous epithelial lining running along the right and inferolateral tissue edge, bordering the large central pale stromal and acellular areas."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT199_1_B_8_9_(10, 1938, 1373, 2720)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the tall, benign prostatic gland with a single smooth lumen lined by orderly columnar epithelium overlying a continuous basal cell layer."
+          ],
+          "Spatial Reasoning": [
+            "Select the vertically oriented elongated gland located in the superior-right portion of the tissue section, separated from adjacent glands by pale stroma."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT204_6_A_1_11": {
+    "regions": {
+      "ZT204_6_A_1_11_(201, 351, 3037, 2950)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral band of fused, irregularly contoured glands with reduced, angulated lumina and scant intervening stroma surrounding the central fibrous tissue."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous circumferential rim of tumor glands encircling the central pale fibromuscular and edematous stromal core."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant outer ring of carcinoma representing the bulk of epithelial tissue in this tissue microarray core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT204_6_A_1_2": {
+    "regions": {
+      "ZT204_6_A_1_2_(89, 351, 3099, 2800)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire central tumor nodule composed of poorly formed, fused glands and cords with scant luminal spaces within fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the round tissue core occupying nearly the full field, excluding the surrounding blank slide background."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant continuous carcinoma focus that constitutes almost all tissue present in this core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT204_6_A_2_10": {
+    "regions": {
+      "ZT204_6_A_2_10_(89, 156, 3076, 3072)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire tissue core composed of solid sheets and nests of highly atypical cells lacking well-formed glandular lumina or stromal separation."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tumor mass occupying essentially the full circular core, excluding only the surrounding blank slide background."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_A_3_1": {
+    "regions": {
+      "ZT204_6_A_3_1_(156, 256, 3099, 2833)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the solid sheets and cords of markedly atypical tumor cells lacking recognizable glandular lumina, separated by delicate fibromuscular stroma."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tumor population occupying nearly the entire tissue core, excluding only peripheral stromal or artifactual areas."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_A_4_7": {
+    "regions": {
+      "ZT204_6_A_4_7_(167, 273, 3099, 2883)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core composed of poorly differentiated tumor with predominantly solid and cord-like growth lacking well-formed glandular lumina."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_A_5_6": {
+    "regions": {
+      "ZT204_6_A_5_6_(365, 230, 3081, 2905)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central tumor composed of crowded, fused glands with irregular, reduced lumina separated by thin fibromuscular septa, lacking solid sheets or cribriform spaces."
+          ],
+          "Spatial Reasoning": [
+            "Select the dominant confluent glandular proliferation occupying nearly the entire tissue core, sparing only the peripheral fibrous capsule-like rim."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the largest, most continuous neoplastic area forming the bulk of the core, excluding minor peripheral stromal or capsular tissue."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT204_6_A_6_2": {
+    "regions": {
+      "ZT204_6_A_6_2_(12, 312, 1417, 2829)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the poorly differentiated carcinoma showing solid and sheet-like tumor cells with virtually absent true glandular lumina and prominent intervening fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad, continuous band of tumor occupying the superior half of the tissue core, abutting the outer circular edge."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area where tumor cells lack recognizable gland formation, contrasting with the more gland-forming carcinoma in the inferior half."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      },
+      "ZT204_6_A_6_2_(1224, 377, 3099, 2829)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central band of fused, irregular glands with poorly formed, slit-like lumina and minimal intervening stroma, showing confluent Gleason pattern 4 architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad, horizontally oriented tumor band traversing the middle of the core, between more fibrotic stroma-rich tissue above and below."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_A_6_6": {
+    "regions": {
+      "ZT204_6_A_6_6_(107, 254, 3099, 2860)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core showing predominantly fused, poorly formed glands with irregular narrow lumina embedded within fibromuscular stroma."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tissue disc occupying essentially all stained tissue within the image field."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT204_6_A_6_8": {
+    "regions": {
+      "ZT204_6_A_6_8_(171, 189, 3093, 2864)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central tumor composed of solid sheets and cords of markedly atypical cells with virtually absent glandular lumina and prominent intervening fibrous stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the entire cellular tissue core occupying the circular central area, excluding the surrounding blank slide background."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant neoplastic component forming nearly the whole tissue core rather than any small peripheral stromal fragments."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_A_7_3": {
+    "regions": {
+      "ZT204_6_A_7_3_(105, 277, 2958, 2535)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the expansile tumor composed of solid sheets and cords of malignant cells with virtually absent true glandular lumina and dense eosinophilic stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the dominant central and inferior tumor occupying most of the tissue core, sparing only the thin peripheral fibrous rim and adjacent empty spaces."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the largest, most extensive area of solid poorly differentiated carcinoma forming the bulk of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_A_8_8": {
+    "regions": {
+      "ZT204_6_A_8_8_(148, 218, 2999, 2982)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the dominant expansile tumor composed of fused, poorly circumscribed glands with irregular lumina embedded in fibromuscular stroma, lacking solid sheets."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the large central region forming the bulk of tumor within the tissue core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT204_6_A_8_9": {
+    "regions": {
+      "ZT204_6_A_8_9_(265, 148, 3099, 2935)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the solid sheets of tumor cells lacking recognizable glandular lumina, with densely packed atypical nuclei and scant intervening stroma occupying the lower portion."
+          ],
+          "Spatial Reasoning": [
+            "Select the expansive, darkly cellular area in the inferior half of the core, sharply demarcated from the fibrous stroma superiorly."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant tumor component forming the bulk of the core, excluding the smaller fibrotic stromal region."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_B_1_8": {
+    "regions": {
+      "ZT204_6_B_1_8_(142, 406, 3063, 2829)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire central tissue core showing diffuse sheets and cords of malignant cells lacking well-formed glandular lumina, with scant intervening stroma."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant continuous tumor area occupying essentially the full tissue core, excluding only the surrounding blank slide background."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_B_3_1": {
+    "regions": {
+      "ZT204_6_B_3_1_(95, 195, 3099, 2929)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core showing predominantly fused, poorly formed glands with irregular narrow lumina embedded in fibromuscular stroma, consistent with Gleason grade 4 carcinoma."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tissue disc occupying nearly all stained area, excluding the surrounding blank slide background."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT204_6_B_3_7": {
+    "regions": {
+      "ZT204_6_B_3_7_(130, 153, 3075, 2905)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central round tissue core composed of solid sheets of tumor cells with absent true glandular lumina and scant intervening stroma."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant circular tissue core occupying nearly the entire field, excluding any peripheral torn fragments or blank background."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_B_4_8": {
+    "regions": {
+      "ZT204_6_B_4_8_(145, 301, 3099, 2861)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central tumor composed of solid sheets and cords of malignant cells with virtually absent glandular lumina and minimal intervening stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the diffuse neoplastic proliferation occupying almost the entire circular core, sparing only the thin peripheral rim of compressed tissue."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant, most extensive poorly differentiated component forming the bulk of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_B_4_9": {
+    "regions": {
+      "ZT204_6_B_4_9_(62, 184, 3087, 2955)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core composed of solid sheets and cords of tumor cells lacking well-formed glandular lumina, embedded in fibromyxoid stroma."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_B_5_3": {
+    "regions": {
+      "ZT204_6_B_5_3_(101, 228, 3043, 2972)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire tissue core showing predominantly solid sheets and cords of pleomorphic tumor cells with virtually absent glandular lumina and intervening fibromuscular stroma."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tumor area encompassing almost the whole circular core, excluding only the surrounding blank slide background."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_B_5_5": {
+    "regions": {
+      "ZT204_6_B_5_5_(134, 267, 3060, 2850)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire tissue core composed of solid sheets and nests of markedly atypical cells lacking well-formed glandular lumina or acinar structures."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_B_6_7": {
+    "regions": {
+      "ZT204_6_B_6_7_(51, 212, 3087, 2994)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the diffuse sheet-like tumor composed of tightly packed atypical cells with prominent nucleoli and virtually absent glandular lumina throughout the tissue core."
+          ],
+          "Spatial Reasoning": [
+            "Select the solid tumor population occupying almost the entire circular core, surrounding the central thick-walled vascular or stromal structure."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant, expansive neoplastic component forming the bulk of the core, excluding only the central vessel and minimal adjacent stroma."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_B_6_9": {
+    "regions": {
+      "ZT204_6_B_6_9_(6, 89, 3087, 2955)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core showing predominantly solid sheets and cords of malignant cells with virtually absent true glandular lumina throughout."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tumor population occupying nearly the full tissue core, excluding the surrounding blank slide background."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_B_7_1": {
+    "regions": {
+      "ZT204_6_B_7_1_(145, 201, 3060, 2822)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral sheet-like tumor composed of densely packed atypical cells with essentially absent true glandular lumina, forming solid and cord-like growth without intervening benign glands."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant circumferential tumor rim occupying nearly the entire outer portion of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_B_7_4": {
+    "regions": {
+      "ZT204_6_B_7_4_(1517, 345, 3099, 2211)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the inferior solid tumor area composed of densely packed atypical cells with almost no true glandular lumina, forming sheet-like and cord-like growth."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad solid carcinoma focus occupying the inferior half of the tissue core, abutting the outer capsule-like edge."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant, most extensive solid tumor component, more expansive than the smaller, slightly more structured carcinoma above."
+          ],
+          "Ambiguity Reasoning": [
+            "Identify the region where tumor cells grow in near-solid sheets with absent lumina, contrasting with the relatively more gland-forming carcinoma superiorly."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT204_6_B_7_8": {
+    "regions": {
+      "ZT204_6_B_7_8_(166, 189, 3099, 2583)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the expansile Gleason grade 4 carcinoma with predominantly fused, poorly formed glands and irregular slit-like lumina embedded within dense eosinophilic fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad inferior and left-sided band of tumor tracking along parallel fibromuscular stromal bundles toward the lower margin of the tissue core."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant continuous sheet of fused carcinoma forming the largest confluent region within the tissue core."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT204_6_B_7_8_(288, 1351, 2716, 3044)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the right-sided tumor area showing predominantly solid sheets and cords of malignant cells with virtually absent true glandular lumina and scant intervening stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad tumor region occupying the right half of the core, extending from central toward inferior and right peripheral edges."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area where tumor cells form solid nests and cords rather than the more gland-forming, fibromuscularly separated carcinoma on the left."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT76_39_A_1_13": {
+    "regions": {
+      "ZT76_39_A_1_13_(336, 95, 2122, 2189)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the central band of fused, poorly separated glands with irregular, reduced lumina and crowded epithelial cells lacking well-formed round acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad, horizontally oriented tract of crowded glands spanning the mid-to-superior portion of the core between more open, rounder glands."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area where glands appear more confluent and angulated compared with the surrounding better-formed, round, microacinar glands."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT76_39_A_1_13_(423, 118, 3099, 3070)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad peripheral band of glands along the superior and left outer edge of the circular tissue core."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT76_39_A_1_5": {
+    "regions": {
+      "ZT76_39_A_1_5_(181, 1741, 465, 1923)_region5": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact benign gland cluster with smooth rounded contours and relatively uniform nuclei embedded within dense fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the small superior-central glandular focus located near the tissue edge, separated from the larger inferior fibromuscular and glandular areas."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT76_39_A_1_5_(195, 248, 3059, 3026)_region4": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral fibromuscular stromal rim containing scattered benign-appearing glands and vessels, separating dense pink stroma from the surrounding blank background."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous outermost circular band of tissue along the entire edge of the core, excluding the central pale acellular region."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT76_39_A_1_5_(304, 1471, 526, 1599)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small benign-appearing prostatic gland cluster with round open lumina and orderly epithelial lining embedded within loose pale fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular focus located near the superior central edge of the tissue core, just beneath the overlying pale acellular area."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT76_39_A_1_5_(598, 1688, 697, 1789)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small benign prostatic gland cluster with well-formed round lumina and intact basal cell layer within loose fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular focus located in the superior central portion of the tissue disc, just below the overlying pale acellular zone."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the only discrete benign gland cluster in this area, contrasting with surrounding predominantly fibromuscular stroma lacking organized luminal structures."
+          ],
+          "diagnosis": "Benign"
+        }
+      },
+      "ZT76_39_A_1_5_(618, 1986, 995, 2275)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the loose, pale, edematous stromal area with scattered benign-appearing small vessels and minimal epithelial elements, lacking cohesive glandular or solid tumor formations."
+          ],
+          "Spatial Reasoning": [
+            "Select the central-superior stromal region immediately beneath the luminal surface, surrounded inferiorly by denser, more collagenized fibromuscular tissue."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT76_39_A_1_8": {
+    "regions": {
+      "ZT76_39_A_1_8_(126, 26, 3079, 2920)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing predominantly well-formed, discrete microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking fused or cribriform architecture."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_A_1_9": {
+    "regions": {
+      "ZT76_39_A_1_9_(172, 34, 3077, 2972)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the expansile, predominantly fused and cribriform malignant glands with irregular, variably sized lumina and minimal intervening stroma replacing nearly the entire tissue core."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant carcinoma component occupying almost the full circular core, excluding only peripheral artifact or pale acellular areas."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT76_39_A_2_11": {
+    "regions": {
+      "ZT76_39_A_2_11_(30, 53, 3075, 3023)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core showing predominantly fused, poorly formed glands with irregular slit-like lumina embedded in abundant fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select all epithelial tumor structures confined within the circular tissue disc, excluding the surrounding blank background outside the tissue edge."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant carcinoma component occupying nearly the full tissue core rather than any tiny peripheral tissue fragments."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT76_39_A_2_13": {
+    "regions": {
+      "ZT76_39_A_2_13_(1476, 1130, 2870, 2970)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to slightly angulated glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the epithelial glandular cluster along the inferior-right peripheral edge, adjacent to more fibrotic, less cellular stroma."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT76_39_A_2_13_(1794, 53, 3082, 2217)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the narrow band of well-formed, small round to oval malignant glands with open lumina infiltrating along the fibromuscular stromal edge."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous glandular strip running along the inferior outer margin of the circular tissue core."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT76_39_A_2_13_(64, 1000, 988, 2105)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the superior central round gland with a large open lumen and a central intraluminal epithelial cluster, lined by relatively uniform cuboidal cells."
+          ],
+          "Spatial Reasoning": [
+            "Select the single well-formed gland located near the superior edge of the tissue core, centrally positioned within surrounding fibromuscular stroma."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_A_2_2": {
+    "regions": {
+      "ZT76_39_A_2_2_(144, 37, 3099, 3014)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire benign prostatic tissue core showing well-formed round glands with intact basal cell layers separated by abundant fibromuscular stroma."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT76_39_A_2_3": {
+    "regions": {
+      "ZT76_39_A_2_3_(143, 10, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the benign peripheral nerve bundle with surrounding fibrous stroma at the inferior edge, showing elongated wavy nuclei and no glandular lumina."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact neural structure located along the inferior border, just beneath the fibromuscular stromal band."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT76_39_A_2_4": {
+    "regions": {
+      "ZT76_39_A_2_4_(25, 71, 3030, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the continuous peripheral rim of benign prostatic tissue composed of well-formed glands with open lumina separated by fibromuscular stroma from the blank background."
+          ],
+          "Spatial Reasoning": [
+            "Select the circumferential ring of tissue occupying the outer edge of the circular core, excluding the central acellular lumen-like spaces."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT76_39_A_2_5": {
+    "regions": {
+      "ZT76_39_A_2_5_(74, 145, 3024, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire benign prostatic tissue core showing well-formed, variably folded glands with open lumina separated by broad fibromuscular stroma."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT76_39_A_3_12": {
+    "regions": {
+      "ZT76_39_A_3_12_(176, 136, 3064, 2864)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the expansile area of fused, irregular glands with poorly formed, slit-like lumina embedded in dense fibromuscular stroma, lacking solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad, centrally located band of tumor extending from the superior-left toward the inferior-right within the circular tissue core."
+          ],
+          "Hierarchical Reasoning": [
+            "Isolate the dominant confluent grade 4 tumor component occupying most of the tissue core, excluding smaller peripheral benign-appearing glands."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT76_39_A_3_6": {
+    "regions": {
+      "ZT76_39_A_3_6_(673, 400, 2799, 3037)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire elongated benign fibromuscular stromal tissue island with scattered bland spindle cells and minimal glandular or epithelial elements, excluding surrounding blank background."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT76_39_A_4_12": {
+    "regions": {
+      "ZT76_39_A_4_12_(1048, 2036, 1487, 2623)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of well-formed round glands with open lumina and relatively uniform nuclei embedded within dense fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the small acinar cluster located in the right-central portion of the core, adjacent to a vertically oriented fibromuscular band."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT76_39_A_4_12_(1317, 348, 1911, 588)_region7": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of fused, poorly formed glands with irregular narrow lumina embedded in desmoplastic stroma, lacking well-formed round benign-appearing acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the small irregular tumor cluster located in the left-central portion of the core, just medial to the outer fibromuscular edge."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more confluent, irregularly contoured glands that appear less differentiated than the scattered, more open benign-appearing acini nearby."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT76_39_A_4_12_(1447, 1565, 2511, 1982)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the vertically oriented chain of small, well-formed round glands with open lumina embedded within dense, eosinophilic fibromuscular stroma, lacking gland fusion or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the central-right linear cluster of glands running vertically along the main fibromuscular band, between looser stromal areas on either side."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT76_39_A_4_12_(1571, 1, 2093, 176)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral cluster of small, round to oval, well-formed microacinar glands with open lumina infiltrating fibromuscular stroma, lacking gland fusion or solid sheets."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular focus along the inferior-left outer edge of the tissue disc, abutting the specimen boundary."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT76_39_A_4_12_(1589, 2106, 2281, 2429)_region6": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small cluster of poorly formed, angulated malignant glands with narrow, irregular lumina infiltrating between dense eosinophilic fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the inferior-right stromal area where scattered distorted glands lie between vertically oriented fibromuscular bundles, just lateral to a larger glandular column."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate glands that are more irregular, collapsed, and closely embedded in stroma compared with the better-formed rounder glands nearby."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT76_39_A_4_12_(194, 1600, 1476, 1817)_region8": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the narrow tract of fused, poorly formed glands with slit-like lumina embedded within dense, vertically oriented fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the elongated epithelial focus running vertically near the central-right side, between broader benign-appearing glands and more cellular stroma."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT76_39_A_4_12_(2206, 448, 3057, 1270)_region5": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the inferior-left cluster of fused, irregularly contoured glands with poorly formed, slit-like lumina embedded within dense fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular focus along the inferior-left peripheral edge, abutting the outer stromal boundary."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT76_39_A_4_12_(2835, 1606, 3052, 1994)_region4": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact focus of fused, irregular glands with poorly formed, slit-like lumina infiltrating fibromuscular stroma, lacking well-circumscribed round acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the small irregular gland cluster located at the inferior edge of the tissue core, slightly right of center."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_A_4_2": {
+    "regions": {
+      "ZT76_39_A_4_2_(193, 162, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular benign prostate tissue core, including well-formed round glands with intact lumina and intervening fibromuscular stroma, excluding surrounding blank background."
+          ],
+          "Spatial Reasoning": [
+            "Select the complete circular tissue disc centrally located within the image, bounded peripherally by uniform white background."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT76_39_A_4_9": {
+    "regions": {
+      "ZT76_39_A_4_9_(28, 101, 3071, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment all well-formed, discrete prostatic adenocarcinoma glands with open round to oval lumina separated by intervening fibromuscular stroma, lacking confluent fused or solid areas."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_A_5_1": {
+    "regions": {
+      "ZT76_39_A_5_1_(61, 10, 3029, 2922)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular benign prostate core, containing variably sized, well-organized glands with preserved lumina separated by abundant fibromuscular stroma."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant round tissue core occupying nearly all tissue in the field, excluding the surrounding blank slide background."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT76_39_A_5_4": {
+    "regions": {
+      "ZT76_39_A_5_4_(203, 10, 3099, 2832)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular core of benign fibromuscular stroma with scattered bland spindle cells and sparse benign glands, lacking infiltrative carcinoma."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT76_39_A_6_10": {
+    "regions": {
+      "ZT76_39_A_6_10_(119, 182, 3055, 3031)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core showing predominantly fused, crowded glands with irregular, poorly formed lumina and minimal intervening stroma, consistent with Gleason grade 4 architecture."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tissue disc occupying nearly all visible tissue, excluding the surrounding blank background slide."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT76_39_A_6_12": {
+    "regions": {
+      "ZT76_39_A_6_12_(1752, 1771, 3082, 3041)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular focus along the inferior-right peripheral edge of the tissue disc."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT76_39_A_6_12_(99, 89, 3099, 3023)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the infiltrative Gleason grade 4 carcinoma composed of fused, irregular glands and cords with reduced, slit-like lumina within desmoplastic stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad peripheral band of fused carcinoma encircling most of the tissue disc, excluding the more circumscribed round glands at the inferior-right edge."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more confluent, poorly formed glandular and cord-like carcinoma, not the better-formed round acini with larger open lumina."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_A_6_13": {
+    "regions": {
+      "ZT76_39_A_6_13_(189, 18, 3099, 3058)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment all well-formed, discrete microacinar glands with open round lumina and intervening fibromuscular stroma, lacking fused, cribriform, or solid growth."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_A_6_1": {
+    "regions": {
+      "ZT76_39_A_6_1_(102, 114, 3099, 3021)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing benign prostatic glands with orderly, well-formed lumina separated by broad fibromuscular stroma and lacking infiltrative edges."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT76_39_A_6_7": {
+    "regions": {
+      "ZT76_39_A_6_7_(121, 126, 3089, 2910)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the peripheral rim of well-formed, round to oval microacinar glands with open lumina, separated by intervening fibromuscular stroma, surrounding the central loose tissue."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous circumferential band of glandular tissue along the outer edge of the circular core, encasing the central pale stromal area."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_A_7_13": {
+    "regions": {
+      "ZT76_39_A_7_13_(36, 12, 3004, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing predominantly well-formed, separate microacinar glands with open lumina embedded in fibromuscular stroma, lacking fused or solid tumor areas."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tissue disc, excluding the surrounding blank slide background."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_A_7_2": {
+    "regions": {
+      "ZT76_39_A_7_2_(187, 216, 3099, 3099)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular benign prostatic tissue core, including fibromuscular stroma and well-formed round glands with open lumina, excluding surrounding blank background."
+          ],
+          "Spatial Reasoning": [
+            "Select the complete central circular tissue disc bounded by a sharp interface with the peripheral empty slide background."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT76_39_A_7_6": {
+    "regions": {
+      "ZT76_39_A_7_6_(158, 1, 3079, 2957)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing well-formed, separate microacinar glands with open lumina, surrounded by intervening fibromuscular stroma and bordered by blank slide background."
+          ],
+          "Spatial Reasoning": [
+            "Select the complete round tissue disc centrally located within the image, sharply demarcated from the surrounding empty background."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_A_7_7": {
+    "regions": {
+      "ZT76_39_A_7_7_(116, 226, 2704, 3085)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, discrete microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid growth."
+          ],
+          "Spatial Reasoning": [
+            "Select the peripheral circumferential band of these separated acini along the outer edge of the circular tissue core."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT76_39_A_7_7_(2396, 616, 3054, 1555)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the inferior peripheral cluster of well-formed, round to oval microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking gland fusion."
+          ],
+          "Spatial Reasoning": [
+            "Located along the inferior-left outer edge of the tissue disc, abutting the fibromuscular stromal band."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT76_39_A_7_7_(401, 491, 834, 1070)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of fused, irregular glands with reduced, slit-like lumina embedded in desmoplastic stroma, lacking well-formed round benign-appearing acini."
+          ],
+          "Spatial Reasoning": [
+            "Select the superior-left peripheral focus situated just beneath the fibromuscular tissue cap at the outer edge of the core."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the area where glands are more crowded and architecturally fused compared with the more rounded, better-formed glands centrally."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_A_8_3": {
+    "regions": {
+      "ZT76_39_A_8_3_(84, 10, 3099, 2936)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular benign prostate tissue core, composed of well-formed round glands with abundant lumina separated by broad fibromuscular stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the complete tissue disc occupying the central field, excluding the surrounding blank background outside the circular boundary."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT76_39_A_8_5": {
+    "regions": {
+      "ZT76_39_A_8_5_(127, 10, 3099, 2923)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular benign tissue core, including fibromuscular stroma with scattered benign glands showing relatively preserved lumina and no overt malignant fusion."
+          ],
+          "diagnosis": "Benign"
+        }
+      }
+    },
+    "diagnosis": "Benign"
+  },
+  "ZT76_39_A_8_9": {
+    "regions": {
+      "ZT76_39_A_8_9_(206, 62, 3054, 3038)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking confluent fusion or solid sheets."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_B_1_2": {
+    "regions": {
+      "ZT76_39_B_1_2_(165, 1, 3051, 2982)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment all well-formed, discrete prostatic glands with round to oval open lumina, separated by intervening fibromuscular stroma, lacking confluent or solid growth."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_B_1_3": {
+    "regions": {
+      "ZT76_39_B_1_3_(30, 71, 3057, 3023)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment all well-formed, discrete microacinar carcinoma glands with open lumina infiltrating fibromuscular stroma, lacking gland fusion, cribriforming, or solid sheets."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_B_2_1": {
+    "regions": {
+      "ZT76_39_B_2_1_(1189, 848, 1928, 1705)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of fused, irregular glands with reduced, angulated lumina and minimal intervening stroma, lacking solid sheets or single-cell cords."
+          ],
+          "Spatial Reasoning": [
+            "Select the central-left intraprostatic focus situated between broader fibromuscular stromal bands and larger, more open benign-appearing glands."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the more crowded, fused glands with smaller distorted lumina compared with the adjacent larger, rounder, well-formed glands."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT76_39_B_2_1_(142, 130, 2975, 2547)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the central band-like area of crowded microacinar glands situated between the more fibrotic right-side stroma and the peripheral left tumor glands."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT76_39_B_2_1_(2194, 1583, 2776, 2064)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of well-formed, round microacinar glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Focus on the inferior-right peripheral nodule of tightly packed small glands adjacent to more loosely arranged glands and surrounding stroma."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT76_39_B_5_2": {
+    "regions": {
+      "ZT76_39_B_5_2_(90, 248, 3093, 3057)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core containing predominantly well-formed, separate prostatic glands with open lumina and intervening fibromuscular stroma, excluding surrounding blank background."
+          ],
+          "Spatial Reasoning": [
+            "Select the complete round tissue section centrally located in the image, bounded by a sharp interface with the peripheral white background."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_B_6_1": {
+    "regions": {
+      "ZT76_39_B_6_1_(1239, 89, 1526, 455)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small cluster of well-formed, round microacinar glands with open lumina infiltrating fibromuscular stroma, lacking gland fusion or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact acinar cluster located near the superior-left peripheral edge of the tissue disc, adjacent to dense eosinophilic stromal bundles."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT76_39_B_6_1_(350, 1039, 605, 1605)_region4": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact cluster of well-formed, round prostatic glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the small glandular cluster located along the superior convex edge of the tissue section, near the outermost surface."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT76_39_B_6_1_(533, 1373, 972, 2033)_region3": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small cluster of well-formed, round prostatic glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or cribriform architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact glandular cluster located in the upper central portion of the tissue, embedded within relatively pale, fibromuscular stroma."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      },
+      "ZT76_39_B_6_1_(772, 406, 1022, 1033)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the small cluster of well-formed, round prostatic glands with open lumina and intervening fibromuscular stroma, lacking gland fusion or solid growth."
+          ],
+          "Spatial Reasoning": [
+            "Select the discrete microacinar gland cluster located in the superior-left stromal band, away from the larger central gland groups."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 3 tissue"
+  },
+  "ZT76_39_B_6_3": {
+    "regions": {
+      "ZT76_39_B_6_3_(28, 1501, 1983, 2994)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of fused, irregular glands with cribriform-like epithelial bridges and reduced, slit-like lumina embedded in scant intervening stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad epithelial focus along the superior-right peripheral edge of the core, overlying more fibromuscular and smaller glandular areas."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT76_39_B_6_3_(355, 1451, 944, 2138)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cluster of well-formed, round to oval microacinar glands with open lumina separated by intervening fibromuscular stroma, lacking gland fusion."
+          ],
+          "Spatial Reasoning": [
+            "Select the compact group of glands located in the superior-central portion of the tissue disc, bordered by prominent pink fibromuscular stroma."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT76_39_B_7_3": {
+    "regions": {
+      "ZT76_39_B_7_3_(6, 67, 2965, 2933)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core composed of solid sheets of tumor cells lacking well-formed glandular lumina or discrete acinar structures."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  },
+  "ZT76_39_B_8_2": {
+    "regions": {
+      "ZT76_39_B_8_2_(751, 2201, 1494, 2916)_region2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the compact area of fused, poorly separated glands with reduced, irregular lumina and minimal intervening stroma showing a more confluent architecture."
+          ],
+          "Spatial Reasoning": [
+            "Select the confluent glandular cluster along the right peripheral edge of the tissue disc, abutting the outer contour."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the region where glands appear more crowded and fused, with smaller lumina, compared with the relatively more open glands elsewhere."
+          ],
+          "diagnosis": "Gleason grade 4 tissue"
+        }
+      },
+      "ZT76_39_B_8_2_(89, 17, 3099, 2927)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the circumscribed peripheral band of well-formed, round to oval microacinar glands with open lumina separated by thin fibromuscular stroma, lacking gland fusion or solid areas."
+          ],
+          "Spatial Reasoning": [
+            "Select the continuous outer rim of tumor glands tracking along the circular edge of the tissue core."
+          ],
+          "diagnosis": "Gleason grade 3 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 4 tissue"
+  },
+  "ZT76_39_B_8_3": {
+    "regions": {
+      "ZT76_39_B_8_3_(84, 62, 3099, 3083)_region1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the entire circular tissue core composed of solid sheets and cords of tumor cells lacking well-formed glandular lumina throughout."
+          ],
+          "Hierarchical Reasoning": [
+            "Select the dominant central tissue core occupying nearly all visible tissue, excluding the surrounding blank background."
+          ],
+          "diagnosis": "Gleason grade 5 tissue"
+        }
+      }
+    },
+    "diagnosis": "Gleason grade 5 tissue"
+  }
+}

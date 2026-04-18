@@ -21,9 +21,9 @@ SOLVER.FIX_PARAM:
 # lang_encoder gets the full BASE_LR; predictor half; frozen heads get 0.
 SOLVER.LR_MULTIPLIER:
   backbone: 1.0
-  lang_encoder: 1.0
   pixel_decoder: 1.0
   predictor: 1.0
+  lang_encoder: 1.0
 
 # ---------------------------------------------------------------------------
 # Warmup schedule

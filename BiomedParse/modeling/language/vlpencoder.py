@@ -16,7 +16,11 @@ from ..utils import configurable
 from .LangEncoder import build_tokenizer, build_lang_encoder
 from utilities.prompt_engineering import prompt_engineering, get_prompt_templates
 
+import logging as _logging
+import transformers
 from transformers import AutoTokenizer, AutoModel
+
+transformers.logging.set_verbosity_error()
 
 class LanguageEncoder(nn.Module):
 

@@ -98,14 +98,14 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
         results = self._eval_on_set(self.save_folder)
         return results
 
-    def _eval_on_set(self, save_folder):
+    def _eval_on_set(self, save_folder, epoch: int = None):
         logger.info(f"Evaluation start ...")
         if self.opt['FP16']:
             from torch.cuda.amp import autocast
             with autocast():
-                results = self.pipeline.evaluate_model(self, save_folder)
-        else:        
-            results = self.pipeline.evaluate_model(self, save_folder)
+                results = self.pipeline.evaluate_model(self, save_folder, epoch=epoch)
+        else:
+            results = self.pipeline.evaluate_model(self, save_folder, epoch=epoch)
         if self.opt['rank'] == 0:
             logger.info(results)
         # Barrier: wait for all ranks to finish evaluation before resuming training.
@@ -116,7 +116,7 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
             torch.distributed.barrier()
         return results
 
-    def _eval_on_eval_split(self, save_folder):
+    def _eval_on_eval_split(self, save_folder, epoch: int = None):
         """Evaluate on DATASETS.EVAL (the held-out validation split)."""
         eval_datasets = self.opt.get('DATASETS', {}).get('EVAL', [])
         if not eval_datasets:
@@ -125,9 +125,9 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
         if self.opt['FP16']:
             from torch.cuda.amp import autocast
             with autocast():
-                results = self.pipeline.evaluate_model_on_datasets(self, save_folder, eval_datasets)
+                results = self.pipeline.evaluate_model_on_datasets(self, save_folder, eval_datasets, epoch=epoch)
         else:
-            results = self.pipeline.evaluate_model_on_datasets(self, save_folder, eval_datasets)
+            results = self.pipeline.evaluate_model_on_datasets(self, save_folder, eval_datasets, epoch=epoch)
         # Barrier: same reason as _eval_on_set — prevent rank divergence after evaluation.
         if self.opt['world_size'] > 1:
             torch.distributed.barrier()
@@ -212,40 +212,49 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
         self.lr_schedulers[model_name].step()
 
     def train_step(self, batch):
-        self.grad_acc_batches.append(batch) # support batch accumulation
+        # Proper gradient accumulation: forward+backward runs on EVERY incoming batch
+        # so that loss is tracked at every step.  The optimizer update (unscale/step/
+        # zero_grad) is deferred until the last batch in each accumulation window.
+        # We pass a sentinel list of length grad_acc_steps so forward_step can infer
+        # whether this is the last accumulation step without storing actual batches.
 
-        if self.is_gradient_accumulation_boundary():
-            # set all modules and criteria into training mode
-            for model_name in self.model_names:
-                self.models[model_name].train()
+        acc_index = self.train_params['num_updates'] % self.grad_acc_steps
+        _sentinel = [None] * self.grad_acc_steps  # only len() is used by forward_step
 
-            assert len(self.grad_acc_batches) == self.grad_acc_steps
+        # set all modules to training mode
+        for model_name in self.model_names:
+            self.models[model_name].train()
 
-            total_batch_sample = 0
-            for batch_index, batch in enumerate(self.grad_acc_batches):
+        # For non-boundary accumulation steps, suppress DDP gradient all-reduce
+        # so gradients are accumulated locally until the final step.
+        is_last_acc_step = (acc_index == self.grad_acc_steps - 1)
+        _ddp_model = self.models.get('default')
+        _no_sync = (
+            self.opt['world_size'] > 1
+            and not is_last_acc_step
+            and hasattr(_ddp_model, 'no_sync')
+        )
+        ctx = _ddp_model.no_sync() if _no_sync else contextlib.nullcontext()
+        with ctx:
+            loss_info, sample_size_info, extra_info = \
+                self.pipeline.forward_step(self,
+                                           batch,
+                                           _sentinel,
+                                           acc_index,
+                                           is_distributed=(self.opt['world_size'] > 1))
 
-                loss_info, sample_size_info, extra_info = \
-                    self.pipeline.forward_step(self,
-                                            batch,
-                                            self.grad_acc_batches,
-                                            batch_index,
-                                            is_distributed=(self.opt['world_size'] > 1))
+        self.train_loss.update_iter(loss_info)
 
-                self.train_loss.update_iter(loss_info)
-                total_batch_sample += sample_size_info['num_samples']
-
+        if is_last_acc_step:
             if self.opt['FP16']:
-                # Update GradScaler after an effective batch
                 self.grad_scaler.update()
 
-            # update losses and item counts of an effective batch to the AverageMeters
+            total_batch_sample = sample_size_info['num_samples']
             if self.opt['world_size'] > 1:
                 total_batch_sample = torch.tensor(total_batch_sample).to(self.opt['device'])
                 torch.distributed.all_reduce(total_batch_sample, torch.distributed.ReduceOp.SUM)
                 total_batch_sample = total_batch_sample.item()
-
             self.train_params['total_batch_size'] += total_batch_sample
-            self.grad_acc_batches = []
 
         self.train_params['num_updates'] += 1
         
@@ -294,7 +303,6 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
                              }
 
         self.train_loss = LossMeter()
-        self.grad_acc_batches = []
 
         if self.opt['CUDA']:
             torch.cuda.empty_cache()
@@ -425,23 +433,45 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
                                 log_dict = {"train/loss": total_loss, "train/loss_avg": total_loss_avg, "train/img_per_sec": its, "train/mem_mb": memory}
                                 for k, v in last_lr.items():
                                     log_dict[f"train/lr_{k}"] = v
-                                wandb.log(log_dict, step=current_optim_steps)
+                                wandb.log(log_dict, step=epoch + 1)
 
                 # evaluate and save ckpt every epoch
                 if batch_idx + 1 == self.train_params['updates_per_epoch']:
+
+                    # Always log loss + LR to W&B at epoch end using epoch as the step.
+                    # Using current_optim_steps would cause duplicate steps when gradient
+                    # accumulation spans multiple epochs (e.g. GRAD_ACC_STEPS=8,
+                    # updates_per_epoch=1 → optimizer only steps every 8 epochs).
+                    if self.opt['rank'] == 0 and self.opt.get('WANDB', False) and wandb.run is not None:
+                        last_lr = {
+                            mn: self.lr_schedulers[mn].get_last_lr()[0]
+                            for mn in self.model_names
+                        }
+                        total_loss = sum(obj.val for obj in self.train_loss.losses.values())
+                        total_loss_avg = sum(obj.avg for obj in self.train_loss.losses.values())
+                        epoch_log = {
+                            "train/epoch_loss":     total_loss,
+                            "train/epoch_loss_avg": total_loss_avg,
+                            "train/optim_step":     current_optim_steps,
+                            "epoch":                epoch + 1,
+                        }
+                        for mn, lr_val in last_lr.items():
+                            epoch_log[f"train/lr_{mn}"] = lr_val
+                        wandb.log(epoch_log, step=epoch + 1)
+
                     if self.opt.get('SAVE_CHECKPOINT', True):
                         self.save_checkpoint(self.train_params['num_updates'])
 
                     # --- Test-set evaluation (unchanged) ---
-                    results = self._eval_on_set(self.save_folder)
+                    results = self._eval_on_set(self.save_folder, epoch=epoch + 1)
                     if self.opt['rank'] == 0 and self.opt.get('WANDB', False) and wandb.run is not None:
                         eval_log = _flatten_eval_results_for_wandb(results, prefix="test")
                         if eval_log:
-                            wandb.log(eval_log, step=current_optim_steps)
+                            wandb.log(eval_log, step=epoch + 1)
 
                     # --- Eval-split evaluation + best-model tracking ---
                     if eval_datasets:
-                        eval_results = self._eval_on_eval_split(self.save_folder)
+                        eval_results = self._eval_on_eval_split(self.save_folder, epoch=epoch + 1)
                         score = self._extract_metric(eval_results, best_metric_key)
                         summary = self._summarise_eval_metrics(eval_results)
                         if self.opt['rank'] == 0:
@@ -459,7 +489,7 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
                                 eval_log = {f"eval/{k}": v for k, v in summary.items()}
                                 eval_log[f"eval/best_{best_metric_key}"] = max(score, best_eval_score)
                                 eval_log["epoch"] = epoch + 1
-                                wandb.log(eval_log, step=current_optim_steps)
+                                wandb.log(eval_log, step=epoch + 1)
                                 # also update summary so metrics are always visible in workspace table
                                 for k, v in summary.items():
                                     wandb.run.summary[f"eval/{k}"] = v
@@ -478,9 +508,9 @@ class DefaultTrainer(UtilsTrainer, DistributedTrainer):
                         torch.distributed.barrier()
                     break
 
-            logger.info(f"This epoch takes {datetime.now() - epoch_start_time}")
+            # logger.info(f"This epoch takes {datetime.now() - epoch_start_time}")
             logger.info(f"PROGRESS: {100.0 * (epoch + 1) / num_epochs:.2f}%")
-            logger.info(f"Config files are at {self.opt['conf_files']}")
+            # logger.info(f"Config files are at {self.opt['conf_files']}")
 
         # if not self.opt.get('SAVE_CHECKPOINT', True):
         #     self.save_checkpoint(self.train_params['num_updates'])

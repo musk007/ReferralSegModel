@@ -110,7 +110,7 @@ class XDecoder_Trainer(DefaultTrainer):
                                 module_params[key] = 0
                             module_params[key] += param.numel()
 
-                logger.info(f"Module {_module_name} has parameters: {module_params}")
+                # logger.info(f"Module {_module_name} has parameters: {module_params}")
             #raise NotImplementedError("Please check the fix_param and ignore_fix in the config file")
 
         # # ---------------- PARAMETER DEBUG / LORA CHECK ----------------
@@ -158,7 +158,7 @@ class XDecoder_Trainer(DefaultTrainer):
                         if key in "{}.{}".format(module_name, module_param_name):
                             hyperparams["lr"] = hyperparams["lr"] * lr_mul
                             if is_main_process():
-                                logger.info("Modify Learning rate of {}: {}".format("{}.{}".format(module_name, module_param_name), lr_mul))
+                                logger.debug("Modify Learning rate of {}: {}".format("{}.{}".format(module_name, module_param_name), lr_mul))
 
                     if (
                         "relative_position_bias_table" in module_param_name
@@ -177,7 +177,8 @@ class XDecoder_Trainer(DefaultTrainer):
                 # detectron2 doesn't have full model gradient clipping now
                 clip_norm_val = cfg_solver['CLIP_GRADIENTS']['CLIP_VALUE']
                 enable = (
-                    cfg_solver['CLIP_GRADIENTS']['ENABLED']
+                    self.opt.get('GRAD_CLIP', True)          # top-level boolean toggle
+                    and cfg_solver['CLIP_GRADIENTS']['ENABLED']
                     and cfg_solver['CLIP_GRADIENTS']['CLIP_TYPE'] == "full_model"
                     and clip_norm_val > 0.0
                 )
@@ -225,5 +226,9 @@ class XDecoder_Trainer(DefaultTrainer):
                 num_params += param.numel()
                 if param.requires_grad:
                     num_trainable_params += param.numel()
-            logger.info(f"Total number of parameters in {module_name} module (on each GPU): {num_params}")
-            logger.info(f"Number of trainable parameters in {module_name} module (on each GPU): {num_trainable_params}")
+            # logger.info("\n")
+            # logger.info("<>*<>*<>"*30)
+            # logger.info(f"Total number of parameters in {module_name} module (on each GPU): {num_params}")
+            # logger.info(f"Number of trainable parameters in {module_name} module (on each GPU): {num_trainable_params}")
+            # logger.info("<>*<>*<>"*30)
+            # logger.info("\n")

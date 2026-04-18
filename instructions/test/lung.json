@@ -1,0 +1,389 @@
+{
+  "00": {
+    "regions": {
+      "00_0": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment cohesive atypical epithelial cells forming irregular acinar and solid nests with enlarged hyperchromatic nuclei lining and partially filling alveolar spaces."
+          ],
+          "Ambiguity Reasoning": [
+            "Select epithelial clusters with nuclear atypia and crowded architecture, distinct from looser spindle-cell stroma and delicate normal alveolar septa."
+          ],
+          "region_label": 0,
+          "region_class": "tumor epithelium"
+        }
+      },
+      "00_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the pale eosinophilic fibrous stroma containing scattered spindle fibroblasts and inflammatory cells that separates and underlies the crowded atypical tumor epithelial cells."
+          ],
+          "Ambiguity Reasoning": [
+            "Select fibrous connective tissue lacking cohesive atypical epithelial nuclei and luminal spaces seen in adjacent tumor epithelium."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  },
+  "06": {
+    "regions": {
+      "06_0": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the atypical epithelial cell clusters forming crowded acinar and papillary structures with hyperchromatic nuclei lining and filling alveolar spaces."
+          ],
+          "Ambiguity Reasoning": [
+            "Select epithelial proliferations with nuclear atypia and complex glandular folding, distinct from the surrounding fibrotic stroma and delicate normal alveolar septa."
+          ],
+          "region_label": 0,
+          "region_class": "tumor epithelium"
+        }
+      },
+      "06_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the pale eosinophilic fibrous stroma composed of spindle fibroblasts and collagen that surrounds and separates the darker purple tumor epithelial glands."
+          ],
+          "Spatial Reasoning": [
+            "Focus on connective tissue lying between adjacent tumor glands and along the right edge, excluding the densely cellular epithelial structures."
+          ],
+          "Ambiguity Reasoning": [
+            "Select fibrous areas with elongated spindle nuclei and fewer cells, not the crowded atypical epithelial cells forming glandular or papillary structures."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  },
+  "09": {
+    "regions": {
+      "09_0": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the atypical epithelial cells lining and slightly thickening an alveolar wall in a lepidic pattern, with enlarged hyperchromatic nuclei and preserved airspace contours."
+          ],
+          "Ambiguity Reasoning": [
+            "Select epithelial lining that shows nuclear atypia and crowding, distinguishing it from adjacent thin, bland alveolar epithelium and fibrotic stroma."
+          ],
+          "region_label": 0,
+          "region_class": "tumor epithelium"
+        }
+      },
+      "09_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the fibrotic tumor-associated stroma composed of eosinophilic collagen bundles with scattered spindle fibroblasts and inflammatory cells interposed between atypical epithelial cell clusters."
+          ],
+          "Ambiguity Reasoning": [
+            "Select stromal collagen and spindle cells surrounding tumor epithelium, excluding cohesive atypical epithelial nests and open alveolar airspaces."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      },
+      "09_2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the delicate normal lung parenchyma showing thin alveolar septa with open airspaces and bland flattened lining cells without desmoplastic stroma."
+          ],
+          "Spatial Reasoning": [
+            "Select the peripheral lace-like alveolated regions bordering the central, more cellular tissue."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate areas with preserved thin septa and uniform pneumocytes, lacking crowded atypical epithelial clusters or dense fibrotic stroma."
+          ],
+          "region_label": 2,
+          "region_class": "normal tissue"
+        }
+      }
+    }
+  },
+  "10": {
+    "regions": {
+      "10_0": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the cohesive columnar tumor epithelium lining the curved luminal surface, forming a continuous atypical epithelial rim with hyperchromatic nuclei and eosinophilic cytoplasm."
+          ],
+          "Spatial Reasoning": [
+            "Select the epithelial lining along the large pale luminal space at the lower left edge of the image."
+          ],
+          "region_label": 0,
+          "region_class": "tumor epithelium"
+        }
+      },
+      "10_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the fibrotic tumor stroma composed of eosinophilic collagen bundles with scattered spindle fibroblasts surrounding and separating adjacent atypical epithelial and inflammatory cell clusters."
+          ],
+          "Spatial Reasoning": [
+            "Select the broad fibrotic stromal band occupying the upper and central portions of the field, interposed between cellular tumor and inflammatory areas."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate collagenous spindle-cell stroma rather than densely cellular epithelial nests or open alveolar airspaces lacking fibrous matrix."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  },
+  "11": {
+    "regions": {
+      "11_0": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment cohesive atypical epithelial cells lining and partially filling alveolar walls in a lepidic pattern, with enlarged hyperchromatic nuclei and loss of normal thin septal architecture."
+          ],
+          "Spatial Reasoning": [
+            "Focus on atypical epithelial linings along the peripheral alveolated regions away from the central large airway lumen."
+          ],
+          "Ambiguity Reasoning": [
+            "Distinguish from normal alveolar epithelium by thicker crowded cell layers and nuclear atypia rather than delicate single-cell linings."
+          ],
+          "region_label": 0,
+          "region_class": "tumor epithelium"
+        }
+      },
+      "11_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the pale eosinophilic fibrous stroma composed of spindle fibroblasts and collagen bundles interposed between and supporting the surrounding atypical epithelial cells."
+          ],
+          "Spatial Reasoning": [
+            "Select the central band of fibrous tissue encircling the large luminal airspace and separating it from peripheral tumor epithelium."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the less cellular, collagen-rich spindle cell areas rather than the darker, densely packed atypical epithelial cell clusters."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  },
+  "14": {
+    "regions": {
+      "14_0": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the atypical epithelial cells forming crowded papillary and acinar tumor structures with enlarged hyperchromatic nuclei and scant intervening stroma, excluding underlying fibrous tissue."
+          ],
+          "Spatial Reasoning": [
+            "Select the complex epithelial proliferations occupying the upper and left portions of the image, superficial to the thicker fibrous band below."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate the densely cellular epithelial clusters with nuclear atypia, not the paler spindle-cell desmoplastic stroma or smooth fibrous band beneath."
+          ],
+          "region_label": 0,
+          "region_class": "tumor epithelium"
+        }
+      },
+      "14_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the pale eosinophilic fibrous stroma composed of spindle fibroblasts and collagen that surrounds and separates the atypical gland-forming tumor epithelium."
+          ],
+          "Spatial Reasoning": [
+            "Focus on the broad fibrous band along the lower edge of the field and any directly contiguous fibrotic tissue between adjacent tumor glands."
+          ],
+          "Ambiguity Reasoning": [
+            "Exclude the darker, crowded epithelial tumor cells lining glandular lumina and the empty alveolar-like spaces lacking fibrous collagen."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  },
+  "17": {
+    "regions": {
+      "17_0": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment cohesive nests and irregular gland-like clusters of atypical dark-purple epithelial cells embedded within pale fibrotic stroma, showing crowded enlarged nuclei and loss of normal alveolar spaces."
+          ],
+          "Ambiguity Reasoning": [
+            "Select epithelial cell clusters with marked nuclear atypia and gland-like architecture, not the surrounding pink collagenous stromal tissue."
+          ],
+          "region_label": 0,
+          "region_class": "tumor epithelium"
+        }
+      },
+      "17_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the pale eosinophilic fibrous stroma composed of spindle-shaped fibroblasts and collagen bundles that surround and separate the dark blue tumor epithelial nests."
+          ],
+          "Ambiguity Reasoning": [
+            "Select fibrotic connective tissue directly encasing tumor clusters, not the densely packed atypical epithelial cell groups themselves."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  },
+  "18": {
+    "regions": {
+      "18_0": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment cohesive atypical epithelial cells forming lepidic and small acinar structures lining and partially filling alveolar walls, with enlarged hyperchromatic nuclei and loss of normal thin pneumocyte lining."
+          ],
+          "Ambiguity Reasoning": [
+            "Select epithelial clusters with nuclear atypia and architectural complexity, distinct from bland thin alveolar septa and loose fibrotic stroma lacking cohesive nests."
+          ],
+          "region_label": 0,
+          "region_class": "tumor epithelium"
+        }
+      },
+      "18_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the eosinophilic fibrous stroma composed of collagen bundles with scattered spindle fibroblasts and inflammatory cells interposed between and surrounding tumor epithelial clusters."
+          ],
+          "Ambiguity Reasoning": [
+            "Select fibrotic desmoplastic tissue thicker and more cellular than delicate normal alveolar septa, lacking cohesive atypical epithelial nests."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  },
+  "19": {
+    "regions": {
+      "19_0": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment cohesive atypical epithelial cells forming crowded acinar and solid nests with enlarged hyperchromatic nuclei and scant intervening stroma, excluding surrounding pale fibrous tissue."
+          ],
+          "region_label": 0,
+          "region_class": "tumor epithelium"
+        }
+      },
+      "19_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the pale eosinophilic fibrous stroma composed of spindle fibroblasts and collagen that surrounds and separates the darker atypical epithelial cell nests."
+          ],
+          "Ambiguity Reasoning": [
+            "Select fibrous areas lacking cohesive gland-forming epithelial cells and with more collagen and spindle cells than adjacent tumor epithelium."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  },
+  "22": {
+    "regions": {
+      "22_0": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment all atypical epithelial cell clusters forming acinar and papillary tumor glands with crowded hyperchromatic nuclei and eosinophilic cytoplasm, excluding surrounding fibrotic stroma and inflammatory cells."
+          ],
+          "region_label": 0,
+          "region_class": "tumor epithelium"
+        }
+      },
+      "22_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the pale eosinophilic fibrous stroma composed of spindle fibroblasts and inflammatory cells interposed between and supporting the atypical tumor epithelial nests."
+          ],
+          "Ambiguity Reasoning": [
+            "Select fibrotic connective tissue lacking cohesive atypical epithelial clusters or clear alveolar airspaces, distinguishing it from tumor epithelium and normal lung parenchyma."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  },
+  "35": {
+    "regions": {
+      "35_0": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the crowded atypical epithelial cells forming complex, thickened lepidic and papillary linings along alveolar walls, with back-to-back tufted projections replacing normal thin septal epithelium."
+          ],
+          "Spatial Reasoning": [
+            "Focus on the dense epithelial proliferation occupying the left and lower portions of the field, contrasting with the more open alveolated parenchyma on the right."
+          ],
+          "Ambiguity Reasoning": [
+            "Select epithelial linings that are multilayered and cytologically atypical, lacking the delicate single-cell alveolar lining seen in adjacent normal lung."
+          ],
+          "region_label": 0,
+          "region_class": "tumor epithelium"
+        }
+      },
+      "35_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the pale eosinophilic fibrous connective tissue immediately subjacent to and between the crowded atypical epithelial linings of thickened alveolar walls."
+          ],
+          "Spatial Reasoning": [
+            "Select stromal bands that track along and between the densely cellular tumor-lined alveolar structures, avoiding the open alveolar airspaces."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate fibrous stroma lacking cohesive epithelial nuclei, distinguishing it from the adjacent dark purple tumor cell layers and empty alveolar spaces."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      },
+      "35_2": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the delicate normal lung parenchyma showing thin alveolar septa and open airspaces with flat inconspicuous lining cells, lacking complex crowded papillary tumor epithelium."
+          ],
+          "Spatial Reasoning": [
+            "Select the more peripheral right-sided regions where airy alveolar spaces predominate over dense cellular tissue."
+          ],
+          "Ambiguity Reasoning": [
+            "Isolate areas with smooth, uniform alveolar walls rather than the thick, highly cellular papillary fronds of tumor epithelium."
+          ],
+          "region_label": 2,
+          "region_class": "normal tissue"
+        }
+      }
+    }
+  },
+  "36": {
+    "regions": {
+      "36_0": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment all cohesive atypical epithelial cell clusters forming irregular acinar or gland-like structures with crowded hyperchromatic nuclei embedded within the fibrotic stromal background."
+          ],
+          "Ambiguity Reasoning": [
+            "Select epithelial tumor glands and nests rather than the surrounding paler desmoplastic stroma or any residual delicate normal alveolar septa."
+          ],
+          "region_label": 0,
+          "region_class": "tumor epithelium"
+        }
+      },
+      "36_1": {
+        "gpt": {
+          "Histological Reasoning": [
+            "Segment the fibrotic tumor stroma composed of eosinophilic collagen bundles with spindle fibroblasts and scattered inflammatory cells surrounding and separating malignant epithelial glands and nests."
+          ],
+          "Spatial Reasoning": [
+            "Focus on the broad central and paracentral areas where dense pink fibrous tissue interdigitates with tumor epithelium, away from the peripheral alveolar-like spaces."
+          ],
+          "Ambiguity Reasoning": [
+            "Select the collagen-rich spindle-cell background matrix, not the darker, more cellular atypical epithelial glands or the delicate normal alveolar septa at the periphery."
+          ],
+          "region_label": 1,
+          "region_class": "tumor stroma"
+        }
+      }
+    }
+  }
+}

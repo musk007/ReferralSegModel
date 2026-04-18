@@ -37,7 +37,7 @@ set -euo pipefail
 # ---------------------------------------------------------------------------
 BIOMEDPARSE_DIR="${BIOMEDPARSE_DIR:-/home/roba/miccai26/BiomedParse}"
 DATASETS_DIR="${DATASETS_DIR:-/adialab/usr/roba/biomedparse_datasets}"
-OUTPUT_ROOT="${OUTPUT_ROOT:-${DATASETS_DIR}/output/histopath_staged_partial}"
+OUTPUT_ROOT="${OUTPUT_ROOT:-/adialab/usr/roba/train_output/histopath_staged_partial}"
 PRETRAINED_WEIGHTS="${PRETRAINED_WEIGHTS:-hf_hub:microsoft/BiomedParse}"
 BASE_CONF="${BASE_CONF:-configs/biomed_seg_lang_v1.yaml}"
 HISTO_CONF="${HISTO_CONF:-biomed_seg_lang_v1_histopath_full.yaml}"
@@ -102,7 +102,9 @@ mkdir -p "${OUTPUT_ROOT}"
 # ---------------------------------------------------------------------------
 # Optional single-dataset mode
 # ---------------------------------------------------------------------------
-CONFIG_OVERRIDES_ARGS=()
+TRAIN_DS=""
+EVAL_DS=""
+TEST_DS=""
 if [ -n "${TRAIN_DATASET:-}" ]; then
   case "${TRAIN_DATASET}" in
     colon)        PREFIX="HistoPathColon" ;;
@@ -118,14 +120,29 @@ if [ -n "${TRAIN_DATASET:-}" ]; then
   TRAIN_DS="biomed_${PREFIX}_train"
   EVAL_DS="biomed_${PREFIX}_eval"
   TEST_DS="biomed_${PREFIX}_test"
-  CONFIG_OVERRIDES_ARGS=(
-    --config_overrides
-    "{\"DATASETS.TRAIN\": [\"${TRAIN_DS}\"], \"DATASETS.EVAL\": [\"${EVAL_DS}\"], \"DATASETS.TEST\": [\"${TEST_DS}\"]}"
-  )
   OUTPUT_ROOT="${OUTPUT_ROOT}_${TRAIN_DATASET}"
   mkdir -p "${OUTPUT_ROOT}"
   echo "Single-dataset mode: train=${TRAIN_DS} eval=${EVAL_DS} test=${TEST_DS} -> ${OUTPUT_ROOT}"
 fi
+
+# Merge stage-specific JSON (flat dotted keys) with optional dataset selection.
+# NOTE: SOLVER.FIX_PARAM.* cannot be passed via --overrides when FIX_PARAM is {}
+# in the YAML — utilities/arguments.py looks up existing leaf keys for typing and
+# raises KeyError. JSON config_overrides runs first and creates those keys.
+merge_config_overrides_json() {
+  local stage_solver_json="$1"
+  STAGE_SOLVER_JSON="${stage_solver_json}" TRAIN_DATASET_FLAG="${TRAIN_DATASET:-}" \
+  TRAIN_DS_VAL="${TRAIN_DS:-}" EVAL_DS_VAL="${EVAL_DS:-}" TEST_DS_VAL="${TEST_DS:-}" \
+  python3 - <<'PY'
+import json, os
+stage = json.loads(os.environ["STAGE_SOLVER_JSON"])
+if os.environ.get("TRAIN_DATASET_FLAG"):
+    stage["DATASETS.TRAIN"] = [os.environ["TRAIN_DS_VAL"]]
+    stage["DATASETS.EVAL"] = [os.environ["EVAL_DS_VAL"]]
+    stage["DATASETS.TEST"] = [os.environ["TEST_DS_VAL"]]
+print(json.dumps(stage))
+PY
+}
 
 cd "${BIOMEDPARSE_DIR}"
 
@@ -158,8 +175,7 @@ run_stage() {
   local epochs="$6"
   local lr="$7"
   local warmup_iters="$8"
-  shift 8
-  local stage_specific_overrides=("$@")
+  local config_overrides_json="$9"
 
   mkdir -p "${stage_dir}"
 
@@ -177,7 +193,7 @@ run_stage() {
 
   mpirun -n ${NUM_GPUS} --oversubscribe --bind-to none python entry.py train \
     --conf_files "${BASE_CONF}" "${HISTO_CONF}" \
-    "${CONFIG_OVERRIDES_ARGS[@]}" \
+    --config_overrides "${config_overrides_json}" \
     --overrides \
     SAVE_DIR "${stage_dir}" \
     FP16 True \
@@ -208,8 +224,7 @@ run_stage() {
     WEIGHT True \
     WANDB True \
     RESUME_FROM "${resume_from}" \
-    "${NO_AUG_OVERRIDES[@]}" \
-    "${stage_specific_overrides[@]}"
+    "${NO_AUG_OVERRIDES[@]}"
 }
 
 # Stage directories/checkpoints
@@ -219,6 +234,71 @@ STAGE3_DIR="${OUTPUT_ROOT}/stage3_decoder_full"
 
 STAGE1_BEST="${STAGE1_DIR}/run_1/best_model"
 STAGE2_BEST="${STAGE2_DIR}/run_1/best_model"
+
+# Flat JSON for SOLVER.FIX_PARAM / IGNORE_FIX / LR_MULTIPLIER (must use --config_overrides; see header comment above).
+STAGE1_SOLVER_JSON=$(cat <<'EOF'
+{
+  "SOLVER.FIX_PARAM.backbone": true,
+  "SOLVER.FIX_PARAM.pixel_decoder": true,
+  "SOLVER.FIX_PARAM.predictor": true,
+  "SOLVER.FIX_PARAM.lang_encoder": true,
+  "SOLVER.IGNORE_FIX": [
+    "predictor.transformer_cross_attention_layers",
+    "lang_encoder.lang_encoder.resblocks.10",
+    "lang_encoder.lang_encoder.resblocks.11"
+  ],
+  "SOLVER.LR_MULTIPLIER.backbone": 1.0,
+  "SOLVER.LR_MULTIPLIER.pixel_decoder": 1.0,
+  "SOLVER.LR_MULTIPLIER.predictor": 0.2,
+  "SOLVER.LR_MULTIPLIER.lang_encoder": 1.0
+}
+EOF
+)
+
+STAGE2_SOLVER_JSON=$(cat <<'EOF'
+{
+  "SOLVER.FIX_PARAM.backbone": true,
+  "SOLVER.FIX_PARAM.pixel_decoder": true,
+  "SOLVER.FIX_PARAM.predictor": true,
+  "SOLVER.FIX_PARAM.lang_encoder": true,
+  "SOLVER.IGNORE_FIX": [
+    "predictor.transformer_cross_attention_layers",
+    "lang_encoder.lang_encoder.resblocks.8",
+    "lang_encoder.lang_encoder.resblocks.9",
+    "lang_encoder.lang_encoder.resblocks.10",
+    "lang_encoder.lang_encoder.resblocks.11"
+  ],
+  "SOLVER.LR_MULTIPLIER.backbone": 1.0,
+  "SOLVER.LR_MULTIPLIER.pixel_decoder": 1.0,
+  "SOLVER.LR_MULTIPLIER.predictor": 0.2,
+  "SOLVER.LR_MULTIPLIER.lang_encoder": 1.0
+}
+EOF
+)
+
+STAGE3_SOLVER_JSON=$(cat <<'EOF'
+{
+  "SOLVER.FIX_PARAM.backbone": true,
+  "SOLVER.FIX_PARAM.pixel_decoder": true,
+  "SOLVER.FIX_PARAM.predictor": false,
+  "SOLVER.FIX_PARAM.lang_encoder": true,
+  "SOLVER.IGNORE_FIX": [
+    "lang_encoder.lang_encoder.resblocks.8",
+    "lang_encoder.lang_encoder.resblocks.9",
+    "lang_encoder.lang_encoder.resblocks.10",
+    "lang_encoder.lang_encoder.resblocks.11"
+  ],
+  "SOLVER.LR_MULTIPLIER.backbone": 1.0,
+  "SOLVER.LR_MULTIPLIER.pixel_decoder": 1.0,
+  "SOLVER.LR_MULTIPLIER.predictor": 0.2,
+  "SOLVER.LR_MULTIPLIER.lang_encoder": 1.0
+}
+EOF
+)
+
+CONFIG_STAGE1=$(merge_config_overrides_json "${STAGE1_SOLVER_JSON}")
+CONFIG_STAGE2=$(merge_config_overrides_json "${STAGE2_SOLVER_JSON}")
+CONFIG_STAGE3=$(merge_config_overrides_json "${STAGE3_SOLVER_JSON}")
 
 # ---------------------------------------------------------------------------
 # Stage 1 — warm-up with minimal trainable subset
@@ -234,15 +314,7 @@ run_stage \
   "${STAGE1_EPOCHS}" \
   "${STAGE1_LR}" \
   "${STAGE1_WARMUP_ITERS}" \
-  SOLVER.FIX_PARAM.backbone True \
-  SOLVER.FIX_PARAM.pixel_decoder True \
-  SOLVER.FIX_PARAM.predictor True \
-  SOLVER.FIX_PARAM.lang_encoder True \
-  SOLVER.IGNORE_FIX "[\"predictor.transformer_cross_attention_layers\",\"lang_encoder.lang_encoder.resblocks.10\",\"lang_encoder.lang_encoder.resblocks.11\"]" \
-  SOLVER.LR_MULTIPLIER.backbone 1.0 \
-  SOLVER.LR_MULTIPLIER.pixel_decoder 1.0 \
-  SOLVER.LR_MULTIPLIER.predictor 0.2 \
-  SOLVER.LR_MULTIPLIER.lang_encoder 1.0
+  "${CONFIG_STAGE1}"
 
 if [ ! -e "${STAGE1_BEST}" ]; then
   echo "ERROR: Stage 1 best checkpoint not found: ${STAGE1_BEST}"
@@ -263,15 +335,7 @@ run_stage \
   "${STAGE2_EPOCHS}" \
   "${STAGE2_LR}" \
   "${STAGE2_WARMUP_ITERS}" \
-  SOLVER.FIX_PARAM.backbone True \
-  SOLVER.FIX_PARAM.pixel_decoder True \
-  SOLVER.FIX_PARAM.predictor True \
-  SOLVER.FIX_PARAM.lang_encoder True \
-  SOLVER.IGNORE_FIX "[\"predictor.transformer_cross_attention_layers\",\"lang_encoder.lang_encoder.resblocks.8\",\"lang_encoder.lang_encoder.resblocks.9\",\"lang_encoder.lang_encoder.resblocks.10\",\"lang_encoder.lang_encoder.resblocks.11\"]" \
-  SOLVER.LR_MULTIPLIER.backbone 1.0 \
-  SOLVER.LR_MULTIPLIER.pixel_decoder 1.0 \
-  SOLVER.LR_MULTIPLIER.predictor 0.2 \
-  SOLVER.LR_MULTIPLIER.lang_encoder 1.0
+  "${CONFIG_STAGE2}"
 
 if [ ! -e "${STAGE2_BEST}" ]; then
   echo "ERROR: Stage 2 best checkpoint not found: ${STAGE2_BEST}"
@@ -293,15 +357,7 @@ if [ "${RUN_STAGE3}" = "1" ]; then
     "${STAGE3_EPOCHS}" \
     "${STAGE3_LR}" \
     "${STAGE3_WARMUP_ITERS}" \
-    SOLVER.FIX_PARAM.backbone True \
-    SOLVER.FIX_PARAM.pixel_decoder True \
-    SOLVER.FIX_PARAM.predictor False \
-    SOLVER.FIX_PARAM.lang_encoder True \
-    SOLVER.IGNORE_FIX "[\"lang_encoder.lang_encoder.resblocks.8\",\"lang_encoder.lang_encoder.resblocks.9\",\"lang_encoder.lang_encoder.resblocks.10\",\"lang_encoder.lang_encoder.resblocks.11\"]" \
-    SOLVER.LR_MULTIPLIER.backbone 1.0 \
-    SOLVER.LR_MULTIPLIER.pixel_decoder 1.0 \
-    SOLVER.LR_MULTIPLIER.predictor 0.2 \
-    SOLVER.LR_MULTIPLIER.lang_encoder 1.0
+    "${CONFIG_STAGE3}"
 fi
 
 echo ""

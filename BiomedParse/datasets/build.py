@@ -615,8 +615,10 @@ def build_evaluator(cfg, dataset_name, output_folder=None):
         evaluator_list.append(RetrievalEvaluator(dataset_name, output_folder, cfg['MODEL']['DECODER']['RETRIEVAL']['ENSEMBLE']))
     if evaluator_type == "captioning":
         evaluator_list.append(CaptioningEvaluator(dataset_name, output_folder, MetadataCatalog.get(dataset_name).gt_json))
+        
     if evaluator_type in ["grounding_refcoco", "grounding_phrasecut", "grounding_spatial", "grounding_entity"]:
-        evaluator_list.append(GroundingEvaluator(dataset_name))
+        pred_dir = os.path.join(output_folder, "predictions") if output_folder else None
+        evaluator_list.append(GroundingEvaluator(dataset_name, save_dir=pred_dir))
     # Interactive
     if evaluator_type in ["interactive", "interactive_grounding"]:
         evaluator_list.append(InteractiveEvaluator(dataset_name, output_dir=output_folder, max_clicks=cfg['STROKE_SAMPLER']['EVAL']['MAX_ITER'], iou_iter=cfg['STROKE_SAMPLER']['EVAL']['IOU_ITER']))
