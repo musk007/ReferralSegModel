@@ -2,23 +2,32 @@
 # biomed_seg_lang_v1_histopath_nolora.yaml
 # ============================================================================
 # Stacked on top of biomed_seg_lang_v1_histopath_full.yaml.
-# Trains lang_encoder + predictor only (no LoRA — full weight fine-tuning).
-# backbone and pixel_decoder are frozen via FIX_PARAM.
+# Uses full-weight updates (no LoRA).
+# Explicitly train ONLY classification head + mask head + text projection.
 # ============================================================================
 
 # Disable LoRA — lang_encoder and predictor are trained at full precision.
 SOLVER.LORA:
   ENABLED: false
 
-# Freeze backbone and pixel_decoder; lang_encoder + predictor remain trainable.
-SOLVER.FIX_PARAM:
-  backbone: false
-  lang_encoder: false
-  pixel_decoder: false
-  predictor: false
+# Disable geometric/color augmentation in dataset mapper.
+# Keeps preprocessing to resize pipeline (with normalization in model preprocessing).
+INPUT.AUGMENT: false
 
-# LR multipliers per component.
-# lang_encoder gets the full BASE_LR; predictor half; frozen heads get 0.
+# Freeze all params first, then unfreeze only matching names.
+SOLVER.TRAINABLE_PARAMS:
+  - class_embed
+  - sem_seg_head
+  - lang_proj
+
+# Fallback freeze controls (only used if TRAINABLE_PARAMS is removed/empty).
+SOLVER.FIX_PARAM:
+  backbone: true
+  lang_encoder: true
+  pixel_decoder: true
+  predictor: true
+
+# LR multipliers per component (kept at 1.0; only TRAINABLE_PARAMS get optimized).
 SOLVER.LR_MULTIPLIER:
   backbone: 1.0
   lang_encoder: 1.0
@@ -28,12 +37,14 @@ SOLVER.LR_MULTIPLIER:
 # ---------------------------------------------------------------------------
 # Warmup schedule
 #
-# The model starts from BASE_LR × WARMUP_FACTOR = 1e-5 × 1e-3 = 1e-8,
-# then linearly ramps up to BASE_LR over WARMUP_ITERS iterations.
-# After warmup the WarmupMultiStepLR scheduler continues normally.
+# Default here is effectively no warmup:
+#   WARMUP_FACTOR=1 and WARMUP_ITERS=0 -> starts at BASE_LR immediately.
+# Override from the runner if you want warmup, e.g.:
+#   WARMUP_FACTOR=0.001, WARMUP_ITERS=100
 #
 # Tune WARMUP_ITERS (100–500) via --overrides in the runner script.
 # ---------------------------------------------------------------------------
-SOLVER.WARMUP_FACTOR: 1     # start LR = BASE_LR × 0.001  (= 1e-8 when BASE_LR=1e-5)
+SOLVER.WARMUP_FACTOR: 1
 SOLVER.WARMUP_ITERS: 0         # ramp-up length (overridable)
-SOLVER.WARMUP_METHOD: "linear"   # linear ramp from 1e-8 → BASE_LR
+SOLVER.WARMUP_METHOD: "linear"
+SOLVER.STEPS: []               # no LR decay

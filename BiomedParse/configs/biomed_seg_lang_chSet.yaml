@@ -52,9 +52,9 @@ MODEL:
   TEXT:
     ARCH: vlpencoder
     NAME: transformer
-    TOKENIZER: biomed-clip
-    CONTEXT_LENGTH: 256 #256 # 77
-    WIDTH: 768 # 768  # 512
+    TOKENIZER: clip
+    CONTEXT_LENGTH: 77 #256 # 77
+    WIDTH: 512 # 768  # 512
     HEADS: 8
     LAYERS: 12 # 6
     AUTOGRESSIVE: True
@@ -145,7 +145,7 @@ MODEL:
       MASK_WEIGHT: 2.0
       DICE_WEIGHT: 2.0
     HIDDEN_DIM: 512
-    NUM_OBJECT_QUERIES: 101
+    NUM_OBJECT_QUERIES: 5
     NHEADS: 8
     DROPOUT: 0.0
     DIM_FEEDFORWARD: 2048

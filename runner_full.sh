@@ -1,7 +1,7 @@
 #!/bin/bash
 # =============================================================================
-# SLURM job script – BiomedParse FULL model fine-tuning
-# All modules trainable: backbone, pixel decoder, predictor, lang encoder.
+# SLURM job script – BiomedParse selective fine-tuning (no LoRA)
+# Train only classification head + text projection.
 #
 # Node specs: 8 × H200 (140 GB VRAM each), 128 CPUs, 1.5 TB RAM.
 # Defaults to a full dedicated node (8 GPUs).  worker-0 and worker-2 are
@@ -42,21 +42,18 @@ set -e
 # ---------------------------------------------------------------------------
 BIOMEDPARSE_DIR="${BIOMEDPARSE_DIR:-/home/roba/miccai26/BiomedParse}"
 DATASETS_DIR="${DATASETS_DIR:-/adialab/usr/roba/biomedparse_datasets}"
-OUTPUT_DIR="${OUTPUT_DIR:-${DATASETS_DIR}/output/histopath_full}"
+OUTPUT_DIR="${OUTPUT_DIR:-${DATASETS_DIR}/output/SegHead_LangProj_ClassHead_PubMedBERT}"
 PRETRAINED_WEIGHTS="${PRETRAINED_WEIGHTS:-hf_hub:microsoft/BiomedParse}"
+BASE_LR="${BASE_LR:-0.00001}"
 
 # ---------------------------------------------------------------------------
 # GPU setup – SLURM sets CUDA_VISIBLE_DEVICES and SLURM_GPUS_ON_NODE for us
 # ---------------------------------------------------------------------------
-NUM_GPUS="${SLURM_GPUS_ON_NODE:-8}"
+NUM_GPUS="${SLURM_GPUS_ON_NODE:-1}"
 
-# Full model fine-tuning stores backward activations through ALL layers,
-# including the deep FocalNet backbone at 1024×1024 resolution.
-# Per-image overhead is ~33 GB; batch=2 per GPU → ~7 GB fixed + 2×33 ≈ 73 GB/GPU.
-# Empirically: batch=6 OOM'd (138 GB), batch=4 OOM'd (138.7 GB) on a single GPU.
-# With DDP (mpirun -n 8), each GPU sees only BATCH_SIZE_PER_GPU images;
-# the remaining 7 GPUs are no longer idle.
-BATCH_SIZE_PER_GPU=12
+# With selective fine-tuning, memory pressure is usually lower than full FT.
+# Keep this configurable in case image size / dataset mix changes.
+BATCH_SIZE_PER_GPU=1
 BATCH_SIZE_TOTAL=$(( NUM_GPUS * BATCH_SIZE_PER_GPU ))   # effective global batch
 
 # ---------------------------------------------------------------------------
@@ -112,15 +109,15 @@ mkdir -p "${OUTPUT_DIR}"
 # Summary
 # ---------------------------------------------------------------------------
 echo "============================================================"
-echo "BiomedParse – FULL model fine-tuning"
+echo "BiomedParse – selective fine-tuning (no LoRA)"
 echo "Job ID     : ${SLURM_JOB_ID}"
 echo "Node       : $(hostname)"
 echo "GPUs       : ${NUM_GPUS}  (CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES})"
 echo "Batch total: ${BATCH_SIZE_TOTAL}  (${BATCH_SIZE_PER_GPU} per GPU)"
 echo "Output     : ${OUTPUT_DIR}"
 echo "Datasets   : ${DATASETS_DIR}"
-echo "Trainable  : ALL (backbone + pixel_decoder + predictor + lang_encoder)"
-echo "LR         : backbone=1e-6 | pixel_decoder=2e-6 | predictor=5e-6 | lang_encoder=1e-5"
+echo "Trainable  : segmentation head + query_feat + query_embed only"
+echo "LR         : base=${BASE_LR} (applied only to trainable params)"
 echo "============================================================"
 
 # ---------------------------------------------------------------------------
@@ -129,7 +126,7 @@ echo "============================================================"
 cd "${BIOMEDPARSE_DIR}"
 
 mpirun -n ${NUM_GPUS} --oversubscribe --bind-to none python entry.py train \
-    --conf_files configs/biomed_seg_lang_v1.yaml biomed_seg_lang_v1_histopath_full.yaml \
+    --conf_files configs/biomed_seg_lang_v1.yaml biomed_seg_lang_v1_histopath_nolora.yaml \
     "${CONFIG_OVERRIDES_ARGS[@]}" \
     --overrides \
     SAVE_DIR "${OUTPUT_DIR}" \
@@ -142,13 +139,13 @@ mpirun -n ${NUM_GPUS} --oversubscribe --bind-to none python entry.py train \
     TRAIN.BATCH_SIZE_TOTAL ${BATCH_SIZE_TOTAL} \
     TRAIN.BATCH_SIZE_PER_GPU ${BATCH_SIZE_PER_GPU} \
     TEST.BATCH_SIZE_TOTAL ${BATCH_SIZE_TOTAL} \
-    SOLVER.MAX_NUM_EPOCHS 100 \
-    SOLVER.BASE_LR 0.000001 \
+    SOLVER.MAX_NUM_EPOCHS 200 \
+    SOLVER.BASE_LR ${BASE_LR} \
     MODEL.DECODER.GROUNDING.ENABLED True \
     MODEL.DECODER.SPATIAL.ENABLED True \
     MODEL.DECODER.SPATIAL.MAX_ITER 0 \
     LOADER.SAMPLE_PROB prop \
-    BioMed.INPUT.AUGMENT False \
+    INPUT.AUGMENT False \
     FIND_UNUSED_PARAMETERS True \
     ATTENTION_ARCH.SPATIAL_MEMORIES 32 \
     ATTENTION_ARCH.QUERY_NUMBER 3 \

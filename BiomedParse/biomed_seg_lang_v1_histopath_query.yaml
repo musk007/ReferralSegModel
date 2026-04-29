@@ -1,8 +1,8 @@
 # ============================================================================
 # biomed_seg_lang_v1_histopath_full.yaml
 # ============================================================================
-# Full model fine-tuning on all histopathology datasets.
-# ALL modules are trainable (backbone, pixel decoder, predictor, lang encoder).
+# Histopathology fine-tuning with selective trainable layers.
+# Only query_feat + query_embed are trainable.
 #
 # Compared to the text-encoder-only config:
 #   - FIX_PARAM is empty  → nothing is frozen
@@ -48,29 +48,43 @@ DATASETS.TEST:  ["biomed_HistoPathAll_test"]
 #   - "biomed_HistoPathLung_test"
 #   - "biomed_HistoPathProstate_test"
 DATASETS.PROMPT_COMBINE: true
+
+# Disable geometric/color augmentation in dataset mapper.
+# With augment=false, mapper uses read_rgb() path: pad-to-square + resize only.
+INPUT.AUGMENT: false
 # ----------------------------------------------------------------------------
-# Training settings — full model fine-tuning
+# Training settings
 # ----------------------------------------------------------------------------
 
 SOLVER.LORA:
   ENABLED: False
-  R: 8                    # LoRA rank
-  ALPHA: 16               # LoRA alpha (scaling)
-  TARGET_MODULES: ["sem_seg_head", "lang_encoder", "predictor"]  # or more specific: query, key, value, c_proj
-  DROPOUT: 0.0
+  # R: 8                    # LoRA rank
+  # ALPHA: 16               # LoRA alpha (scaling)
+  # TARGET_MODULES: ["sem_seg_head", "lang_encoder", "predictor"]  # or more specific: query, key, value, c_proj
+  # DROPOUT: 0.0
 
 
 SOLVER.BEST_METRIC: "mIoU"         # metric used to select and save the best checkpoint
 
-SOLVER.BASE_LR: 0.000001         # 5x lower than text-only run to protect visual features
+SOLVER.BASE_LR: 0.00001         # 5x lower than text-only run to protect visual features
 SOLVER.MAX_NUM_EPOCHS: 100
-SOLVER.WARMUP_ITERS: 96        # longer warmup: more params need to settle
+SOLVER.WARMUP_ITERS: 0        # longer warmup: more params need to settle
+SOLVER.STEPS: []             # no LR decay
 
-# Nothing is frozen — all modules are trainable.
+# Explicit allowlist: freeze everything, train only matching params.
+# `query_feat` and `query_embed` are decoder query embeddings (101, 512).
+SOLVER.TRAINABLE_PARAMS:
+  - query_feat
+  - query_embed
+  - class_embed
+  - lang_proj
+  - sem_seg_head
+
+# Fallback freeze controls (used only when TRAINABLE_PARAMS is empty).
 SOLVER.FIX_PARAM: 
   backbone: true
   lang_encoder: true
-  pixel_decoder: false
+  pixel_decoder: true
   predictor: true
 SOLVER.IGNORE_FIX: []
 
@@ -78,10 +92,10 @@ SOLVER.IGNORE_FIX: []
 # Any param whose name contains the key gets BASE_LR * multiplier.
 # Params not matching any key receive BASE_LR (1.0x) by default.
 SOLVER.LR_MULTIPLIER:
-  backbone: 0         # visual backbone  → 1e-6  (most conservative)
+  backbone: 1.0         # visual backbone  → 1e-6  (most conservative)
   pixel_decoder: 1.0    # pixel / FPN decoder → 2e-6
-  predictor: 0        # transformer decoder → 5e-6
-  lang_encoder: 0     # text encoder        → 1e-5 (most aggressive)
+  predictor: 1.0       # transformer decoder → 5e-6
+  lang_encoder: 1.0     # text encoder        → 1e-5 (most aggressive)
 
 # Load the pretrained BiomedParse v1 checkpoint before fine-tuning.
 WEIGHT: true

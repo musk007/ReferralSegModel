@@ -584,3 +584,14 @@ fi
 echo ""
 echo "Stage 2 early stopping log: ${ES_LOG_FILE}"
 echo "============================================================"
+
+
+
+
+cd /path/to/ReferralSegModel
+# Make sure target_dist_HF.json is in the current directory
+python fit_target_dist_full.py \
+    /data/breast/images \
+    /data/breast/masks \
+    "neoplastic cells" \
+    /path/to/cloned/BiomedParse

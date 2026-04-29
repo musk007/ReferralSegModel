@@ -71,7 +71,7 @@ DUALPROTOSEG_DATASET="bcss"   # checkpoint was trained on BCSS
 BASE_DATA="${DATASETS_DIR:-/adialab/usr/roba/biomedparse_datasets}"
 BASE_RESULTS="${SCRIPT_DIR}/results/eval"
 BIOMEDPARSE_OFFICIAL_DATA="${BASE_DATA}/biomedParse/BiomedParseData"
-BIOMEDPARSE_CHECKPOINT="/adialab/usr/roba/train_output/histopath_staged_v4_colon/stage1_warmup/biomed_seg_lang_v1.yaml_conf~/run_1/best_model"
+BIOMEDPARSE_CHECKPOINT="/adialab/usr/roba/biomedparse_datasets/output/OnlySegHead_colon/biomed_seg_lang_pubmed.yaml_conf~/run_1/000001800/default"
 # ---------------------------------------------------------------------------
 # Dataset path table
 # Each dataset entry: IMAGES_DIR  MASKS_DIR  PROMPTS_JSON
@@ -85,9 +85,9 @@ resolve_dataset() {
             PROMPTS_JSON="/home/roba/miccai26/test_data/instructions/test/lung.json"
             ;;
         colon)
-            IMAGES_DIR="${BASE_DATA}/colon/test"
-            MASKS_DIR="${BASE_DATA}/colon/test_mask"
-            PROMPTS_JSON="/home/roba/miccai26/instructions/test/colon.json"
+            IMAGES_DIR="${BASE_DATA}/colon/train"
+            MASKS_DIR="${BASE_DATA}/colon/train_mask"
+            PROMPTS_JSON="/home/roba/miccai26/instructions/train/colon_train_small.json"
             # PROMPTS_JSON="/home/roba/miccai26/instructions/train/colon_train_filtered.json"
             ;;
         prostate)
@@ -159,7 +159,7 @@ run_eval() {
     resolve_dataset "$ds"
 
     # local out_dir="/home/roba/miccai26/results/eval/histop_langEnc_Pred_SegmHead_NoLoRA"
-    local out_dir="/adialab/usr/roba/eval_results/staged_partial_v4/${ds}/${m}"
+    local out_dir="/adialab/usr/roba/eval_results/SingleSample/OnlySegHeadPubmed/${ds}/${m}"
     mkdir -p "${out_dir}"
 
     echo "------------------------------------------------------------"

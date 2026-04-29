@@ -87,31 +87,77 @@ class XDecoder_Trainer(DefaultTrainer):
         else:
             fix_param = self.opt['SOLVER'].get('FIX_PARAM',{})
             ignore_fix = self.opt['SOLVER'].get('IGNORE_FIX',[])
-            for _module_name in self.model_names:
+            trainable_params = self.opt['SOLVER'].get('TRAINABLE_PARAMS', [])
+            if trainable_params:
+                for _module_name in self.model_names:
+                    for _, param in self.raw_models[_module_name].named_parameters():
+                        param.requires_grad = False
+                    for name, param in self.raw_models[_module_name].named_parameters():
+                        if any(k in name for k in trainable_params):
+                            param.requires_grad = True
+                logger.info(
+                    "Selective train mode: only params matching %s are trainable",
+                    trainable_params,
+                )
+            else:
+                for _module_name in self.model_names:
 
-                flag_continue = False
-                module_params = {}
-                for name, param in self.raw_models[_module_name].named_parameters():
-                    for ig in ignore_fix:
-                        if ig in name:
-                            flag_continue = True
-                            break
+                    flag_continue = False
+                    module_params = {}
+                    for name, param in self.raw_models[_module_name].named_parameters():
+                        for ig in ignore_fix:
+                            if ig in name:
+                                flag_continue = True
+                                break
 
-                    if flag_continue:
-                        flag_continue = False
-                        continue
+                        if flag_continue:
+                            flag_continue = False
+                            continue
 
-                    for key, value in fix_param.items():
-                        if key in name and value == True:
-                            param.requires_grad = False
+                        for key, value in fix_param.items():
+                            if key in name and value == True:
+                                param.requires_grad = False
 
-                        if key in name:
-                            if key not in module_params:
-                                module_params[key] = 0
-                            module_params[key] += param.numel()
+                            if key in name:
+                                if key not in module_params:
+                                    module_params[key] = 0
+                                module_params[key] += param.numel()
 
-                # logger.info(f"Module {_module_name} has parameters: {module_params}")
+                    # logger.info(f"Module {_module_name} has parameters: {module_params}")
             #raise NotImplementedError("Please check the fix_param and ignore_fix in the config file")
+
+        # Always print trainable-parameter sanity info to avoid silent misconfiguration.
+        for _module_name in self.model_names:
+            trainable_names = []
+            total_params = 0
+            total_trainable = 0
+            for name, param in self.raw_models[_module_name].named_parameters():
+                n = param.numel()
+                total_params += n
+                if param.requires_grad:
+                    total_trainable += n
+                    trainable_names.append(name)
+
+            if total_trainable == 0:
+                raise RuntimeError(
+                    f"No trainable parameters found for model '{_module_name}'. "
+                    "Check SOLVER.TRAINABLE_PARAMS / SOLVER.FIX_PARAM."
+                )
+
+            preview_count = min(20, len(trainable_names))
+            logger.info(
+                "[%s] Trainable params: %d / %d (%.4f%%)",
+                _module_name,
+                total_trainable,
+                total_params,
+                100.0 * total_trainable / max(total_params, 1),
+            )
+            logger.info(
+                "[%s] First %d trainable parameter names: %s",
+                _module_name,
+                preview_count,
+                trainable_names[:preview_count],
+            )
 
         # # ---------------- PARAMETER DEBUG / LORA CHECK ----------------
         # global_total = 0

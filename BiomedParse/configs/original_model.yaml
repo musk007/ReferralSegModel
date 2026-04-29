@@ -52,9 +52,9 @@ MODEL:
   TEXT:
     ARCH: vlpencoder
     NAME: transformer
-    TOKENIZER: biomed-clip
-    CONTEXT_LENGTH: 256 #256 # 77
-    WIDTH: 768 # 768  # 512
+    TOKENIZER: clip
+    CONTEXT_LENGTH: 77 #256 # 77
+    WIDTH: 512 # 768  # 512
     HEADS: 8
     LAYERS: 12 # 6
     AUTOGRESSIVE: True
@@ -247,7 +247,6 @@ DATASETS:
 INPUT:
   PIXEL_MEAN: [123.675, 116.280, 103.530]
   PIXEL_STD: [58.395, 57.120, 57.375]
-  AUGMENT: True
 
 TRAIN:
   ASPECT_RATIO_GROUPING: true
@@ -304,12 +303,11 @@ BioMed:
 # Detectron2 training config for optimizer and lr scheduler
 SOLVER:
   BASE_LR: 0.0001
-  # Constant LR (no decay): empty STEPS disables MultiStep drops.
-  STEPS: []
+  STEPS: [0.88889, 0.96296]
   MAX_ITER: 1
   GAMMA: 0.1
   WARMUP_FACTOR: 1.0
-  WARMUP_ITERS: 0
+  WARMUP_ITERS: 10
   WARMUP_METHOD: "linear"
   WEIGHT_DECAY: 0.05
   OPTIMIZER: "ADAMW"

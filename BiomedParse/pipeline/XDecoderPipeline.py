@@ -54,13 +54,13 @@ class XDecoderPipeline:
                 pass
 
         if is_main_process():
-            logger.info(model)
-            with open("/home/roba/miccai26/BiomedParse/pipeline/model_arch.txt", "w") as f:
-                f.write(str(model))
-                f.close()
-            print("SAVED MODEL")
-            import sys
-            sys.exit()
+            # logger.info(model)
+            # with open("/home/roba/miccai26/BiomedParse/pipeline/model_arch.txt", "w") as f:
+            #     f.write(str(model))
+            # print("SAVED MODEL")
+            # import sys
+            # sys.exit()
+            pass
 
         raw_models = {model_name: BaseModel(self._opt, model)}
         return raw_models
